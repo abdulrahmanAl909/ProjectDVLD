@@ -30,10 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountSeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.manageApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +37,10 @@
             this.detaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageApplicationTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageTestTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountSeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,12 +76,58 @@
             this.applicationsToolStripMenuItem.Text = "Applications";
             this.applicationsToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
+            // driToolStripMenuItem
+            // 
+            this.driToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.driToolStripMenuItem.Name = "driToolStripMenuItem";
+            this.driToolStripMenuItem.Size = new System.Drawing.Size(339, 36);
+            this.driToolStripMenuItem.Text = "Driving Licenses Server";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(336, 6);
+            // 
+            // manageApplicationToolStripMenuItem
+            // 
+            this.manageApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.manageApplicationToolStripMenuItem.Name = "manageApplicationToolStripMenuItem";
+            this.manageApplicationToolStripMenuItem.Size = new System.Drawing.Size(339, 36);
+            this.manageApplicationToolStripMenuItem.Text = "Manage Applications";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(336, 6);
+            // 
+            // detaToolStripMenuItem
+            // 
+            this.detaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.detaToolStripMenuItem.Name = "detaToolStripMenuItem";
+            this.detaToolStripMenuItem.Size = new System.Drawing.Size(339, 36);
+            this.detaToolStripMenuItem.Text = "Detain Licenses";
+            // 
+            // manageApplicationTypeToolStripMenuItem
+            // 
+            this.manageApplicationTypeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.manageApplicationTypeToolStripMenuItem.Name = "manageApplicationTypeToolStripMenuItem";
+            this.manageApplicationTypeToolStripMenuItem.Size = new System.Drawing.Size(339, 36);
+            this.manageApplicationTypeToolStripMenuItem.Text = "Manage Application Type";
+            // 
+            // manageTestTypesToolStripMenuItem
+            // 
+            this.manageTestTypesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
+            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(339, 36);
+            this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
+            // 
             // peopleToolStripMenuItem
             // 
             this.peopleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
             this.peopleToolStripMenuItem.Size = new System.Drawing.Size(102, 36);
             this.peopleToolStripMenuItem.Text = "People";
+            this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
             // driversToolStripMenuItem
             // 
@@ -104,51 +150,6 @@
             this.accountSeeToolStripMenuItem.Size = new System.Drawing.Size(210, 36);
             this.accountSeeToolStripMenuItem.Text = "Account Settings";
             // 
-            // driToolStripMenuItem
-            // 
-            this.driToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.driToolStripMenuItem.Name = "driToolStripMenuItem";
-            this.driToolStripMenuItem.Size = new System.Drawing.Size(339, 40);
-            this.driToolStripMenuItem.Text = "Driving Licenses Server";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(336, 6);
-            // 
-            // manageApplicationToolStripMenuItem
-            // 
-            this.manageApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.manageApplicationToolStripMenuItem.Name = "manageApplicationToolStripMenuItem";
-            this.manageApplicationToolStripMenuItem.Size = new System.Drawing.Size(339, 40);
-            this.manageApplicationToolStripMenuItem.Text = "Manage Applications";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(336, 6);
-            // 
-            // detaToolStripMenuItem
-            // 
-            this.detaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.detaToolStripMenuItem.Name = "detaToolStripMenuItem";
-            this.detaToolStripMenuItem.Size = new System.Drawing.Size(339, 40);
-            this.detaToolStripMenuItem.Text = "Detain Licenses";
-            // 
-            // manageApplicationTypeToolStripMenuItem
-            // 
-            this.manageApplicationTypeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.manageApplicationTypeToolStripMenuItem.Name = "manageApplicationTypeToolStripMenuItem";
-            this.manageApplicationTypeToolStripMenuItem.Size = new System.Drawing.Size(339, 40);
-            this.manageApplicationTypeToolStripMenuItem.Text = "Manage Application Type";
-            // 
-            // manageTestTypesToolStripMenuItem
-            // 
-            this.manageTestTypesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
-            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(339, 36);
-            this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -157,6 +158,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMain";
             this.Text = "FrmMain";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

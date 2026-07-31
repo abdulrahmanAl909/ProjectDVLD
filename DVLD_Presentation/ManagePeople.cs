@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,18 +11,13 @@ using System.Windows.Forms;
 
 namespace DVLD_Presentation
 {
-    public partial class frmMain : Form
+    public partial class ManagePeople : Form
     {
-        public frmMain()
+        public ManagePeople()
         {
             InitializeComponent();
         }
 
-        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frmManagePeople = new ManagePeople();
-
-            frmManagePeople.ShowDialog();
-        }
+      
     }
 }
