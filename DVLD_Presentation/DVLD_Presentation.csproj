@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManagePeople.cs">
+    <Compile Include="People\ManagePeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagePeople.Designer.cs">
+    <Compile Include="People\ManagePeople.Designer.cs">
       <DependentUpon>ManagePeople.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -58,21 +58,21 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoginScreen.cs">
+    <Compile Include="Users\frmLoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoginScreen.Designer.cs">
+    <Compile Include="Users\frmLoginScreen.Designer.cs">
       <DependentUpon>frmLoginScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmLoginScreen.resx">
+    <EmbeddedResource Include="Users\frmLoginScreen.resx">
       <DependentUpon>frmLoginScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagePeople.resx">
+    <EmbeddedResource Include="People\ManagePeople.resx">
       <DependentUpon>ManagePeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -109,6 +109,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\username %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-create-order-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-crowd-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-create-order-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-create-order-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drivers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drivers1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vanpool-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-users-settings-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-info-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-info-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-users-settings-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-users-settings-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-information-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Finally.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
