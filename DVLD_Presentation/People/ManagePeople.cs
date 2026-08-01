@@ -34,6 +34,11 @@ namespace DVLD_Presentation
             this.Close();
         }
 
+        private void btnAddPerson_Click(object sender, EventArgs e)
+        {
+           Form frmAddEdit = new AddEditPersonInfo();
 
+            frmAddEdit.ShowDialog();
+        }
     }
 }
