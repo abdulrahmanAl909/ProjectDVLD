@@ -20,7 +20,7 @@ namespace DVLD_Presentation
 
         public void ReflishTable()
         {
-            dgvLoadPeople.DataSource = clsPeople.GetAllPeople();
+            dgvLoadPeople.DataSource = clsPerson.GetAllPeople();
             lblCountRecorde.Text = dgvLoadPeople.RowCount.ToString();
         }
 
@@ -40,5 +40,7 @@ namespace DVLD_Presentation
 
             frmAddEdit.ShowDialog();
         }
+
+     
     }
 }

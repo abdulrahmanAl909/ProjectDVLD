@@ -47,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 25F);
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(479, 140);
+            this.label1.Location = new System.Drawing.Point(336, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(360, 60);
             this.label1.TabIndex = 0;
@@ -57,16 +57,18 @@
             // 
             this.dgvLoadPeople.AllowUserToAddRows = false;
             this.dgvLoadPeople.AllowUserToDeleteRows = false;
+            this.dgvLoadPeople.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLoadPeople.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvLoadPeople.BackgroundColor = System.Drawing.Color.White;
-            this.dgvLoadPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoadPeople.ColumnHeadersHeight = 34;
             this.dgvLoadPeople.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvLoadPeople.Location = new System.Drawing.Point(3, 243);
+            this.dgvLoadPeople.Location = new System.Drawing.Point(16, 253);
             this.dgvLoadPeople.Name = "dgvLoadPeople";
             this.dgvLoadPeople.ReadOnly = true;
             this.dgvLoadPeople.RowHeadersVisible = false;
             this.dgvLoadPeople.RowHeadersWidth = 62;
             this.dgvLoadPeople.RowTemplate.Height = 29;
-            this.dgvLoadPeople.Size = new System.Drawing.Size(1477, 333);
+            this.dgvLoadPeople.Size = new System.Drawing.Size(984, 219);
             this.dgvLoadPeople.TabIndex = 1;
             // 
             // label2
@@ -74,7 +76,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 623);
+            this.label2.Location = new System.Drawing.Point(12, 493);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 24);
             this.label2.TabIndex = 2;
@@ -86,7 +88,7 @@
             this.lblCountRecorde.BackColor = System.Drawing.Color.Transparent;
             this.lblCountRecorde.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblCountRecorde.ForeColor = System.Drawing.Color.White;
-            this.lblCountRecorde.Location = new System.Drawing.Point(105, 623);
+            this.lblCountRecorde.Location = new System.Drawing.Point(105, 493);
             this.lblCountRecorde.Name = "lblCountRecorde";
             this.lblCountRecorde.Size = new System.Drawing.Size(22, 24);
             this.lblCountRecorde.TabIndex = 3;
@@ -100,7 +102,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 11F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1127, 608);
+            this.btnClose.Location = new System.Drawing.Point(867, 478);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 53);
             this.btnClose.TabIndex = 4;
@@ -114,7 +116,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 199);
+            this.label3.Location = new System.Drawing.Point(12, 216);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 6;
@@ -124,7 +126,7 @@
             // 
             this.cbFilterBy.BackColor = System.Drawing.Color.White;
             this.cbFilterBy.FormattingEnabled = true;
-            this.cbFilterBy.Location = new System.Drawing.Point(108, 199);
+            this.cbFilterBy.Location = new System.Drawing.Point(108, 217);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(151, 27);
             this.cbFilterBy.TabIndex = 7;
@@ -133,7 +135,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD_Presentation.Properties.Resources.people1;
-            this.pictureBox1.Location = new System.Drawing.Point(531, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(363, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(245, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -149,7 +151,7 @@
             this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPerson.Font = new System.Drawing.Font("Tahoma", 1F);
             this.btnAddPerson.ForeColor = System.Drawing.Color.White;
-            this.btnAddPerson.Location = new System.Drawing.Point(1127, 184);
+            this.btnAddPerson.Location = new System.Drawing.Point(867, 191);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(114, 53);
             this.btnAddPerson.TabIndex = 5;
@@ -162,7 +164,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1123, 157);
+            this.label4.Location = new System.Drawing.Point(871, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 24);
             this.label4.TabIndex = 9;
@@ -172,8 +174,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(1502, 671);
+            this.ClientSize = new System.Drawing.Size(1048, 563);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbFilterBy);
