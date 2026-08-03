@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblAddEditPerson = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPersonID = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mtxtPhoneNumber = new System.Windows.Forms.MaskedTextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.llRemoveImage = new System.Windows.Forms.LinkLabel();
             this.llImagePath = new System.Windows.Forms.LinkLabel();
+            this.pbImagePath = new System.Windows.Forms.PictureBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cbCountry = new System.Windows.Forms.ComboBox();
@@ -59,10 +62,10 @@
             this.txtSecondName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbImagePath = new System.Windows.Forms.PictureBox();
-            this.mtxtPhoneNumber = new System.Windows.Forms.MaskedTextBox();
+            this.epEmailError = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagePath)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmailError)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAddEditPerson
@@ -135,6 +138,19 @@
             this.panel1.Size = new System.Drawing.Size(1054, 489);
             this.panel1.TabIndex = 3;
             // 
+            // mtxtPhoneNumber
+            // 
+            this.mtxtPhoneNumber.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.mtxtPhoneNumber.BeepOnError = true;
+            this.mtxtPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.mtxtPhoneNumber.ForeColor = System.Drawing.Color.White;
+            this.mtxtPhoneNumber.Location = new System.Drawing.Point(532, 183);
+            this.mtxtPhoneNumber.Mask = "0000000000";
+            this.mtxtPhoneNumber.Name = "mtxtPhoneNumber";
+            this.mtxtPhoneNumber.PromptChar = ' ';
+            this.mtxtPhoneNumber.Size = new System.Drawing.Size(192, 29);
+            this.mtxtPhoneNumber.TabIndex = 4;
+            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -180,6 +196,16 @@
             this.llImagePath.TabIndex = 25;
             this.llImagePath.TabStop = true;
             this.llImagePath.Text = "Set Image";
+            // 
+            // pbImagePath
+            // 
+            this.pbImagePath.Image = global::DVLD_Presentation.Properties.Resources.add_group__1_;
+            this.pbImagePath.Location = new System.Drawing.Point(775, 106);
+            this.pbImagePath.Name = "pbImagePath";
+            this.pbImagePath.Size = new System.Drawing.Size(215, 188);
+            this.pbImagePath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagePath.TabIndex = 24;
+            this.pbImagePath.TabStop = false;
             // 
             // txtAddress
             // 
@@ -229,6 +255,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(218, 27);
             this.txtEmail.TabIndex = 19;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // label11
             // 
@@ -371,6 +398,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(157, 27);
             this.txtLastName.TabIndex = 4;
+            this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // txtThirdName
             // 
@@ -380,6 +408,7 @@
             this.txtThirdName.Name = "txtThirdName";
             this.txtThirdName.Size = new System.Drawing.Size(150, 27);
             this.txtThirdName.TabIndex = 3;
+            this.txtThirdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // txtSecondName
             // 
@@ -389,6 +418,7 @@
             this.txtSecondName.Name = "txtSecondName";
             this.txtSecondName.Size = new System.Drawing.Size(161, 27);
             this.txtSecondName.TabIndex = 2;
+            this.txtSecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // txtFirstName
             // 
@@ -398,6 +428,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(175, 27);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // label2
             // 
@@ -409,28 +440,9 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name:";
             // 
-            // pbImagePath
+            // epEmailError
             // 
-            this.pbImagePath.Image = global::DVLD_Presentation.Properties.Resources.add_group__1_;
-            this.pbImagePath.Location = new System.Drawing.Point(775, 106);
-            this.pbImagePath.Name = "pbImagePath";
-            this.pbImagePath.Size = new System.Drawing.Size(215, 188);
-            this.pbImagePath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagePath.TabIndex = 24;
-            this.pbImagePath.TabStop = false;
-            // 
-            // mtxtPhoneNumber
-            // 
-            this.mtxtPhoneNumber.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.mtxtPhoneNumber.BeepOnError = true;
-            this.mtxtPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.mtxtPhoneNumber.ForeColor = System.Drawing.Color.White;
-            this.mtxtPhoneNumber.Location = new System.Drawing.Point(532, 183);
-            this.mtxtPhoneNumber.Mask = "0000000000";
-            this.mtxtPhoneNumber.Name = "mtxtPhoneNumber";
-            this.mtxtPhoneNumber.PromptChar = ' ';
-            this.mtxtPhoneNumber.Size = new System.Drawing.Size(192, 29);
-            this.mtxtPhoneNumber.TabIndex = 4;
+            this.epEmailError.ContainerControl = this;
             // 
             // AddEditPersonInfo
             // 
@@ -449,6 +461,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagePath)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmailError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,5 +502,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.MaskedTextBox mtxtPhoneNumber;
+        private System.Windows.Forms.ErrorProvider epEmailError;
     }
 }

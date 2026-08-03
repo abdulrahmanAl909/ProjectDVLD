@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net;
 using System.Reflection;
 
 
@@ -18,9 +19,10 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = "SELECT People.PersonID, People.NationalNo,FullName=FirstName+SecondName+ThirdName+LastName ,People.DateOfBirth, People.Gendor, People.Address, People.Phone, People.Email, Countries.CountryName " +
-                "FROM People " +
-                "INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID";
+            string quary ="SELECT People.PersonID, People.NationalNo,FullName=FirstName + ' ' +SecondName + ' '+ThirdName+ ' ' + LastName ,People.DateOfBirth," +
+                " Gendor = case when Gendor = 0 then 'Male' when Gendor = 1 then 'Femail' else'UnKnows' End," +
+                " People.Address, People.Phone, People.Email, Countries.CountryName FROM People" +
+                " INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
@@ -60,7 +62,7 @@ namespace DVLD_DataAccess
 
         public static int AddNewPerson(ref string NationalNo ,ref string FirstName
             ,ref string SecondName, ref string ThirdName, ref string LastName,
-            ref DateTime DateOfBirth,ref enGendor Gendor,ref string Address, ref string Phone,
+            ref DateTime DateOfBirth,ref int Gendor,ref string Address, ref string Phone,
             ref string Email,ref int CountryID,ref string ImagePath)
         {
             return 0;

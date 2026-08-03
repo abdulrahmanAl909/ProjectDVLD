@@ -5,10 +5,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DVLD_Presentation
 {
@@ -43,5 +43,37 @@ namespace DVLD_Presentation
             dtpDateOfBirth.MinDate = DateTime.Today.AddYears(-100);
         }
 
+        private void txtLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                SystemSounds.Asterisk.Play();
+            }
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+
+            if(string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                e.Cancel = false;
+                epEmailError.SetError(txtEmail, "");
+            }
+            else
+            {
+                if (txtEmail.Text.EndsWith("@gmail.com"))
+                {
+                    e.Cancel = false;
+                    epEmailError.SetError(txtEmail, "");
+                }
+                else
+                {
+                    e.Cancel = true;
+                    txtEmail.Focus();
+                    epEmailError.SetError(txtEmail, "Invaild Email Address Format!");
+                }
+            }
+        }
     }
 }

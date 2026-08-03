@@ -104,7 +104,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(867, 478);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(114, 53);
+            this.btnClose.Size = new System.Drawing.Size(106, 53);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -125,12 +125,12 @@
             // cbFilterBy
             // 
             this.cbFilterBy.BackColor = System.Drawing.Color.White;
+            this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Location = new System.Drawing.Point(108, 217);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(151, 27);
             this.cbFilterBy.TabIndex = 7;
-            this.cbFilterBy.Text = "None";
             // 
             // pictureBox1
             // 
@@ -151,9 +151,9 @@
             this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPerson.Font = new System.Drawing.Font("Tahoma", 1F);
             this.btnAddPerson.ForeColor = System.Drawing.Color.White;
-            this.btnAddPerson.Location = new System.Drawing.Point(867, 191);
+            this.btnAddPerson.Location = new System.Drawing.Point(867, 195);
             this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(114, 53);
+            this.btnAddPerson.Size = new System.Drawing.Size(101, 49);
             this.btnAddPerson.TabIndex = 5;
             this.btnAddPerson.Text = "Close";
             this.btnAddPerson.UseVisualStyleBackColor = false;
@@ -164,7 +164,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(871, 159);
+            this.label4.Location = new System.Drawing.Point(863, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 24);
             this.label4.TabIndex = 9;
