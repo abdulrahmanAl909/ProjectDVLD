@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvLoadPeople = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,10 +36,21 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmsPersonInformation = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddPerson = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewPerswonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phoneCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phoneCallToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoadPeople)).BeginInit();
+            this.cmsPersonInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 25F);
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(336, 129);
+            this.label1.Location = new System.Drawing.Point(330, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(360, 60);
             this.label1.TabIndex = 0;
@@ -61,6 +73,7 @@
             this.dgvLoadPeople.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvLoadPeople.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoadPeople.ColumnHeadersHeight = 34;
+            this.dgvLoadPeople.ContextMenuStrip = this.cmsPersonInformation;
             this.dgvLoadPeople.GridColor = System.Drawing.Color.DarkGray;
             this.dgvLoadPeople.Location = new System.Drawing.Point(16, 253);
             this.dgvLoadPeople.Name = "dgvLoadPeople";
@@ -132,10 +145,52 @@
             this.cbFilterBy.Size = new System.Drawing.Size(151, 27);
             this.cbFilterBy.TabIndex = 7;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(863, 168);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 24);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Add Person";
+            // 
+            // cmsPersonInformation
+            // 
+            this.cmsPersonInformation.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.cmsPersonInformation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDetailsToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.addNewPerswonToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.phoneCallToolStripMenuItem,
+            this.phoneCallToolStripMenuItem1});
+            this.cmsPersonInformation.Name = "contextMenuStrip1";
+            this.cmsPersonInformation.Size = new System.Drawing.Size(249, 247);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(245, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(245, 6);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(245, 6);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD_Presentation.Properties.Resources.people1;
-            this.pictureBox1.Location = new System.Drawing.Point(363, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(368, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(245, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,16 +214,48 @@
             this.btnAddPerson.UseVisualStyleBackColor = false;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
-            // label4
+            // showDetailsToolStripMenuItem
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(863, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Add Person";
+            this.showDetailsToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume;
+            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
+            // 
+            // addNewPerswonToolStripMenuItem
+            // 
+            this.addNewPerswonToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.add_user__2_;
+            this.addNewPerswonToolStripMenuItem.Name = "addNewPerswonToolStripMenuItem";
+            this.addNewPerswonToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.addNewPerswonToolStripMenuItem.Text = "Add New Person";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume__1_;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.delete_user;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // phoneCallToolStripMenuItem
+            // 
+            this.phoneCallToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.email;
+            this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.phoneCallToolStripMenuItem.Text = "Send Email";
+            // 
+            // phoneCallToolStripMenuItem1
+            // 
+            this.phoneCallToolStripMenuItem1.Image = global::DVLD_Presentation.Properties.Resources.phone;
+            this.phoneCallToolStripMenuItem1.Name = "phoneCallToolStripMenuItem1";
+            this.phoneCallToolStripMenuItem1.Size = new System.Drawing.Size(248, 32);
+            this.phoneCallToolStripMenuItem1.Text = "Phone Call";
             // 
             // ManagePeople
             // 
@@ -192,6 +279,7 @@
             this.Text = "ManagePeople";
             this.Load += new System.EventHandler(this.ManagePeople_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoadPeople)).EndInit();
+            this.cmsPersonInformation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,5 +298,15 @@
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip cmsPersonInformation;
+        private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem addNewPerswonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem1;
     }
 }

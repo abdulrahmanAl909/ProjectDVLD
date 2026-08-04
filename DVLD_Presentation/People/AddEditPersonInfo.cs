@@ -36,6 +36,8 @@ namespace DVLD_Presentation
             this.Close();
         }
 
+
+
         private void AddEditPersonInfo_Load(object sender, EventArgs e)
         {
             GetAlllCountryIn();
@@ -75,5 +77,7 @@ namespace DVLD_Presentation
                 }
             }
         }
+
+     
     }
 }

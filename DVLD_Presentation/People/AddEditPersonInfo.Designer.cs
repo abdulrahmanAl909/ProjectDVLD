@@ -142,6 +142,7 @@
             // 
             this.mtxtPhoneNumber.BackColor = System.Drawing.SystemColors.HotTrack;
             this.mtxtPhoneNumber.BeepOnError = true;
+            this.mtxtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.mtxtPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F);
             this.mtxtPhoneNumber.ForeColor = System.Drawing.Color.White;
             this.mtxtPhoneNumber.Location = new System.Drawing.Point(532, 183);

@@ -52,5 +52,11 @@ namespace DVLD_Presentation
             frmAddEdit.ShowDialog();
         }
 
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmShowPersonDetails = new PersonDetails();
+
+            frmShowPersonDetails.ShowDialog();
+        }
     }
 }
