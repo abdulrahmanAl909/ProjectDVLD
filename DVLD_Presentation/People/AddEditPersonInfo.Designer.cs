@@ -63,6 +63,7 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.epEmailError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofdSetImage = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagePath)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epEmailError)).BeginInit();
@@ -197,6 +198,7 @@
             this.llImagePath.TabIndex = 25;
             this.llImagePath.TabStop = true;
             this.llImagePath.Text = "Set Image";
+            this.llImagePath.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llImagePath_LinkClicked);
             // 
             // pbImagePath
             // 
@@ -504,5 +506,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.MaskedTextBox mtxtPhoneNumber;
         private System.Windows.Forms.ErrorProvider epEmailError;
+        private System.Windows.Forms.OpenFileDialog ofdSetImage;
     }
 }

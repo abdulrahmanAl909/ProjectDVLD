@@ -70,10 +70,10 @@
     <Compile Include="People\PersonDetails.Designer.cs">
       <DependentUpon>PersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShowPersonDetails.cs">
+    <Compile Include="UserControl\ShowPersonDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ShowPersonDetails.Designer.cs">
+    <Compile Include="UserControl\ShowPersonDetails.Designer.cs">
       <DependentUpon>ShowPersonDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
@@ -96,7 +96,7 @@
     <EmbeddedResource Include="People\PersonDetails.resx">
       <DependentUpon>PersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShowPersonDetails.resx">
+    <EmbeddedResource Include="UserControl\ShowPersonDetails.resx">
       <DependentUpon>ShowPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">

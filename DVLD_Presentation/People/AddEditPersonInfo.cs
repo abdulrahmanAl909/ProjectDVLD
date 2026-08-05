@@ -78,6 +78,13 @@ namespace DVLD_Presentation
             }
         }
 
-     
+        private void llImagePath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if(ofdSetImage.ShowDialog()==DialogResult.OK)
+            {
+                MessageBox.Show(ofdSetImage.FileName);
+                llRemoveImage.Visible = true;
+            }
+        }
     }
 }
