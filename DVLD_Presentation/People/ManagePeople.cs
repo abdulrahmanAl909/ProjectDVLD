@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace DVLD_Presentation
             InitializeComponent();
         }
 
-        private void ReflishTable()
+        private void _RefreshPeople()
         {
             dgvLoadPeople.DataSource = clsPerson.GetAllPeople();
             lblCountRecorde.Text = dgvLoadPeople.RowCount.ToString();
@@ -36,7 +37,7 @@ namespace DVLD_Presentation
 
         private void ManagePeople_Load(object sender, EventArgs e)
         {
-            ReflishTable();
+            _RefreshPeople();
             GetAllFilter();
         }
 
@@ -47,14 +48,15 @@ namespace DVLD_Presentation
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-           Form frmAddEdit = new AddEditPersonInfo();
+            AddEditPersonInfo frmAddEdit = new AddEditPersonInfo(-1);
 
             frmAddEdit.ShowDialog();
+            _RefreshPeople();
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmShowPersonDetails = new PersonDetails();
+            PersonDetails frmShowPersonDetails = new PersonDetails();
 
             frmShowPersonDetails.ShowDialog();
         }
@@ -69,5 +71,31 @@ namespace DVLD_Presentation
             MessageBox.Show("This Feature Is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to delete person[" + dgvLoadPeople.CurrentRow.Cells[0].Value + "]","Delete Person" , MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                if (clsPerson.DeletePerson((int)dgvLoadPeople.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Person Delete Successfully");
+                    _RefreshPeople();
+                }
+                else
+                {
+                    MessageBox.Show("Person is NOT Delete");
+                }
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddEditPersonInfo frm = new AddEditPersonInfo((int)dgvLoadPeople.CurrentRow.Cells[0].Value);
+
+            frm.ShowDialog();
+            _RefreshPeople();
+
+        }
     }
 }
+
+

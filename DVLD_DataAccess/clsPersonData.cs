@@ -10,6 +10,7 @@ namespace DVLD_DataAccess
     public class clsPersonData
     {
 
+
        public static DataTable GetAllPeople()
        {
             DataTable dataTable = new DataTable();
@@ -48,7 +49,7 @@ namespace DVLD_DataAccess
        }
 
         public static bool GetPersonInfoByID(int PersonID,ref string NationalNo,ref string FirstName, ref string SecondName,ref string ThirdName,
-            ref string LastName,ref DateTime DateOfBirth,ref enGendor Gendor,ref string Address,ref string Phone
+            ref string LastName,ref DateTime DateOfBirth,ref byte Gendor,ref string Address,ref string Phone
             , ref string Email,ref int CountryID,ref string ImagePath)
         {
             bool isFound = false;
@@ -77,11 +78,29 @@ namespace DVLD_DataAccess
                     ThirdName = (string)reader["ThirdName"];
                     LastName = (string)reader["LastName"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
-                    Gendor = (enGendor)reader["Gendor"];
+                    Gendor = (byte)reader["Gendor"];
                     Address = (string)reader["Address"];
                     Phone = (string)reader["Phone"];
                     Email = (string)reader["Email"];
                     CountryID = (int)reader["NationalityCountryID"];
+
+                    if (reader["ThirdName"] != DBNull.Value)
+                    {
+                        ThirdName = (string)reader["ThirdName"];
+                    }
+                    else
+                    {
+                        ThirdName = "";
+                    }
+
+                    if (reader["Email"] != DBNull.Value)
+                    {
+                        Email = (string)reader["Email"];
+                    }
+                    else
+                    {
+                        Email = "";
+                    }
 
                     if (reader["ImagePath"]!=DBNull.Value)
                     {
@@ -109,14 +128,88 @@ namespace DVLD_DataAccess
             return isFound;
         }
 
-        public static bool GetPersonInfoByNational()
+        public static bool GetPersonInfoByNationalNo(ref int PersonID,string NationalNo, ref string FirstName, ref string SecondName, ref string ThirdName,
+                    ref string LastName, ref DateTime DateOfBirth, ref byte Gendor, ref string Address, ref string Phone
+                    , ref string Email, ref int CountryID, ref string ImagePath)
         {
-            return false;
-        }
+            bool isFound = false;
 
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = "select * From People where NationalNo=@NationalNo";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    isFound = true;
+
+                    PersonID = (int)reader["PersonID"];
+                    FirstName = (string)reader["FirstName"];
+                    SecondName = (string)reader["SecondName"];
+                    ThirdName = (string)reader["ThirdName"];
+                    LastName = (string)reader["LastName"];
+                    DateOfBirth = (DateTime)reader["DateOfBirth"];
+                    Gendor = (byte)reader["Gendor"];
+                    Address = (string)reader["Address"];
+                    Phone = (string)reader["Phone"];
+                    Email = (string)reader["Email"];
+                    CountryID = (int)reader["NationalityCountryID"];
+
+                    if (reader["ThirdName"] != DBNull.Value)
+                    {
+                        ThirdName = (string)reader["ThirdName"];
+                    }
+                    else
+                    {
+                        ThirdName = "";
+                    }
+
+                    if (reader["Email"] != DBNull.Value)
+                    {
+                        Email = (string)reader["Email"];
+                    }
+                    else
+                    {
+                        Email = "";
+                    }
+
+                    if (reader["ImagePath"] != DBNull.Value)
+                    {
+                        ImagePath = (string)reader["ImagePath"];
+                    }
+                    else
+                    {
+                        ImagePath = "";
+                    }
+                }
+                else
+                {
+                    isFound = false;
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
         public static int AddNewPerson(string NationalNo ,string FirstName
             , string SecondName, string ThirdName,string LastName,
-             DateTime DateOfBirth,enGendor Gendor, string Address, string Phone,
+             DateTime DateOfBirth,byte Gendor, string Address, string Phone,
              string Email, int CountryID, string ImagePath)
         {
             int PersonID = -1;
@@ -138,7 +231,7 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@ThirdName",ThirdName);
             command.Parameters.AddWithValue("@LastName",LastName);
             command.Parameters.AddWithValue("@DateOfBirth",DateOfBirth);
-            command.Parameters.AddWithValue("@Gendor",Gendor);
+            command.Parameters.AddWithValue("@Gendor",(byte)Gendor);
             command.Parameters.AddWithValue("@Address",Address);
             command.Parameters.AddWithValue("@Phone",Phone);
             command.Parameters.AddWithValue("@Email",Email);
@@ -177,7 +270,7 @@ namespace DVLD_DataAccess
 
         public static bool UpdatePerson(int PersonID,string NationalNo, string FirstName
             , string SecondName, string ThirdName, string LastName,
-             DateTime DateOfBirth, enGendor Gendor, string Address, string Phone,
+             DateTime DateOfBirth, byte Gendor, string Address, string Phone,
              string Email, int CountryID, string ImagePath)
         {
             int RowAffectid = -1;
@@ -208,11 +301,29 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@ThirdName", ThirdName);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-            command.Parameters.AddWithValue("@Gendor", Gendor);
+            command.Parameters.AddWithValue("@Gendor", (byte)Gendor);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@CountryID", CountryID);
+
+            if (ThirdName != "")
+            {
+                command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@ThirdName", System.DBNull.Value);
+            }
+
+            if (Email != "")
+            {
+                command.Parameters.AddWithValue("@Email", Email);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@Email", System.DBNull.Value);
+            }
 
             if (ImagePath != "")
             {

@@ -62,11 +62,11 @@
             this.txtSecondName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.epEmailError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epCheckText = new System.Windows.Forms.ErrorProvider(this.components);
             this.ofdSetImage = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagePath)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epEmailError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheckText)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAddEditPerson
@@ -95,7 +95,7 @@
             // 
             this.lblPersonID.AutoSize = true;
             this.lblPersonID.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblPersonID.Location = new System.Drawing.Point(132, 118);
+            this.lblPersonID.Location = new System.Drawing.Point(167, 118);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(39, 29);
             this.lblPersonID.TabIndex = 2;
@@ -163,6 +163,7 @@
             this.btnSave.TabIndex = 28;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -187,6 +188,7 @@
             this.llRemoveImage.TabStop = true;
             this.llRemoveImage.Text = "Remove Image";
             this.llRemoveImage.Visible = false;
+            this.llRemoveImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llRemoveImage_LinkClicked);
             // 
             // llImagePath
             // 
@@ -402,6 +404,7 @@
             this.txtLastName.Size = new System.Drawing.Size(157, 27);
             this.txtLastName.TabIndex = 4;
             this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
+            this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
             // 
             // txtThirdName
             // 
@@ -412,6 +415,7 @@
             this.txtThirdName.Size = new System.Drawing.Size(150, 27);
             this.txtThirdName.TabIndex = 3;
             this.txtThirdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
+            this.txtThirdName.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
             // 
             // txtSecondName
             // 
@@ -422,6 +426,7 @@
             this.txtSecondName.Size = new System.Drawing.Size(161, 27);
             this.txtSecondName.TabIndex = 2;
             this.txtSecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
+            this.txtSecondName.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
             // 
             // txtFirstName
             // 
@@ -432,6 +437,7 @@
             this.txtFirstName.Size = new System.Drawing.Size(175, 27);
             this.txtFirstName.TabIndex = 1;
             this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
+            this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
             // 
             // label2
             // 
@@ -443,9 +449,9 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name:";
             // 
-            // epEmailError
+            // epCheckText
             // 
-            this.epEmailError.ContainerControl = this;
+            this.epCheckText.ContainerControl = this;
             // 
             // AddEditPersonInfo
             // 
@@ -464,7 +470,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagePath)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epEmailError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheckText)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,7 +511,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.MaskedTextBox mtxtPhoneNumber;
-        private System.Windows.Forms.ErrorProvider epEmailError;
+        private System.Windows.Forms.ErrorProvider epCheckText;
         private System.Windows.Forms.OpenFileDialog ofdSetImage;
     }
 }

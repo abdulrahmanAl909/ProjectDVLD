@@ -27,7 +27,9 @@ namespace DVLD_Presentation
             {
                 comboBox1.Items.Add(row["CountryName"]);
             }
-            
+
+            int Country = clsCountry.GetCountryByName("Jordan").CountryID;
+
         }
     }
 }

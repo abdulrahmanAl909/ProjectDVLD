@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddPerson = new System.Windows.Forms.Button();
+            this.txtFilterBy = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoadPeople)).BeginInit();
             this.cmsPersonInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,6 +118,7 @@
             this.addNewPerswonToolStripMenuItem.Name = "addNewPerswonToolStripMenuItem";
             this.addNewPerswonToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
             this.addNewPerswonToolStripMenuItem.Text = "Add New Person";
+            this.addNewPerswonToolStripMenuItem.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -124,6 +126,7 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -131,6 +134,7 @@
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -252,6 +256,14 @@
             this.btnAddPerson.UseVisualStyleBackColor = false;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
+            // txtFilterBy
+            // 
+            this.txtFilterBy.Location = new System.Drawing.Point(277, 218);
+            this.txtFilterBy.Name = "txtFilterBy";
+            this.txtFilterBy.Size = new System.Drawing.Size(240, 27);
+            this.txtFilterBy.TabIndex = 10;
+            this.txtFilterBy.Visible = false;
+            // 
             // ManagePeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -259,6 +271,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(1048, 563);
+            this.Controls.Add(this.txtFilterBy);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbFilterBy);
@@ -302,5 +315,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem1;
+        private System.Windows.Forms.TextBox txtFilterBy;
     }
 }
