@@ -25,6 +25,11 @@ namespace DVLD_Business
 
         public string LastName { set; get; }
 
+        public string FullName
+        {
+            get { return (FirstName + " " + SecondName + " " + ThirdName + " " + LastName); }
+        }
+
         public DateTime DateOfBirth { set; get; }
 
         public enGendor Gendor { set; get; }
@@ -57,10 +62,10 @@ namespace DVLD_Business
             Mode = enMode.Add;
         }
 
-        private clsPerson(string NationalNo, string FirstName, string SecondName, string ThirdName,
+        private clsPerson(int PersonID,string NationalNo, string FirstName, string SecondName, string ThirdName,
             string LastName, DateTime DateOfBirth,enGendor Gendor ,string Address, string Phone, string Email, int CountryID, string ImagePath)
         {
-
+            this.PersonID = PersonID;
             this.NationalNo = NationalNo;
             this.FirstName = FirstName;
             this.SecondName = SecondName;
@@ -125,7 +130,7 @@ namespace DVLD_Business
                , ref LastName, ref DateOfBirth,ref Gendor, ref Address, ref Phone, ref Email
                , ref CountryID, ref ImagePath))
             {
-                return new clsPerson(NationalNo, FirstName, SecondName, ThirdName
+                return new clsPerson(PersonID,NationalNo, FirstName, SecondName, ThirdName
                , LastName, DateOfBirth,(enGendor)Gendor, Address, Phone, Email
                , CountryID, ImagePath);
             }
@@ -178,7 +183,7 @@ namespace DVLD_Business
                 case enMode.Add:
                     if(_AddNewPerson())
                     {
-                        Mode = enMode.Add;
+                        Mode = enMode.Update;
                         return true;
                     }
                     else

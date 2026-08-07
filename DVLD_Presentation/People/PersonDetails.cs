@@ -12,9 +12,13 @@ namespace DVLD_Presentation
 {
     public partial class PersonDetails : Form
     {
-        public PersonDetails()
+
+        int _PersonID;
+        public PersonDetails(int PersonID)
         {
             InitializeComponent();
+
+            _PersonID = PersonID;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -22,5 +26,9 @@ namespace DVLD_Presentation
             this.Close();
         }
 
+        private void PersonDetails_Load(object sender, EventArgs e)
+        {
+            ctrlShowPersonDetails1.LoadData(_PersonID);
+        }
     }
 }

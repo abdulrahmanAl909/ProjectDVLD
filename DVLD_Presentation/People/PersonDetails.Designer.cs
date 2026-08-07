@@ -79,6 +79,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "PersonDetails";
             this.Text = "PersonDetails";
+            this.Load += new System.EventHandler(this.PersonDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

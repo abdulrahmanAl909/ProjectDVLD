@@ -56,7 +56,7 @@ namespace DVLD_Presentation
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PersonDetails frmShowPersonDetails = new PersonDetails();
+            PersonDetails frmShowPersonDetails = new PersonDetails((int)dgvLoadPeople.CurrentRow.Cells[0].Value);
 
             frmShowPersonDetails.ShowDialog();
         }
@@ -95,6 +95,8 @@ namespace DVLD_Presentation
             _RefreshPeople();
 
         }
+
+     
     }
 }
 

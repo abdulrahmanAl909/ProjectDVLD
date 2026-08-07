@@ -98,7 +98,7 @@
             // pbImagePath
             // 
             this.pbImagePath.Image = global::DVLD_Presentation.Properties.Resources.DSC_1193;
-            this.pbImagePath.Location = new System.Drawing.Point(549, 233);
+            this.pbImagePath.Location = new System.Drawing.Point(599, 233);
             this.pbImagePath.Name = "pbImagePath";
             this.pbImagePath.Size = new System.Drawing.Size(258, 180);
             this.pbImagePath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,7 +132,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblPhone.ForeColor = System.Drawing.Color.White;
-            this.lblPhone.Location = new System.Drawing.Point(727, 179);
+            this.lblPhone.Location = new System.Drawing.Point(726, 179);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(143, 29);
             this.lblPhone.TabIndex = 15;
@@ -143,7 +143,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(544, 179);
+            this.label7.Location = new System.Drawing.Point(594, 179);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 29);
             this.label7.TabIndex = 14;
@@ -154,7 +154,7 @@
             this.lblDateOfBirth.AutoSize = true;
             this.lblDateOfBirth.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblDateOfBirth.ForeColor = System.Drawing.Color.White;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(727, 117);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(748, 117);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(109, 29);
             this.lblDateOfBirth.TabIndex = 13;
@@ -165,7 +165,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(544, 117);
+            this.label6.Location = new System.Drawing.Point(594, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 29);
             this.label6.TabIndex = 12;
@@ -262,11 +262,11 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblName.Font = new System.Drawing.Font("Tahoma", 11F);
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(181, 117);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(284, 29);
+            this.lblName.Size = new System.Drawing.Size(260, 27);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Abdulrahman Mohammed";
             // 

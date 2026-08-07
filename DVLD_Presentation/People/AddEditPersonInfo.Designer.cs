@@ -221,6 +221,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(552, 81);
             this.txtAddress.TabIndex = 23;
+            this.txtAddress.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
             // 
             // label13
             // 
@@ -293,6 +294,7 @@
             this.rbFemale.TabStop = true;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.CheckedChanged += new System.EventHandler(this.rbFemale_CheckedChanged);
             // 
             // rbMale
             // 
@@ -305,6 +307,7 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
             // 
             // label9
             // 
@@ -344,6 +347,7 @@
             this.txtNationalNo.Name = "txtNationalNo";
             this.txtNationalNo.Size = new System.Drawing.Size(218, 27);
             this.txtNationalNo.TabIndex = 10;
+            this.txtNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
             // 
             // label7
             // 
@@ -415,7 +419,6 @@
             this.txtThirdName.Size = new System.Drawing.Size(150, 27);
             this.txtThirdName.TabIndex = 3;
             this.txtThirdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
-            this.txtThirdName.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
             // 
             // txtSecondName
             // 

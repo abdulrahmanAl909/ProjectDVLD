@@ -17,10 +17,10 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary ="SELECT People.PersonID, People.NationalNo,FullName=FirstName + ' ' +SecondName + ' '+ThirdName+ ' ' + LastName ,People.DateOfBirth," +
-                " Gendor = case when Gendor = 0 then 'Male' when Gendor = 1 then 'Femail' else'UnKnows' End," +
-                " People.Address, People.Phone, People.Email, Countries.CountryName FROM People" +
-                " INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID";
+            string quary = @"SELECT People.PersonID, People.NationalNo,FirstName,SecondName,ThirdName, LastName ,People.DateOfBirth,
+                 Gendor = case when Gendor = 0 then 'Male' when Gendor = 1 then 'Femail' else'UnKnows' End,
+                 People.Phone, People.Email, Countries.CountryName FROM People
+                 INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
@@ -75,13 +75,11 @@ namespace DVLD_DataAccess
                     NationalNo = (string)reader["NationalNo"];
                     FirstName = (string)reader["FirstName"];
                     SecondName = (string)reader["SecondName"];
-                    ThirdName = (string)reader["ThirdName"];
                     LastName = (string)reader["LastName"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
                     Gendor = (byte)reader["Gendor"];
                     Address = (string)reader["Address"];
                     Phone = (string)reader["Phone"];
-                    Email = (string)reader["Email"];
                     CountryID = (int)reader["NationalityCountryID"];
 
                     if (reader["ThirdName"] != DBNull.Value)
@@ -155,13 +153,11 @@ namespace DVLD_DataAccess
                     PersonID = (int)reader["PersonID"];
                     FirstName = (string)reader["FirstName"];
                     SecondName = (string)reader["SecondName"];
-                    ThirdName = (string)reader["ThirdName"];
                     LastName = (string)reader["LastName"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
                     Gendor = (byte)reader["Gendor"];
                     Address = (string)reader["Address"];
                     Phone = (string)reader["Phone"];
-                    Email = (string)reader["Email"];
                     CountryID = (int)reader["NationalityCountryID"];
 
                     if (reader["ThirdName"] != DBNull.Value)
@@ -228,16 +224,33 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@SecondName", SecondName);
-            command.Parameters.AddWithValue("@ThirdName",ThirdName);
             command.Parameters.AddWithValue("@LastName",LastName);
             command.Parameters.AddWithValue("@DateOfBirth",DateOfBirth);
             command.Parameters.AddWithValue("@Gendor",(byte)Gendor);
             command.Parameters.AddWithValue("@Address",Address);
             command.Parameters.AddWithValue("@Phone",Phone);
-            command.Parameters.AddWithValue("@Email",Email);
             command.Parameters.AddWithValue("@CountryID",CountryID);
 
-            if(ImagePath!="")
+            if (ThirdName != "")
+            {
+                command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@ThirdName", System.DBNull.Value);
+            }
+
+            if (Email != "")
+            {
+                command.Parameters.AddWithValue("@Email", Email);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@Email", System.DBNull.Value);
+            }
+
+
+            if (ImagePath!="")
             {
                 command.Parameters.AddWithValue("@ImagePath", ImagePath);
             }
@@ -273,7 +286,8 @@ namespace DVLD_DataAccess
              DateTime DateOfBirth, byte Gendor, string Address, string Phone,
              string Email, int CountryID, string ImagePath)
         {
-            int RowAffectid = -1;
+            int RowAffectid = 0;
+
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -281,7 +295,7 @@ namespace DVLD_DataAccess
                           SET [NationalNo] =@NationalNo
                              ,[FirstName] = @FirstName
                              ,[SecondName] =@SecondName
-                             ,[ThirdName] =@ ThirdName
+                             ,[ThirdName] =@ThirdName
                              ,[LastName] = @LastName
                              ,[DateOfBirth] = @DateOfBirth
                              ,[Gendor] =@Gendor
@@ -298,13 +312,11 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@SecondName", SecondName);
-            command.Parameters.AddWithValue("@ThirdName", ThirdName);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
             command.Parameters.AddWithValue("@Gendor", (byte)Gendor);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
-            command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@CountryID", CountryID);
 
             if (ThirdName != "")

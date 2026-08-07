@@ -60,7 +60,9 @@ namespace DVLD_Presentation
             cbCountry.SelectedIndex = 148;
 
             dtpDateOfBirth.MaxDate = DateTime.Today.AddYears(-18);
-            dtpDateOfBirth.MinDate = DateTime.Today.AddYears(-100);
+            dtpDateOfBirth.MinDate = DateTime.Today.AddYears(-150);
+
+            
 
             if(Mode == enMode.AddNew)
             {
@@ -192,7 +194,7 @@ namespace DVLD_Presentation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren())
+            if (!this.ValidateChildren() || mtxtPhoneNumber.Text=="")
             {
                 MessageBox.Show("Some fields have invalid information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -236,9 +238,14 @@ namespace DVLD_Presentation
             }
             else
             {
-                MessageBox.Show("Error: Data Is NOT Saved Successfully");
+                if(MessageBox.Show("Error: Data Is NOT Saved Successfully" , "Error!" ,MessageBoxButtons.OK)==DialogResult.OK)
+                {
+                    this.Close();
+                }
+                
             }
 
+            lblPersonID.Visible = true;
             lblPersonID.Text = _PersonInfo.PersonID.ToString();
             lblAddEditPerson.Text = "Update Person";
             Mode = enMode.Update;
@@ -256,6 +263,21 @@ namespace DVLD_Presentation
             _CheckIsNotEmptyText((TextBox)sender, e);
         }
 
+        private void rbMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbMale.Checked)
+            {
+                pbImagePath.Image = Resources.businessman;
+            }
+        }
+
+        private void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbFemale.Checked)
+            {
+                pbImagePath.Image = Resources.businesswoman;
+            }
+        }
 
     }
 }

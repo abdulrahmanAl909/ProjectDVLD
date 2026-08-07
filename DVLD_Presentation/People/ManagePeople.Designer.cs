@@ -59,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 25F);
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(330, 142);
+            this.label1.Location = new System.Drawing.Point(518, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(360, 60);
             this.label1.TabIndex = 0;
@@ -81,7 +81,7 @@
             this.dgvLoadPeople.RowHeadersVisible = false;
             this.dgvLoadPeople.RowHeadersWidth = 62;
             this.dgvLoadPeople.RowTemplate.Height = 29;
-            this.dgvLoadPeople.Size = new System.Drawing.Size(984, 219);
+            this.dgvLoadPeople.Size = new System.Drawing.Size(1255, 219);
             this.dgvLoadPeople.TabIndex = 1;
             // 
             // cmsPersonInformation
@@ -97,26 +97,26 @@
             this.phoneCallToolStripMenuItem,
             this.phoneCallToolStripMenuItem1});
             this.cmsPersonInformation.Name = "contextMenuStrip1";
-            this.cmsPersonInformation.Size = new System.Drawing.Size(249, 241);
+            this.cmsPersonInformation.Size = new System.Drawing.Size(225, 208);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(245, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(221, 6);
             // 
             // addNewPerswonToolStripMenuItem
             // 
             this.addNewPerswonToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.add_user__2_;
             this.addNewPerswonToolStripMenuItem.Name = "addNewPerswonToolStripMenuItem";
-            this.addNewPerswonToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.addNewPerswonToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.addNewPerswonToolStripMenuItem.Text = "Add New Person";
             this.addNewPerswonToolStripMenuItem.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
@@ -124,7 +124,7 @@
             // 
             this.editToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume__1_;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -132,20 +132,20 @@
             // 
             this.deleteToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.delete_user;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(245, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(221, 6);
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.email;
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.phoneCallToolStripMenuItem.Text = "Send Email";
             this.phoneCallToolStripMenuItem.Click += new System.EventHandler(this.phoneCallToolStripMenuItem_Click);
             // 
@@ -153,7 +153,7 @@
             // 
             this.phoneCallToolStripMenuItem1.Image = global::DVLD_Presentation.Properties.Resources.phone;
             this.phoneCallToolStripMenuItem1.Name = "phoneCallToolStripMenuItem1";
-            this.phoneCallToolStripMenuItem1.Size = new System.Drawing.Size(248, 32);
+            this.phoneCallToolStripMenuItem1.Size = new System.Drawing.Size(224, 32);
             this.phoneCallToolStripMenuItem1.Text = "Phone Call";
             this.phoneCallToolStripMenuItem1.Click += new System.EventHandler(this.phoneCallToolStripMenuItem1_Click);
             // 
@@ -188,7 +188,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 11F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(867, 478);
+            this.btnClose.Location = new System.Drawing.Point(1165, 478);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(106, 53);
             this.btnClose.TabIndex = 4;
@@ -223,7 +223,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(863, 168);
+            this.label4.Location = new System.Drawing.Point(1161, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 24);
             this.label4.TabIndex = 9;
@@ -232,7 +232,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD_Presentation.Properties.Resources.people1;
-            this.pictureBox1.Location = new System.Drawing.Point(368, 49);
+            this.pictureBox1.Location = new System.Drawing.Point(560, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(245, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -248,7 +248,7 @@
             this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPerson.Font = new System.Drawing.Font("Tahoma", 1F);
             this.btnAddPerson.ForeColor = System.Drawing.Color.White;
-            this.btnAddPerson.Location = new System.Drawing.Point(867, 195);
+            this.btnAddPerson.Location = new System.Drawing.Point(1170, 196);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(101, 49);
             this.btnAddPerson.TabIndex = 5;
@@ -270,7 +270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(1048, 563);
+            this.ClientSize = new System.Drawing.Size(1306, 563);
             this.Controls.Add(this.txtFilterBy);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);

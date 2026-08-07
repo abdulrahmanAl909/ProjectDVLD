@@ -11,8 +11,6 @@ namespace DVLD_DataAccess
     public class clsCountryData
     {
 
-
-
         public static DataTable GetAllCountry()
         {
             DataTable dataTable = new DataTable();
