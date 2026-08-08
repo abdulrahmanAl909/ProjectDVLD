@@ -81,28 +81,6 @@ namespace DVLD_Business
 
             Mode = enMode.Update;
         }
-
-        private clsPerson(int PersonID, string FirstName, string SecondName, string ThirdName,
-         string LastName, DateTime DateOfBirth, enGendor Gendor, string Address, string Phone, string Email, int CountryID, string ImagePath)
-        {
-
-            this.PersonID = PersonID;
-            this.FirstName = FirstName;
-            this.SecondName = SecondName;
-            this.ThirdName = ThirdName;
-            this.LastName = LastName;
-            this.DateOfBirth = DateOfBirth;
-            this.Gendor = Gendor;
-            this.Address = Address;
-            this.Phone = Phone;
-            this.Email = Email;
-            this.CountryID = CountryID;
-            this.ImagePath = ImagePath;
-
-            Mode = enMode.Update;
-        }
-
-
         private bool _AddNewPerson()
         {
             this.PersonID = clsPersonData.AddNewPerson(this.NationalNo, this.FirstName, this.SecondName
@@ -151,7 +129,7 @@ namespace DVLD_Business
                , ref LastName, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email
                , ref CountryID, ref ImagePath))
             {
-                return new clsPerson(PersonID, FirstName, SecondName, ThirdName
+                return new clsPerson(PersonID,NationalNo ,FirstName, SecondName, ThirdName
                , LastName, DateOfBirth,(enGendor)Gendor, Address, Phone, Email
                , CountryID, ImagePath);
             }
@@ -171,9 +149,24 @@ namespace DVLD_Business
             return clsPersonData.IsPersonExist(PersonID);
         }
 
+        public static bool IsPersonExist(string NationalNo)
+        {
+            return clsPersonData.IsPersonExist(NationalNo);
+        }
+
         public static DataTable GetAllPeople()
         {
             return clsPersonData.GetAllPeople();
+        }
+
+        public static DataTable GetAllColumnName()
+        {
+            return clsPersonData.GetAllColumnName();
+        }
+
+        public static DataTable GetAllPeopleByFilter(string ColumnName , string FilterBy)
+        {
+            return clsPersonData.GetAllPeopleByFilter(ColumnName, FilterBy);
         }
 
         public bool SavePerson()

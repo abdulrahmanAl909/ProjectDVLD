@@ -151,7 +151,7 @@
             this.mtxtPhoneNumber.Name = "mtxtPhoneNumber";
             this.mtxtPhoneNumber.PromptChar = ' ';
             this.mtxtPhoneNumber.Size = new System.Drawing.Size(192, 29);
-            this.mtxtPhoneNumber.TabIndex = 4;
+            this.mtxtPhoneNumber.TabIndex = 9;
             // 
             // btnSave
             // 
@@ -220,7 +220,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(552, 81);
-            this.txtAddress.TabIndex = 23;
+            this.txtAddress.TabIndex = 12;
             this.txtAddress.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
             // 
             // label13
@@ -241,7 +241,7 @@
             this.cbCountry.Location = new System.Drawing.Point(532, 249);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(192, 27);
-            this.cbCountry.TabIndex = 21;
+            this.cbCountry.TabIndex = 11;
             // 
             // label12
             // 
@@ -260,7 +260,7 @@
             this.txtEmail.Location = new System.Drawing.Point(172, 251);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(218, 27);
-            this.txtEmail.TabIndex = 19;
+            this.txtEmail.TabIndex = 10;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // label11
@@ -290,7 +290,7 @@
             this.rbFemale.Location = new System.Drawing.Point(275, 187);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(115, 33);
-            this.rbFemale.TabIndex = 15;
+            this.rbFemale.TabIndex = 8;
             this.rbFemale.TabStop = true;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.rbMale.Location = new System.Drawing.Point(172, 187);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(88, 33);
-            this.rbMale.TabIndex = 14;
+            this.rbMale.TabIndex = 7;
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
@@ -326,7 +326,7 @@
             this.dtpDateOfBirth.MaxDate = new System.DateTime(2026, 8, 3, 21, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(139, 27);
-            this.dtpDateOfBirth.TabIndex = 12;
+            this.dtpDateOfBirth.TabIndex = 6;
             this.dtpDateOfBirth.Value = new System.DateTime(2026, 8, 3, 0, 0, 0, 0);
             // 
             // label8
@@ -346,8 +346,7 @@
             this.txtNationalNo.Location = new System.Drawing.Point(172, 129);
             this.txtNationalNo.Name = "txtNationalNo";
             this.txtNationalNo.Size = new System.Drawing.Size(218, 27);
-            this.txtNationalNo.TabIndex = 10;
-            this.txtNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.IsNotEmptyText);
+            this.txtNationalNo.TabIndex = 5;
             // 
             // label7
             // 

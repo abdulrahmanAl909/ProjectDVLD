@@ -48,6 +48,85 @@ namespace DVLD_DataAccess
             return dataTable;
        }
 
+        public static DataTable GetAllColumnName()
+        {
+            DataTable dataTable = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"SELECT top(1) People.PersonID, People.NationalNo, People.FirstName,
+                            People.SecondName, People.ThirdName, People.LastName, 
+                            People.Gendor,People.Phone, People.Email, Countries.CountryName
+                            FROM   People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    dataTable.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error " + ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+        }
+
+        public static DataTable GetAllPeopleByFilter(string ColumnName , string FilterBy)
+        {
+            DataTable dataTable = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"SELECT People.PersonID, People.NationalNo,FirstName,SecondName,ThirdName, LastName ,People.DateOfBirth,
+                 Gendor = case when Gendor = 0 then 'Male' when Gendor = 1 then 'Femail' else'UnKnows' End,
+                 People.Phone, People.Email, Countries.CountryName FROM People
+                 INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID
+                 where @ColumnName LIKE '' + @FilterBy + '%'";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@ColumnName", ColumnName);
+            command.Parameters.AddWithValue("@FilterBy", FilterBy);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    dataTable.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error " + ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+        }
+
         public static bool GetPersonInfoByID(int PersonID,ref string NationalNo,ref string FirstName, ref string SecondName,ref string ThirdName,
             ref string LastName,ref DateTime DateOfBirth,ref byte Gendor,ref string Address,ref string Phone
             , ref string Email,ref int CountryID,ref string ImagePath)
@@ -428,6 +507,41 @@ namespace DVLD_DataAccess
             }
 
             return isFount;   
+        }
+
+        public static bool IsPersonExist(string NationalNo)
+        {
+            bool isFount = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select Fount=1 From People
+                             where NationalNo=@NationalNo";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                isFount = reader.HasRows;
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+                isFount = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFount;
         }
 
     }

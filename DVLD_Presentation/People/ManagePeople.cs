@@ -27,7 +27,7 @@ namespace DVLD_Presentation
 
         private void GetAllFilter()
         {
-            DataTable dataTable = clsPerson.GetAllPeople();
+            DataTable dataTable = clsPerson.GetAllColumnName();
 
             foreach(DataColumn column in dataTable.Columns)
             {
@@ -52,6 +52,7 @@ namespace DVLD_Presentation
 
             frmAddEdit.ShowDialog();
             _RefreshPeople();
+
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,16 +60,7 @@ namespace DVLD_Presentation
             PersonDetails frmShowPersonDetails = new PersonDetails((int)dgvLoadPeople.CurrentRow.Cells[0].Value);
 
             frmShowPersonDetails.ShowDialog();
-        }
-
-        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This Feature Is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
-
-        private void phoneCallToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This Feature Is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            _RefreshPeople();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,7 +88,35 @@ namespace DVLD_Presentation
 
         }
 
-     
+        private void cmsEmail_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Feature Is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void cmsPhone_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Feature Is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilterBy.Visible = true;
+
+            if(cbFilterBy.Text=="Gendor")
+            {
+                // doing late
+            }
+        }
+
+        private void txtFilterBy_TextChanged(object sender, EventArgs e)
+        {
+            dgvLoadPeople.DataSource = clsPerson.GetAllPeopleByFilter(cbFilterBy.Text, txtFilterBy.Text);
+
+            if(txtFilterBy.Text=="")
+            {
+                _RefreshPeople();
+            }
+        }
     }
 }
 

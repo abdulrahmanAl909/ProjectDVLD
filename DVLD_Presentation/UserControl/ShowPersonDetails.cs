@@ -13,7 +13,7 @@ namespace DVLD_Presentation
 {
     public partial class ctrlShowPersonDetails : UserControl
     {
-
+        int _PersonID = -1;
         public ctrlShowPersonDetails()
         {
             InitializeComponent();
@@ -22,6 +22,8 @@ namespace DVLD_Presentation
 
         public void LoadData(int PersonID)
         {
+            _PersonID = PersonID;
+
             clsPerson PersonInfo = clsPerson.GetPersonInfoByID(PersonID);
 
             lblPersonID.Text = PersonID.ToString();
@@ -45,6 +47,13 @@ namespace DVLD_Presentation
             }
         }
 
-     
+        private void llEditPerson_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddEditPersonInfo frm = new AddEditPersonInfo(_PersonID);
+
+            frm.ShowDialog();
+            LoadData(_PersonID);
+        }
+
     }
 }

@@ -31,6 +31,7 @@ namespace DVLD_DataAccess
                 {
                     dataTable.Load(reader);
                 }
+                reader.Close();
             }
             catch(Exception e)
             {

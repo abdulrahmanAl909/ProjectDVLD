@@ -88,12 +88,13 @@
             // 
             this.llEditPerson.AutoSize = true;
             this.llEditPerson.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.llEditPerson.Location = new System.Drawing.Point(544, 58);
+            this.llEditPerson.Location = new System.Drawing.Point(594, 58);
             this.llEditPerson.Name = "llEditPerson";
             this.llEditPerson.Size = new System.Drawing.Size(183, 29);
             this.llEditPerson.TabIndex = 19;
             this.llEditPerson.TabStop = true;
             this.llEditPerson.Text = "Edit Person Info";
+            this.llEditPerson.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llEditPerson_LinkClicked);
             // 
             // pbImagePath
             // 
