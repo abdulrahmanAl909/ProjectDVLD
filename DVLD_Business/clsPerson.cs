@@ -168,7 +168,10 @@ namespace DVLD_Business
         {
             return clsPersonData.GetAllPeopleByFilter(ColumnName, FilterBy);
         }
-
+        public static DataTable GetAllPeopleByFilter(string ColumnName, int FilterBy)
+        {
+            return clsPersonData.GetAllPeopleByFilter(ColumnName, FilterBy);
+        }
         public bool SavePerson()
         {
             switch (Mode)

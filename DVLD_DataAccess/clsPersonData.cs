@@ -30,16 +30,14 @@ namespace DVLD_DataAccess
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                if(reader.Read())
+                if (reader.HasRows)
                 {
                     dataTable.Load(reader);
                 }
-                reader.Close();
             }
             catch(Exception ex)
             {
                 Console.WriteLine("Error " + ex.Message);
-                
             }
             finally
             {
@@ -68,7 +66,7 @@ namespace DVLD_DataAccess
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                if (reader.Read())
+                if (reader.HasRows)
                 {
                     dataTable.Load(reader);
                 }
@@ -92,15 +90,15 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = @"SELECT People.PersonID, People.NationalNo,FirstName,SecondName,ThirdName, LastName ,People.DateOfBirth,
+          
+            string quary = $@"SELECT People.PersonID, People.NationalNo,FirstName,SecondName,ThirdName, LastName ,People.DateOfBirth,
                  Gendor = case when Gendor = 0 then 'Male' when Gendor = 1 then 'Femail' else'UnKnows' End,
                  People.Phone, People.Email, Countries.CountryName FROM People
                  INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID
-                 where @ColumnName LIKE '' + @FilterBy + '%'";
+                 where {ColumnName} LIKE  '' + @FilterBy + '%'";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
-            command.Parameters.AddWithValue("@ColumnName", ColumnName);
             command.Parameters.AddWithValue("@FilterBy", FilterBy);
 
             try
@@ -109,7 +107,7 @@ namespace DVLD_DataAccess
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                if (reader.Read())
+                if(reader.HasRows)
                 {
                     dataTable.Load(reader);
                 }
@@ -126,6 +124,47 @@ namespace DVLD_DataAccess
             }
             return dataTable;
         }
+
+        public static DataTable GetAllPeopleByFilter(string ColumnName, int FilterBy)
+        {
+            DataTable dataTable = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = $@"SELECT People.PersonID, People.NationalNo,FirstName,SecondName,ThirdName, LastName ,People.DateOfBirth,
+                 Gendor = case when Gendor = 0 then 'Male' when Gendor = 1 then 'Femail' else'UnKnows' End,
+                 People.Phone, People.Email, Countries.CountryName FROM People
+                 INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID
+                 where {ColumnName} = @FilterBy";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@FilterBy", FilterBy);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error " + ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+        }
+
 
         public static bool GetPersonInfoByID(int PersonID,ref string NationalNo,ref string FirstName, ref string SecondName,ref string ThirdName,
             ref string LastName,ref DateTime DateOfBirth,ref byte Gendor,ref string Address,ref string Phone

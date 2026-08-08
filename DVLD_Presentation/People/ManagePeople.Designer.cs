@@ -49,6 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.txtFilterBy = new System.Windows.Forms.TextBox();
+            this.cbGendor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoadPeople)).BeginInit();
             this.cmsPersonInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -213,6 +214,8 @@
             this.cbFilterBy.BackColor = System.Drawing.Color.White;
             this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilterBy.FormattingEnabled = true;
+            this.cbFilterBy.Items.AddRange(new object[] {
+            "None"});
             this.cbFilterBy.Location = new System.Drawing.Point(108, 217);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(151, 27);
@@ -265,6 +268,22 @@
             this.txtFilterBy.TabIndex = 10;
             this.txtFilterBy.Visible = false;
             this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
+            this.txtFilterBy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterBy_KeyPress);
+            // 
+            // cbGendor
+            // 
+            this.cbGendor.BackColor = System.Drawing.Color.White;
+            this.cbGendor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGendor.FormattingEnabled = true;
+            this.cbGendor.Items.AddRange(new object[] {
+            "All",
+            "Male",
+            "Female"});
+            this.cbGendor.Location = new System.Drawing.Point(290, 218);
+            this.cbGendor.Name = "cbGendor";
+            this.cbGendor.Size = new System.Drawing.Size(240, 27);
+            this.cbGendor.TabIndex = 11;
+            this.cbGendor.SelectedIndexChanged += new System.EventHandler(this.cbGendor_SelectedIndexChanged);
             // 
             // ManagePeople
             // 
@@ -273,6 +292,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(1219, 563);
+            this.Controls.Add(this.cbGendor);
             this.Controls.Add(this.txtFilterBy);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
@@ -318,5 +338,6 @@
         private System.Windows.Forms.ToolStripMenuItem cmsEmail;
         private System.Windows.Forms.ToolStripMenuItem cmsPhone;
         private System.Windows.Forms.TextBox txtFilterBy;
+        private System.Windows.Forms.ComboBox cbGendor;
     }
 }

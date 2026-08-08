@@ -33,12 +33,15 @@ namespace DVLD_Presentation
             {
                 cbFilterBy.Items.Add(column.ColumnName);
             }
+            cbFilterBy.SelectedIndex = 0;
         }
 
         private void ManagePeople_Load(object sender, EventArgs e)
         {
+
             _RefreshPeople();
             GetAllFilter();
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -100,21 +103,67 @@ namespace DVLD_Presentation
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtFilterBy.Visible = true;
-
-            if(cbFilterBy.Text=="Gendor")
+            if(cbFilterBy.Text=="None")
             {
-                // doing late
+                txtFilterBy.Visible = false;
+                cbGendor.Visible = false;
+            }
+            else if (cbFilterBy.Text == "Gendor")
+            {
+                txtFilterBy.Visible = false;
+                cbGendor.Visible = true;
+                cbGendor.SelectedIndex = 0;
+            }
+            else
+            {
+                txtFilterBy.Visible = true;
+                cbGendor.Visible = false;
+                txtFilterBy.Clear();
             }
         }
 
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
         {
-            dgvLoadPeople.DataSource = clsPerson.GetAllPeopleByFilter(cbFilterBy.Text, txtFilterBy.Text);
+            if (cbFilterBy.Text == "PersonID" && !string.IsNullOrWhiteSpace(txtFilterBy.Text))
+            {
+                dgvLoadPeople.DataSource = clsPerson.GetAllPeopleByFilter(cbFilterBy.Text, int.Parse(txtFilterBy.Text));
+                lblCountRecorde.Text = dgvLoadPeople.RowCount.ToString();
+                return;
+            }
 
-            if(txtFilterBy.Text=="")
+            dgvLoadPeople.DataSource = clsPerson.GetAllPeopleByFilter(cbFilterBy.Text, txtFilterBy.Text);
+            lblCountRecorde.Text = dgvLoadPeople.RowCount.ToString();
+
+            if (txtFilterBy.Text == "")
             {
                 _RefreshPeople();
+            }
+        }
+
+        private void cbGendor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbGendor.Text=="All")
+            {
+                _RefreshPeople();
+            }
+            else
+            {
+                dgvLoadPeople.DataSource = clsPerson.GetAllPeopleByFilter(cbFilterBy.Text, cbGendor.SelectedIndex-1);
+                lblCountRecorde.Text = dgvLoadPeople.RowCount.ToString();
+            }
+        }
+
+        private void txtFilterBy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(cbFilterBy.Text!="PersonID" && cbFilterBy.Text!="Phone")
+            {
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                SystemSounds.Asterisk.Play();
             }
         }
     }
