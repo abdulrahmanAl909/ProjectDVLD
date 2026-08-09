@@ -19,9 +19,16 @@ namespace DVLD_Presentation
 
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmManagePeople = new ManagePeople();
+            ManagePeople frmManagePeople = new ManagePeople();
 
             frmManagePeople.ShowDialog();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageUser frmManageUser = new frmManageUser();
+
+            frmManageUser.ShowDialog();
         }
     }
 }

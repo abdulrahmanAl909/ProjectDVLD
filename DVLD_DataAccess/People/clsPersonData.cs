@@ -165,7 +165,6 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
-
         public static bool GetPersonInfoByID(int PersonID,ref string NationalNo,ref string FirstName, ref string SecondName,ref string ThirdName,
             ref string LastName,ref DateTime DateOfBirth,ref byte Gendor,ref string Address,ref string Phone
             , ref string Email,ref int CountryID,ref string ImagePath)
