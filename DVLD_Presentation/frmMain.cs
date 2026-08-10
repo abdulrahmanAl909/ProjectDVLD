@@ -30,5 +30,17 @@ namespace DVLD_Presentation
 
             frmManageUser.ShowDialog();
         }
+
+        private void singOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmChangePassword = new frmChangePassword();
+
+            frmChangePassword.ShowDialog();
+        }
     }
 }

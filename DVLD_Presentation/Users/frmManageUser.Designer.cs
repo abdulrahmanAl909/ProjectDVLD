@@ -28,17 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvUser = new System.Windows.Forms.DataGridView();
+            this.cmsForDGV = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCountRecord = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
-            this.btnAddNewUser = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAddNewUser = new System.Windows.Forms.Button();
+            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsSendEmail = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
+            this.cmsForDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +62,7 @@
             this.dgvUser.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvUser.BackgroundColor = System.Drawing.Color.White;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUser.ContextMenuStrip = this.cmsForDGV;
             this.dgvUser.Location = new System.Drawing.Point(2, 223);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.ReadOnly = true;
@@ -57,6 +70,32 @@
             this.dgvUser.RowTemplate.Height = 29;
             this.dgvUser.Size = new System.Drawing.Size(1053, 263);
             this.dgvUser.TabIndex = 0;
+            // 
+            // cmsForDGV
+            // 
+            this.cmsForDGV.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.cmsForDGV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDetailsToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.addNewUserToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.changePasswordToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.cmsSendEmail,
+            this.cmsPhoneCall});
+            this.cmsForDGV.Name = "cmsForDGV";
+            this.cmsForDGV.Size = new System.Drawing.Size(233, 240);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(229, 6);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(229, 6);
             // 
             // label1
             // 
@@ -113,6 +152,38 @@
             this.cbFilterBy.Size = new System.Drawing.Size(161, 27);
             this.cbFilterBy.TabIndex = 5;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(900, 137);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 24);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Add New User";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 25F);
+            this.label4.ForeColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(342, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(360, 60);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Manage People";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DVLD_Presentation.Properties.Resources.people1;
+            this.pictureBox1.Location = new System.Drawing.Point(383, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(245, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnAddNewUser
             // 
             this.btnAddNewUser.BackColor = System.Drawing.Color.DarkBlue;
@@ -125,38 +196,62 @@
             this.btnAddNewUser.Size = new System.Drawing.Size(137, 52);
             this.btnAddNewUser.TabIndex = 6;
             this.btnAddNewUser.UseVisualStyleBackColor = false;
+            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
             // 
-            // label3
+            // showDetailsToolStripMenuItem
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(900, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 24);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Add New User";
+            this.showDetailsToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume;
+            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
+            this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
-            // pictureBox1
+            // addNewUserToolStripMenuItem
             // 
-            this.pictureBox1.Image = global::DVLD_Presentation.Properties.Resources.people1;
-            this.pictureBox1.Location = new System.Drawing.Point(383, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.addNewUserToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.add_user__2_;
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
-            // label4
+            // editToolStripMenuItem
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.label4.ForeColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(342, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(360, 60);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Manage People";
+            this.editToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume__1_;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.delete_user;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.password;
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // cmsSendEmail
+            // 
+            this.cmsSendEmail.Image = global::DVLD_Presentation.Properties.Resources.email;
+            this.cmsSendEmail.Name = "cmsSendEmail";
+            this.cmsSendEmail.Size = new System.Drawing.Size(232, 32);
+            this.cmsSendEmail.Text = "Send Email";
+            this.cmsSendEmail.Click += new System.EventHandler(this.cmsSendEmail_Click);
+            // 
+            // cmsPhoneCall
+            // 
+            this.cmsPhoneCall.Image = global::DVLD_Presentation.Properties.Resources.phone;
+            this.cmsPhoneCall.Name = "cmsPhoneCall";
+            this.cmsPhoneCall.Size = new System.Drawing.Size(232, 32);
+            this.cmsPhoneCall.Text = "Phone Call";
+            this.cmsPhoneCall.Click += new System.EventHandler(this.cmsPhoneCall_Click);
             // 
             // frmManageUser
             // 
@@ -178,6 +273,7 @@
             this.Text = "frmManageUser";
             this.Load += new System.EventHandler(this.frmManageUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
+            this.cmsForDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,5 +292,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip cmsForDGV;
+        private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem cmsSendEmail;
+        private System.Windows.Forms.ToolStripMenuItem cmsPhoneCall;
     }
 }

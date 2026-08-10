@@ -33,5 +33,51 @@ namespace DVLD_Presentation
         {
             _RefrishUser();
         }
+
+        private void cmsPhoneCall_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Feature Is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+        }
+
+        private void cmsSendEmail_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Feature Is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword();
+
+            frm.ShowDialog();
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserInfo frm = new frmUserInfo();
+
+            frm.ShowDialog();
+        }
+
+        private void btnAddNewUser_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser();
+
+            frm.ShowDialog();
+        }
+
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser();
+
+            frm.ShowDialog();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser();
+
+            frm.ShowDialog();
+        }
     }
 }
