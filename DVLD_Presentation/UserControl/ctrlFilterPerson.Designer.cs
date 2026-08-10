@@ -28,30 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlShowPersonDetails1 = new DVLD_Presentation.ctrlShowPersonDetails();
             this.gbFilterBy = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddNewPerson = new System.Windows.Forms.Button();
+            this.btnFilterBy = new System.Windows.Forms.Button();
             this.txtFilterBy = new System.Windows.Forms.TextBox();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ctrlShowPersonDetails1 = new DVLD_Presentation.ctrlShowPersonDetails();
             this.gbFilterBy.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ctrlShowPersonDetails1
-            // 
-            this.ctrlShowPersonDetails1.BackColor = System.Drawing.Color.SteelBlue;
-            this.ctrlShowPersonDetails1.Location = new System.Drawing.Point(0, 127);
-            this.ctrlShowPersonDetails1.Name = "ctrlShowPersonDetails1";
-            this.ctrlShowPersonDetails1.Size = new System.Drawing.Size(914, 457);
-            this.ctrlShowPersonDetails1.TabIndex = 0;
             // 
             // gbFilterBy
             // 
             this.gbFilterBy.Controls.Add(this.label2);
-            this.gbFilterBy.Controls.Add(this.button2);
-            this.gbFilterBy.Controls.Add(this.button1);
+            this.gbFilterBy.Controls.Add(this.btnAddNewPerson);
+            this.gbFilterBy.Controls.Add(this.btnFilterBy);
             this.gbFilterBy.Controls.Add(this.txtFilterBy);
             this.gbFilterBy.Controls.Add(this.cbFilterBy);
             this.gbFilterBy.Controls.Add(this.label1);
@@ -74,31 +66,33 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Add New";
             // 
-            // button2
+            // btnAddNewPerson
             // 
-            this.button2.BackColor = System.Drawing.Color.SteelBlue;
-            this.button2.BackgroundImage = global::DVLD_Presentation.Properties.Resources.add_user__2_;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button2.Location = new System.Drawing.Point(648, 43);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 50);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAddNewPerson.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddNewPerson.BackgroundImage = global::DVLD_Presentation.Properties.Resources.add_user__2_;
+            this.btnAddNewPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddNewPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewPerson.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnAddNewPerson.Location = new System.Drawing.Point(648, 43);
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.Size = new System.Drawing.Size(70, 50);
+            this.btnAddNewPerson.TabIndex = 4;
+            this.btnAddNewPerson.UseVisualStyleBackColor = false;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
-            // button1
+            // btnFilterBy
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.BackgroundImage = global::DVLD_Presentation.Properties.Resources.magnifying_glass;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(557, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 50);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFilterBy.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnFilterBy.BackgroundImage = global::DVLD_Presentation.Properties.Resources.magnifying_glass;
+            this.btnFilterBy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFilterBy.FlatAppearance.BorderSize = 0;
+            this.btnFilterBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterBy.Location = new System.Drawing.Point(557, 43);
+            this.btnFilterBy.Name = "btnFilterBy";
+            this.btnFilterBy.Size = new System.Drawing.Size(70, 50);
+            this.btnFilterBy.TabIndex = 3;
+            this.btnFilterBy.UseVisualStyleBackColor = false;
+            this.btnFilterBy.Click += new System.EventHandler(this.btnFilterBy_Click);
             // 
             // txtFilterBy
             // 
@@ -106,10 +100,14 @@
             this.txtFilterBy.Name = "txtFilterBy";
             this.txtFilterBy.Size = new System.Drawing.Size(212, 32);
             this.txtFilterBy.TabIndex = 2;
+            this.txtFilterBy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterBy_KeyPress);
             // 
             // cbFilterBy
             // 
             this.cbFilterBy.FormattingEnabled = true;
+            this.cbFilterBy.Items.AddRange(new object[] {
+            "PersonID",
+            "National No"});
             this.cbFilterBy.Location = new System.Drawing.Point(120, 60);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(188, 32);
@@ -125,6 +123,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Filter By:";
             // 
+            // ctrlShowPersonDetails1
+            // 
+            this.ctrlShowPersonDetails1.BackColor = System.Drawing.Color.SteelBlue;
+            this.ctrlShowPersonDetails1.Location = new System.Drawing.Point(0, 127);
+            this.ctrlShowPersonDetails1.Name = "ctrlShowPersonDetails1";
+            this.ctrlShowPersonDetails1.Size = new System.Drawing.Size(914, 457);
+            this.ctrlShowPersonDetails1.TabIndex = 0;
+            // 
             // ctrlFilterPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -134,6 +140,7 @@
             this.Controls.Add(this.ctrlShowPersonDetails1);
             this.Name = "ctrlFilterPerson";
             this.Size = new System.Drawing.Size(917, 587);
+            this.Load += new System.EventHandler(this.ctrlFilterPerson_Load);
             this.gbFilterBy.ResumeLayout(false);
             this.gbFilterBy.PerformLayout();
             this.ResumeLayout(false);
@@ -147,8 +154,8 @@
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFilterBy;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddNewPerson;
+        private System.Windows.Forms.Button btnFilterBy;
         private System.Windows.Forms.Label label2;
     }
 }

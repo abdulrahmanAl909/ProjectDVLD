@@ -28,7 +28,7 @@ namespace DVLD_Presentation
 
         private void PersonDetails_Load(object sender, EventArgs e)
         {
-            ctrlShowPersonDetails1.LoadData(_PersonID);
+            ctrlShowPersonDetails1.LoadDataByPersonID(_PersonID);
         }
     }
 }

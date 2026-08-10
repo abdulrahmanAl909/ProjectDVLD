@@ -24,6 +24,17 @@ namespace DVLD_Presentation
             lblCountRecord.Text = dgvUser.RowCount.ToString();
         }
 
+        private void GetAllFilter()
+        {
+            DataTable dataTable = clsUser.GetAllColumnName();
+
+            foreach(DataColumn column in dataTable.Columns)
+            {
+                cbFilterBy.Items.Add(column.ColumnName);
+            }
+            cbFilterBy.SelectedIndex = 0;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,6 +43,7 @@ namespace DVLD_Presentation
         private void frmManageUser_Load(object sender, EventArgs e)
         {
             _RefrishUser();
+            GetAllFilter();
         }
 
         private void cmsPhoneCall_Click(object sender, EventArgs e)
@@ -79,5 +91,23 @@ namespace DVLD_Presentation
 
             frm.ShowDialog();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to delete this user [" + dgvUser.CurrentRow.Cells[0].Value + "]","Warning!" ,MessageBoxButtons.OKCancel,MessageBoxIcon.Warning)==DialogResult.OK)
+            {
+                if (clsUser.DeleteUser((int)dgvUser.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("User Delete Successfully");
+                    _RefrishUser();
+                }
+                else
+                {
+                    MessageBox.Show("User is NOT Delete");
+                }
+            }
+        }
+
+
     }
 }

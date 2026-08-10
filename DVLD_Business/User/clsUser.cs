@@ -53,17 +53,50 @@ namespace DVLD_Business
 
         private bool _AddNewUser()
         {
-            return clsUserData.AddNewUser(this.UserID, this.PersonID, this.UserName, this.UserPassword, this.IsActive);
+            this.UserID= clsUserData.AddNewUser( this.PersonID, this.UserName, this.UserPassword, this.IsActive);
+            return (UserID !=-1);
         }
 
         private bool _UpdateUser()
         {
-            return false;
+            return clsUserData.UpdateUser(this.UserID, this.PersonID, this.UserName, this.UserPassword, this.IsActive);
+
         }
 
         public static DataTable GetAllUsers()
         {
             return clsUserData.GetAllUsers();
+        }
+
+        public static DataTable GetAllColumnName()
+        {
+            return clsUserData.GetAllColumnName();
+        }
+
+        public static clsUser GetUserInfoByID(int UserID)
+        {
+            int PersonID = -1;
+            string UserName = "", UserPassword = "";
+            bool IsActive = false;
+
+            if(clsUserData.GetUserInfoByID(UserID,ref PersonID,ref UserName,ref UserPassword ,ref IsActive))
+            {
+                return new clsUser(UserID, PersonID, UserName, UserPassword, IsActive);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static bool DeleteUser(int UserID)
+        {
+            return clsUserData.DeleteUser(UserID);
+        }
+
+        public static bool IsUserExist(int UserID)
+        {
+            return clsUserData.IsUserExist(UserID);
         }
 
         public bool Save()
