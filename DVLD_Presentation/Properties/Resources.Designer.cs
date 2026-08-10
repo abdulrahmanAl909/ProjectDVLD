@@ -473,6 +473,16 @@ namespace DVLD_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap right_panel_user_security_image {
+            get {
+                object obj = ResourceManager.GetObject("right_panel_user_security_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap username__1_ {
             get {
                 object obj = ResourceManager.GetObject("username (1)", resourceCulture);

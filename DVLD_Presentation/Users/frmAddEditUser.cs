@@ -21,5 +21,12 @@ namespace DVLD_Presentation
         {
             this.Close();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            tcAddEditUser.SelectedTab = tpLoginInfo;    
+        }
+
+
     }
 }

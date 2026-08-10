@@ -133,7 +133,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblPhone.ForeColor = System.Drawing.Color.White;
-            this.lblPhone.Location = new System.Drawing.Point(726, 179);
+            this.lblPhone.Location = new System.Drawing.Point(714, 179);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(143, 29);
             this.lblPhone.TabIndex = 15;
@@ -144,7 +144,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(594, 179);
+            this.label7.Location = new System.Drawing.Point(566, 179);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 29);
             this.label7.TabIndex = 14;
@@ -166,7 +166,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(594, 117);
+            this.label6.Location = new System.Drawing.Point(566, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 29);
             this.label6.TabIndex = 12;

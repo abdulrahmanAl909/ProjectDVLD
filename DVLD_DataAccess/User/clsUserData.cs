@@ -44,5 +44,56 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
+        public static int AddNewUser(int UserID , int PersonID,string UserName , string UserPassword , bool IsActive)
+        {
+            int NewUserID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"INSERT INTO [dbo].[Users]
+           ([PersonID],[UserName],[Password],[IsActive])
+            VALUES (@UserID,@PersonID,@UserName,@UserPassword,@IsActive);
+            Select SCOPE_IDENTITY();";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@UserID", UserID);
+            command.Parameters.AddWithValue("PersonID", PersonID);
+            command.Parameters.AddWithValue("UserName", UserName);
+            command.Parameters.AddWithValue("UserPassword", UserPassword);
+            command.Parameters.AddWithValue("@IsActive", IsActive);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if(result!=null && int.TryParse(result.ToString(),out int insertvalue))
+                {
+                    NewUserID = insertvalue;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error" + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return NewUserID;
+        }
+
+        public static bool UpdateUser(int UserID, int PersonID, string UserName, string UserPassword, bool IsActive)
+        {
+            bool IsFound = false;
+
+
+            return IsFound;
+        }
+       
+
     }
 }

@@ -31,8 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.cmsForDGV = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmsSendEmail = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCountRecord = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -42,13 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddNewUser = new System.Windows.Forms.Button();
-            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmsSendEmail = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmsPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.cmsForDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,9 +66,10 @@
             this.dgvUser.Location = new System.Drawing.Point(2, 223);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.ReadOnly = true;
+            this.dgvUser.RowHeadersVisible = false;
             this.dgvUser.RowHeadersWidth = 62;
             this.dgvUser.RowTemplate.Height = 29;
-            this.dgvUser.Size = new System.Drawing.Size(1053, 263);
+            this.dgvUser.Size = new System.Drawing.Size(1033, 213);
             this.dgvUser.TabIndex = 0;
             // 
             // cmsForDGV
@@ -87,22 +88,77 @@
             this.cmsForDGV.Name = "cmsForDGV";
             this.cmsForDGV.Size = new System.Drawing.Size(233, 240);
             // 
+            // showDetailsToolStripMenuItem
+            // 
+            this.showDetailsToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume;
+            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
+            this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(229, 6);
+            // 
+            // addNewUserToolStripMenuItem
+            // 
+            this.addNewUserToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.add_user__2_;
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume__1_;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.delete_user;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.password;
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(229, 6);
             // 
+            // cmsSendEmail
+            // 
+            this.cmsSendEmail.Image = global::DVLD_Presentation.Properties.Resources.email;
+            this.cmsSendEmail.Name = "cmsSendEmail";
+            this.cmsSendEmail.Size = new System.Drawing.Size(232, 32);
+            this.cmsSendEmail.Text = "Send Email";
+            this.cmsSendEmail.Click += new System.EventHandler(this.cmsSendEmail_Click);
+            // 
+            // cmsPhoneCall
+            // 
+            this.cmsPhoneCall.Image = global::DVLD_Presentation.Properties.Resources.phone;
+            this.cmsPhoneCall.Name = "cmsPhoneCall";
+            this.cmsPhoneCall.Size = new System.Drawing.Size(232, 32);
+            this.cmsPhoneCall.Text = "Phone Call";
+            this.cmsPhoneCall.Click += new System.EventHandler(this.cmsPhoneCall_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 509);
+            this.label1.Location = new System.Drawing.Point(12, 454);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 29);
             this.label1.TabIndex = 1;
@@ -113,7 +169,7 @@
             this.lblCountRecord.AutoSize = true;
             this.lblCountRecord.Font = new System.Drawing.Font("Tahoma", 11F);
             this.lblCountRecord.ForeColor = System.Drawing.Color.White;
-            this.lblCountRecord.Location = new System.Drawing.Point(102, 511);
+            this.lblCountRecord.Location = new System.Drawing.Point(102, 456);
             this.lblCountRecord.Name = "lblCountRecord";
             this.lblCountRecord.Size = new System.Drawing.Size(36, 27);
             this.lblCountRecord.TabIndex = 2;
@@ -124,7 +180,7 @@
             this.btnClose.BackColor = System.Drawing.Color.DarkBlue;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(898, 497);
+            this.btnClose.Location = new System.Drawing.Point(904, 442);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(137, 52);
             this.btnClose.TabIndex = 3;
@@ -198,67 +254,12 @@
             this.btnAddNewUser.UseVisualStyleBackColor = false;
             this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
             // 
-            // showDetailsToolStripMenuItem
-            // 
-            this.showDetailsToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume;
-            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
-            this.showDetailsToolStripMenuItem.Text = "Show Details";
-            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
-            // 
-            // addNewUserToolStripMenuItem
-            // 
-            this.addNewUserToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.add_user__2_;
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
-            this.addNewUserToolStripMenuItem.Text = "Add New User";
-            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.resume__1_;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.delete_user;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // changePasswordToolStripMenuItem
-            // 
-            this.changePasswordToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.password;
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
-            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
-            // 
-            // cmsSendEmail
-            // 
-            this.cmsSendEmail.Image = global::DVLD_Presentation.Properties.Resources.email;
-            this.cmsSendEmail.Name = "cmsSendEmail";
-            this.cmsSendEmail.Size = new System.Drawing.Size(232, 32);
-            this.cmsSendEmail.Text = "Send Email";
-            this.cmsSendEmail.Click += new System.EventHandler(this.cmsSendEmail_Click);
-            // 
-            // cmsPhoneCall
-            // 
-            this.cmsPhoneCall.Image = global::DVLD_Presentation.Properties.Resources.phone;
-            this.cmsPhoneCall.Name = "cmsPhoneCall";
-            this.cmsPhoneCall.Size = new System.Drawing.Size(232, 32);
-            this.cmsPhoneCall.Text = "Phone Call";
-            this.cmsPhoneCall.Click += new System.EventHandler(this.cmsPhoneCall_Click);
-            // 
             // frmManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(1047, 556);
+            this.ClientSize = new System.Drawing.Size(1038, 526);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

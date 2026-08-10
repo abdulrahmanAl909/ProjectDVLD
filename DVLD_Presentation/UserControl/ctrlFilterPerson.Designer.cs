@@ -42,10 +42,9 @@
             // ctrlShowPersonDetails1
             // 
             this.ctrlShowPersonDetails1.BackColor = System.Drawing.Color.SteelBlue;
-            this.ctrlShowPersonDetails1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ctrlShowPersonDetails1.Location = new System.Drawing.Point(0, 185);
+            this.ctrlShowPersonDetails1.Location = new System.Drawing.Point(0, 127);
             this.ctrlShowPersonDetails1.Name = "ctrlShowPersonDetails1";
-            this.ctrlShowPersonDetails1.Size = new System.Drawing.Size(917, 475);
+            this.ctrlShowPersonDetails1.Size = new System.Drawing.Size(914, 457);
             this.ctrlShowPersonDetails1.TabIndex = 0;
             // 
             // gbFilterBy
@@ -56,11 +55,11 @@
             this.gbFilterBy.Controls.Add(this.txtFilterBy);
             this.gbFilterBy.Controls.Add(this.cbFilterBy);
             this.gbFilterBy.Controls.Add(this.label1);
-            this.gbFilterBy.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gbFilterBy.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gbFilterBy.ForeColor = System.Drawing.Color.White;
             this.gbFilterBy.Location = new System.Drawing.Point(3, 13);
             this.gbFilterBy.Name = "gbFilterBy";
-            this.gbFilterBy.Size = new System.Drawing.Size(882, 166);
+            this.gbFilterBy.Size = new System.Drawing.Size(882, 108);
             this.gbFilterBy.TabIndex = 1;
             this.gbFilterBy.TabStop = false;
             this.gbFilterBy.Text = "Filter";
@@ -69,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label2.Location = new System.Drawing.Point(784, 23);
+            this.label2.Location = new System.Drawing.Point(644, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 24);
             this.label2.TabIndex = 2;
@@ -82,7 +81,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button2.Location = new System.Drawing.Point(788, 50);
+            this.button2.Location = new System.Drawing.Point(648, 43);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(70, 50);
             this.button2.TabIndex = 4;
@@ -95,7 +94,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(686, 50);
+            this.button1.Location = new System.Drawing.Point(557, 43);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 50);
             this.button1.TabIndex = 3;
@@ -103,26 +102,26 @@
             // 
             // txtFilterBy
             // 
-            this.txtFilterBy.Location = new System.Drawing.Point(396, 64);
+            this.txtFilterBy.Location = new System.Drawing.Point(326, 61);
             this.txtFilterBy.Name = "txtFilterBy";
-            this.txtFilterBy.Size = new System.Drawing.Size(272, 36);
+            this.txtFilterBy.Size = new System.Drawing.Size(212, 32);
             this.txtFilterBy.TabIndex = 2;
             // 
             // cbFilterBy
             // 
             this.cbFilterBy.FormattingEnabled = true;
-            this.cbFilterBy.Location = new System.Drawing.Point(147, 63);
+            this.cbFilterBy.Location = new System.Drawing.Point(120, 60);
             this.cbFilterBy.Name = "cbFilterBy";
-            this.cbFilterBy.Size = new System.Drawing.Size(234, 37);
+            this.cbFilterBy.Size = new System.Drawing.Size(188, 32);
             this.cbFilterBy.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label1.Location = new System.Drawing.Point(6, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 36);
+            this.label1.Size = new System.Drawing.Size(108, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filter By:";
             // 
@@ -134,7 +133,7 @@
             this.Controls.Add(this.gbFilterBy);
             this.Controls.Add(this.ctrlShowPersonDetails1);
             this.Name = "ctrlFilterPerson";
-            this.Size = new System.Drawing.Size(917, 660);
+            this.Size = new System.Drawing.Size(917, 587);
             this.gbFilterBy.ResumeLayout(false);
             this.gbFilterBy.PerformLayout();
             this.ResumeLayout(false);
