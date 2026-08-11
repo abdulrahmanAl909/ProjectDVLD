@@ -42,5 +42,12 @@ namespace DVLD_Presentation
 
             frmChangePassword.ShowDialog();
         }
+
+        private void currentUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserInfo frm = new frmUserInfo();
+
+            frm.ShowDialog();
+        }
     }
 }

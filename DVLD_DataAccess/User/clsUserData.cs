@@ -77,6 +77,51 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
+        public static bool GetUserInfoByUserNameAndPassword(ref int  UserID,ref int PersonID,string UserName,string Password,ref bool IsActive)
+        {
+            bool IsFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"SELECT UserID, UserName,PersonID ,Password, IsActive FROM Users
+                             Where UserName = @UserName and Password = @Password";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Password", Password);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if(reader.Read())
+                {
+                    IsFound = true;
+
+                    UserID = (int)reader["UserID"];
+                    PersonID = (int)reader["PersonID"];
+                    IsActive = (bool)reader["IsActive"];
+                }
+                else
+                {
+                    IsFound = false;
+                }
+                    reader.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
+
         public static bool GetUserInfoByID(int UserID,ref int PersonID,ref string UserName,ref string UserPassword,ref bool IsActive)
         {
             bool IsFount = false;

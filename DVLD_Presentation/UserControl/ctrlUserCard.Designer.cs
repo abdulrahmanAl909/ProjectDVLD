@@ -47,6 +47,7 @@
             this.ctrlShowPersonDetails1.Name = "ctrlShowPersonDetails1";
             this.ctrlShowPersonDetails1.Size = new System.Drawing.Size(889, 449);
             this.ctrlShowPersonDetails1.TabIndex = 0;
+            this.ctrlShowPersonDetails1.Load += new System.EventHandler(this.ctrlShowPersonDetails1_Load);
             // 
             // gbLoginInfo
             // 

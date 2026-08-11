@@ -112,7 +112,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(835, 708);
-            this.Controls.Add(this.ctrlUserCard1);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.txtCurrentPassword);

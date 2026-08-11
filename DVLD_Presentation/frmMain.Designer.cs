@@ -177,6 +177,7 @@
             this.currentUserToolStripMenuItem.Name = "currentUserToolStripMenuItem";
             this.currentUserToolStripMenuItem.Size = new System.Drawing.Size(313, 40);
             this.currentUserToolStripMenuItem.Text = "Current User";
+            this.currentUserToolStripMenuItem.Click += new System.EventHandler(this.currentUserToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
