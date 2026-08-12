@@ -107,6 +107,7 @@ namespace DVLD_Presentation
             {
                 txtFilterBy.Visible = false;
                 cbGendor.Visible = false;
+                _RefreshPeople();
             }
             else if (cbFilterBy.Text == "Gendor")
             {

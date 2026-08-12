@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlShowPersonDetails1 = new DVLD_Presentation.ctrlShowPersonDetails();
             this.gbLoginInfo = new System.Windows.Forms.GroupBox();
             this.lblIsUserActive = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -36,18 +35,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ctrlShowPersonDetails1 = new DVLD_Presentation.ctrlShowPersonDetails();
+            this.ctrlShowPersonDetails2 = new DVLD_Presentation.ctrlShowPersonDetails();
             this.gbLoginInfo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ctrlShowPersonDetails1
-            // 
-            this.ctrlShowPersonDetails1.BackColor = System.Drawing.Color.SteelBlue;
-            this.ctrlShowPersonDetails1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ctrlShowPersonDetails1.Location = new System.Drawing.Point(0, 0);
-            this.ctrlShowPersonDetails1.Name = "ctrlShowPersonDetails1";
-            this.ctrlShowPersonDetails1.Size = new System.Drawing.Size(889, 449);
-            this.ctrlShowPersonDetails1.TabIndex = 0;
-            this.ctrlShowPersonDetails1.Load += new System.EventHandler(this.ctrlShowPersonDetails1_Load);
             // 
             // gbLoginInfo
             // 
@@ -126,13 +117,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "User ID     :";
             // 
+            // ctrlShowPersonDetails1
+            // 
+            this.ctrlShowPersonDetails1.BackColor = System.Drawing.Color.SteelBlue;
+            this.ctrlShowPersonDetails1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ctrlShowPersonDetails1.Location = new System.Drawing.Point(0, 0);
+            this.ctrlShowPersonDetails1.Name = "ctrlShowPersonDetails1";
+            this.ctrlShowPersonDetails1.Size = new System.Drawing.Size(889, 449);
+            this.ctrlShowPersonDetails1.TabIndex = 0;
+            // 
+            // ctrlShowPersonDetails2
+            // 
+            this.ctrlShowPersonDetails2.BackColor = System.Drawing.Color.SteelBlue;
+            this.ctrlShowPersonDetails2.Location = new System.Drawing.Point(0, 2);
+            this.ctrlShowPersonDetails2.Name = "ctrlShowPersonDetails2";
+            this.ctrlShowPersonDetails2.Size = new System.Drawing.Size(888, 453);
+            this.ctrlShowPersonDetails2.TabIndex = 2;
+            // 
             // ctrlUserCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
+            this.Controls.Add(this.ctrlShowPersonDetails2);
             this.Controls.Add(this.gbLoginInfo);
-            this.Controls.Add(this.ctrlShowPersonDetails1);
             this.Name = "ctrlUserCard";
             this.Size = new System.Drawing.Size(889, 626);
             this.gbLoginInfo.ResumeLayout(false);
@@ -151,5 +159,6 @@
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private ctrlShowPersonDetails ctrlShowPersonDetails2;
     }
 }

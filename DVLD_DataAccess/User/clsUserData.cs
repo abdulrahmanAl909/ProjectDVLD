@@ -77,6 +77,44 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
+        public static DataTable GetAllIsActive(string ColumnName , bool FilterBy)
+        {
+            DataTable dataTable = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = $@"SELECT Users.UserID, Users.PersonID,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Users.UserName,Users.IsActive
+                           FROM  Users INNER JOIN
+                           People ON Users.PersonID = People.PersonID
+                           Where {ColumnName} = @FilterBy";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@FilterBy", FilterBy);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if(reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+                reader.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+        }
+
         public static bool GetUserInfoByUserNameAndPassword(ref int  UserID,ref int PersonID,string UserName,string Password,ref bool IsActive)
         {
             bool IsFound = false;
@@ -246,7 +284,39 @@ namespace DVLD_DataAccess
 
             return (RowAffectid>0);
         }
-       
+
+        public static bool ChangePasswor(int UserID , string Password)
+        {
+            int RowAffectid = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"UPDATE [dbo].[Users]
+                           SET [Password] = @Password
+                           WHERE UserID = @UserID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@UserID", UserID);
+            command.Parameters.AddWithValue("@Password", Password);
+
+            try
+            {
+                connection.Open();
+
+                RowAffectid = command.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (RowAffectid > 0);
+        }
+
         public static bool DeleteUser(int UserID)
         {
             int RowAffectid = -1;

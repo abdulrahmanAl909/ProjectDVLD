@@ -59,14 +59,14 @@ namespace DVLD_Presentation
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmChangePassword frm = new frmChangePassword();
+            frmChangePassword frm = new frmChangePassword((int)dgvUser.CurrentRow.Cells[0].Value);
 
             frm.ShowDialog();
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUserInfo frm = new frmUserInfo();
+            frmUserInfo frm = new frmUserInfo((int)dgvUser.CurrentRow.Cells[0].Value);
 
             frm.ShowDialog();
         }
@@ -105,6 +105,48 @@ namespace DVLD_Presentation
                 {
                     MessageBox.Show("User is NOT Delete");
                 }
+            }
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbFilterBy.Text=="None")
+            {
+                txtFilterBy.Visible = false;
+                cbIsActive.Visible = false;
+                _RefrishUser();
+            }
+            else if(cbFilterBy.Text=="IsActive")
+            {
+                txtFilterBy.Visible = false;
+                cbIsActive.Visible = true;
+                cbIsActive.SelectedIndex = 0;
+            }
+            else
+            {
+                txtFilterBy.Visible = true;
+                cbIsActive.Visible = false;
+                txtFilterBy.Clear();
+            }
+        }
+
+        private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbIsActive.Text=="All")
+            {
+                _RefrishUser();
+            }
+            else
+            {
+                if(cbIsActive.Text=="Yes")
+                {
+                    dgvUser.DataSource = clsUser.GetAllIsActive(cbFilterBy.Text,true);
+                }
+                else
+                {
+                    dgvUser.DataSource = clsUser.GetAllIsActive(cbFilterBy.Text, false);
+                }
+                lblCountRecord.Text = dgvUser.RowCount.ToString();
             }
         }
 

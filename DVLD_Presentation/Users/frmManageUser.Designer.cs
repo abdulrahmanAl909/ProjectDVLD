@@ -50,6 +50,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddNewUser = new System.Windows.Forms.Button();
             this.txtFilterBy = new System.Windows.Forms.TextBox();
+            this.cbIsActive = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.cmsForDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -122,7 +123,7 @@
             // 
             this.deleteToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.delete_user;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(232, 32);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -211,6 +212,7 @@
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(161, 27);
             this.cbFilterBy.TabIndex = 5;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -267,12 +269,26 @@
             this.txtFilterBy.TabIndex = 11;
             this.txtFilterBy.Visible = false;
             // 
+            // cbIsActive
+            // 
+            this.cbIsActive.FormattingEnabled = true;
+            this.cbIsActive.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.cbIsActive.Location = new System.Drawing.Point(309, 183);
+            this.cbIsActive.Name = "cbIsActive";
+            this.cbIsActive.Size = new System.Drawing.Size(273, 27);
+            this.cbIsActive.TabIndex = 12;
+            this.cbIsActive.SelectedIndexChanged += new System.EventHandler(this.cbIsActive_SelectedIndexChanged);
+            // 
             // frmManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(1045, 526);
+            this.Controls.Add(this.cbIsActive);
             this.Controls.Add(this.txtFilterBy);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
@@ -318,5 +334,6 @@
         private System.Windows.Forms.ToolStripMenuItem cmsSendEmail;
         private System.Windows.Forms.ToolStripMenuItem cmsPhoneCall;
         private System.Windows.Forms.TextBox txtFilterBy;
+        private System.Windows.Forms.ComboBox cbIsActive;
     }
 }

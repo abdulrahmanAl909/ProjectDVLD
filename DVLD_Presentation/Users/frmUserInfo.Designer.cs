@@ -28,8 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ctrlUserCard2 = new DVLD_Presentation.ctrlUserCard();
             this.ctrlUserCard1 = new DVLD_Presentation.ctrlUserCard();
             this.SuspendLayout();
+            // 
+            // ctrlUserCard2
+            // 
+            this.ctrlUserCard2.BackColor = System.Drawing.Color.SteelBlue;
+            this.ctrlUserCard2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrlUserCard2.Location = new System.Drawing.Point(0, 0);
+            this.ctrlUserCard2.Name = "ctrlUserCard2";
+            this.ctrlUserCard2.Size = new System.Drawing.Size(888, 638);
+            this.ctrlUserCard2.TabIndex = 0;
             // 
             // ctrlUserCard1
             // 
@@ -45,9 +55,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 638);
-            this.Controls.Add(this.ctrlUserCard1);
+            this.Controls.Add(this.ctrlUserCard2);
             this.Name = "frmUserInfo";
             this.Text = "frmUserInfo";
+            this.Load += new System.EventHandler(this.frmUserInfo_Load);
             this.ResumeLayout(false);
 
         }
@@ -55,5 +66,6 @@
         #endregion
 
         private ctrlUserCard ctrlUserCard1;
+        private ctrlUserCard ctrlUserCard2;
     }
 }

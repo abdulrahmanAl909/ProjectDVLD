@@ -88,6 +88,11 @@ namespace DVLD_Business
             return clsUserData.GetAllColumnName();
         }
 
+        public static DataTable GetAllIsActive(string ColumnName , bool FilterBy)
+        {
+            return clsUserData.GetAllIsActive(ColumnName, FilterBy);
+        }
+
         public static clsUser GetUserInfoByID(int UserID)
         {
             int PersonID = -1;
@@ -112,6 +117,11 @@ namespace DVLD_Business
         public static bool IsUserExist(int UserID)
         {
             return clsUserData.IsUserExist(UserID);
+        }
+
+        public static bool ChangePassword(int ID , string Password)
+        {
+            return clsUserData.ChangePasswor(ID, Password);
         }
 
         public bool Save()
