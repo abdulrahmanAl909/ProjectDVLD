@@ -113,6 +113,26 @@ namespace DVLD_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap admission_form {
+            get {
+                object obj = ResourceManager.GetObject("admission-form", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap admission_form1 {
+            get {
+                object obj = ResourceManager.GetObject("admission-form1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Application {
             get {
                 object obj = ResourceManager.GetObject("Application", resourceCulture);
@@ -136,6 +156,16 @@ namespace DVLD_Presentation.Properties {
         internal static System.Drawing.Bitmap businesswoman {
             get {
                 object obj = ResourceManager.GetObject("businesswoman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Aug_14__2026__06_36_13_AM {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Aug 14, 2026, 06_36_13 AM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,6 +426,16 @@ namespace DVLD_Presentation.Properties {
         internal static System.Drawing.Bitmap magnifying_glass {
             get {
                 object obj = ResourceManager.GetObject("magnifying-glass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notes {
+            get {
+                object obj = ResourceManager.GetObject("notes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

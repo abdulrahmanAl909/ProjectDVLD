@@ -47,6 +47,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsGlobalSettings.cs" />
+    <Compile Include="ApplicationType\frmApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationType\frmApplicationType.Designer.cs">
+      <DependentUpon>frmApplicationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationType\frmUpdateApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationType\frmUpdateApplicationType.Designer.cs">
+      <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestType\UpdateTestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestType\UpdateTestType.Designer.cs">
+      <DependentUpon>UpdateTestType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestType\TestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestType\TestType.Designer.cs">
+      <DependentUpon>TestType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\frmAddEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +151,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ApplicationType\frmApplicationType.resx">
+      <DependentUpon>frmApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationType\frmUpdateApplicationType.resx">
+      <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestType\TestType.resx">
+      <DependentUpon>TestType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestType\UpdateTestType.resx">
+      <DependentUpon>UpdateTestType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\frmAddEditUser.resx">
       <DependentUpon>frmAddEditUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +362,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\right_panel_user_security_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admission-form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image Aug 14, 2026, 06_36_13 AM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admission-form1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

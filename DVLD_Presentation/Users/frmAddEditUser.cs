@@ -65,6 +65,7 @@ namespace DVLD_Presentation
 
             lblName.Text = "Update User";
             btnSave.Enabled = true;
+            allowLoginTab = true;
 
             lblUserID.Text = _UserInfo.UserID.ToString();
             txtUserName.Text = _UserInfo.UserName;
@@ -138,6 +139,7 @@ namespace DVLD_Presentation
 
             lblUserID.Text = _UserInfo.UserID.ToString();
             lblName.Text = "Update User";
+            allowLoginTab = true;
             ctrlFilterPerson1.StatusOfUpdate(_UserInfo.PersonID);
             Mode = enMode.UpdateUser;
         }

@@ -49,5 +49,19 @@ namespace DVLD_Presentation
 
             frm.ShowDialog();
         }
+
+        private void manageApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmApplicationType frm = new frmApplicationType();
+
+            frm.ShowDialog();
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TestType frm = new TestType();
+
+            frm.ShowDialog();
+        }
     }
 }
