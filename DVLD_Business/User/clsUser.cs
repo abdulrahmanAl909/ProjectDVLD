@@ -12,7 +12,8 @@ namespace DVLD_Business
     public class clsUser
     {
 
-        clsPerson _PersonInfo;
+        public clsPerson PersonInfo;
+
         enum enMode { AddNew , Update}
         enMode Mode = enMode.AddNew;
         public int UserID { set; get; }
@@ -33,7 +34,7 @@ namespace DVLD_Business
             this.UserPassword = "";
             this.IsActive = false;
 
-            _PersonInfo = new clsPerson();
+            PersonInfo = new clsPerson();
 
             Mode = enMode.AddNew;
         }
@@ -46,7 +47,7 @@ namespace DVLD_Business
             this.UserPassword = UserPassword;
             this.IsActive = IsActive;
 
-            _PersonInfo = clsPerson.GetPersonInfoByID(PersonID);
+            PersonInfo = clsPerson.GetPersonInfoByID(PersonID);
 
             Mode = enMode.Update;
         }
@@ -88,9 +89,20 @@ namespace DVLD_Business
             return clsUserData.GetAllColumnName();
         }
 
-        public static DataTable GetAllIsActive(string ColumnName , bool FilterBy)
+        public static DataTable GetAllUserByFilter(string ColumnName , int FilterBy)
         {
-            return clsUserData.GetAllIsActive(ColumnName, FilterBy);
+            return clsUserData.GetAllUserByFilter(ColumnName, FilterBy);
+        }
+
+        public static DataTable GetAllUserByFilter(string ColumnName, string FilterBy)
+        {
+            return clsUserData.GetAllUserByFilter(ColumnName, FilterBy);
+        }
+
+
+        public static DataTable GetAllUserByFilter(string ColumnName , bool FilterBy)
+        {
+            return clsUserData.GetAllUserByFilter(ColumnName, FilterBy);
         }
 
         public static clsUser GetUserInfoByID(int UserID)
@@ -117,6 +129,11 @@ namespace DVLD_Business
         public static bool IsUserExist(int UserID)
         {
             return clsUserData.IsUserExist(UserID);
+        }
+
+        public static bool IsPersonExist(int PersonID)
+        {
+            return clsUserData.IsPersonConnectedWithUser(PersonID);
         }
 
         public static bool ChangePassword(int ID , string Password)

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -69,6 +70,7 @@ namespace DVLD_Presentation
             frmUserInfo frm = new frmUserInfo((int)dgvUser.CurrentRow.Cells[0].Value);
 
             frm.ShowDialog();
+            _RefrishUser();
         }
 
         private void btnAddNewUser_Click(object sender, EventArgs e)
@@ -76,20 +78,15 @@ namespace DVLD_Presentation
             frmAddEditUser frm = new frmAddEditUser();
 
             frm.ShowDialog();
-        }
-
-        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAddEditUser frm = new frmAddEditUser();
-
-            frm.ShowDialog();
+            _RefrishUser();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddEditUser frm = new frmAddEditUser();
+            frmAddEditUser frm = new frmAddEditUser((int)dgvUser.CurrentRow.Cells[0].Value);
 
             frm.ShowDialog();
+            _RefrishUser();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,7 +111,6 @@ namespace DVLD_Presentation
             {
                 txtFilterBy.Visible = false;
                 cbIsActive.Visible = false;
-                _RefrishUser();
             }
             else if(cbFilterBy.Text=="IsActive")
             {
@@ -128,6 +124,7 @@ namespace DVLD_Presentation
                 cbIsActive.Visible = false;
                 txtFilterBy.Clear();
             }
+            _RefrishUser();
         }
 
         private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,16 +137,49 @@ namespace DVLD_Presentation
             {
                 if(cbIsActive.Text=="Yes")
                 {
-                    dgvUser.DataSource = clsUser.GetAllIsActive(cbFilterBy.Text,true);
+                    dgvUser.DataSource = clsUser.GetAllUserByFilter(cbFilterBy.Text,true);
                 }
                 else
                 {
-                    dgvUser.DataSource = clsUser.GetAllIsActive(cbFilterBy.Text, false);
+                    dgvUser.DataSource = clsUser.GetAllUserByFilter(cbFilterBy.Text, false);
                 }
                 lblCountRecord.Text = dgvUser.RowCount.ToString();
             }
         }
 
+        private void txtFilterBy_TextChanged(object sender, EventArgs e)
+        {
+            if(cbFilterBy.Text=="UserName")
+            {
+                dgvUser.DataSource = clsUser.GetAllUserByFilter(cbFilterBy.Text, txtFilterBy.Text);
+                lblCountRecord.Text = dgvUser.RowCount.ToString();
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(txtFilterBy.Text))
+            {
+                _RefrishUser();
+            }
+            else
+            {
+                dgvUser.DataSource = clsUser.GetAllUserByFilter(cbFilterBy.Text, int.Parse(txtFilterBy.Text));
+                lblCountRecord.Text = dgvUser.RowCount.ToString();
+            }
+
+        }
+
+        private void txtFilterBy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(cbFilterBy.Text=="UserName")
+            {
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                SystemSounds.Asterisk.Play();
+            }
+        }
     }
 }

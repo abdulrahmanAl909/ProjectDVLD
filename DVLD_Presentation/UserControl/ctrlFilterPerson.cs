@@ -14,6 +14,9 @@ namespace DVLD_Presentation
 {
     public partial class ctrlFilterPerson : UserControl
     {
+
+        public clsPerson _PersonInfo { set;  get; }
+
         public ctrlFilterPerson()
         {
             InitializeComponent();
@@ -21,9 +24,10 @@ namespace DVLD_Presentation
 
         private void _GetInfoByFilter(int PersonID)
         {
-            if(clsPerson.IsPersonExist(PersonID))
+            _PersonInfo = clsPerson.GetPersonInfoByID(PersonID);
+            if(_PersonInfo!=null)
             {
-                ctrlShowPersonDetails1.LoadDataByPersonID(PersonID);   
+                ctrlShowPersonDetails1.LoadDataByPersonID(PersonID);
             }
             else
             {
@@ -33,7 +37,9 @@ namespace DVLD_Presentation
 
         private void _GetInfoByFilter(string NationalNo)
         {
-            if (clsPerson.IsPersonExist(NationalNo))
+            _PersonInfo = clsPerson.GetPersonInfoByNationalNo(NationalNo);
+
+            if (_PersonInfo != null)
             {
                 ctrlShowPersonDetails1.LoadDataByNationalNo(NationalNo);
             }
@@ -85,6 +91,12 @@ namespace DVLD_Presentation
             }
         }
 
+        public void StatusOfUpdate(int PersonID)
+        {
+            gbFilterBy.Enabled = false;
+            _GetInfoByFilter(PersonID);
+            txtFilterBy.Text = PersonID.ToString();
+        }
 
     }
 }

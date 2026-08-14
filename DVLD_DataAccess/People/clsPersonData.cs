@@ -10,7 +10,6 @@ namespace DVLD_DataAccess
     public class clsPersonData
     {
 
-
        public static DataTable GetAllPeople()
        {
             DataTable dataTable = new DataTable();
@@ -320,6 +319,7 @@ namespace DVLD_DataAccess
             }
             return isFound;
         }
+
         public static int AddNewPerson(string NationalNo ,string FirstName
             , string SecondName, string ThirdName,string LastName,
              DateTime DateOfBirth,byte Gendor, string Address, string Phone,

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace DVLD_DataAccess
 {
@@ -77,7 +78,83 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
-        public static DataTable GetAllIsActive(string ColumnName , bool FilterBy)
+        public static DataTable GetAllUserByFilter(string ColumnName ,int FilterBy)
+        {
+            DataTable dataTable = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = $@"SELECT Users.UserID, Users.PersonID,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Users.UserName,Users.IsActive
+                           FROM  Users INNER JOIN
+                           People ON Users.PersonID = People.PersonID
+                           Where Users.{ColumnName} = @FilterBy";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@FilterBy", FilterBy);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+        }
+
+        public static DataTable GetAllUserByFilter(string ColumnName,string FilterBy)
+        {
+            DataTable dataTable = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = $@"SELECT Users.UserID, Users.PersonID,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Users.UserName,Users.IsActive
+                           FROM  Users INNER JOIN
+                           People ON Users.PersonID = People.PersonID
+                           Where {ColumnName} LIKE '' +  @FilterBy + '%'";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@FilterBy", FilterBy);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+        }
+
+        public static DataTable GetAllUserByFilter(string ColumnName , bool FilterBy)
         {
             DataTable dataTable = new DataTable();
 
@@ -377,6 +454,39 @@ namespace DVLD_DataAccess
             {
                 connection.Close();
             }
+            return IsFount;
+        }
+
+        public static bool IsPersonConnectedWithUser(int PersonID)
+        {
+            bool IsFount = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quaty = "select Fount=1 From Users Where PersonID = @PersonID";
+
+            SqlCommand command = new SqlCommand(quaty, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                IsFount = reader.HasRows;
+                reader.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
             return IsFount;
         }
 
