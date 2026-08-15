@@ -95,11 +95,11 @@
             // 
             this.lblPersonID.AutoSize = true;
             this.lblPersonID.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblPersonID.Location = new System.Drawing.Point(167, 118);
+            this.lblPersonID.Location = new System.Drawing.Point(144, 118);
             this.lblPersonID.Name = "lblPersonID";
-            this.lblPersonID.Size = new System.Drawing.Size(39, 29);
+            this.lblPersonID.Size = new System.Drawing.Size(46, 29);
             this.lblPersonID.TabIndex = 2;
-            this.lblPersonID.Text = "12";
+            this.lblPersonID.Text = "???";
             this.lblPersonID.Visible = false;
             // 
             // panel1

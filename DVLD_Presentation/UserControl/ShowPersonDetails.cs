@@ -13,6 +13,7 @@ namespace DVLD_Presentation
 {
     public partial class ctrlShowPersonDetails : UserControl
     {
+
         int _PersonID = -1;
 
         string _NationalNo = "";
@@ -75,7 +76,6 @@ namespace DVLD_Presentation
                 pbImagePath.Visible = false;
             }
         }
-
 
         private void llEditPerson_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

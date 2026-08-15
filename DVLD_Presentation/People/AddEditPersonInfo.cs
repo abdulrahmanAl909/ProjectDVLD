@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Media;
@@ -15,6 +16,9 @@ namespace DVLD_Presentation
 {
     public partial class AddEditPersonInfo : Form
     {
+        public delegate void DataBackEventHandler(int PersonID);
+
+        public event DataBackEventHandler DataBack;
 
         enum enMode { AddNew , Update}
 
@@ -131,7 +135,17 @@ namespace DVLD_Presentation
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(int.TryParse(lblPersonID.Text, out int PersonID))
+            {
+                DataBack?.Invoke(PersonID);
+            }
+            else
+            {
+                MessageBox.Show("There is not person ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+                this.Close();
         }
 
         private void AddEditPersonInfo_Load(object sender, EventArgs e)

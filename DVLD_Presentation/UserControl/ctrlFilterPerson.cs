@@ -22,6 +22,19 @@ namespace DVLD_Presentation
             InitializeComponent();
         }
 
+        private void _GetInfoByDelegate(int PersonID)
+        {
+            if (_PersonInfo != null)
+            {
+                ctrlShowPersonDetails1.LoadDataByPersonID(PersonID);
+                txtFilterBy.Text = PersonID.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No Person with Person ID = " + PersonID.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void _GetInfoByFilter(int PersonID)
         {
             _PersonInfo = clsPerson.GetPersonInfoByID(PersonID);
@@ -52,6 +65,8 @@ namespace DVLD_Presentation
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
             AddEditPersonInfo frm = new AddEditPersonInfo(-1);
+
+            frm.DataBack += _GetInfoByDelegate;
 
             frm.Show();
         }
