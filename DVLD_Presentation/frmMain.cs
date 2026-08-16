@@ -63,5 +63,12 @@ namespace DVLD_Presentation
 
             frm.ShowDialog();
         }
+
+        private void localToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocalApplication frm = new frmLocalApplication();
+
+            frm.ShowDialog();
+        }
     }
 }
