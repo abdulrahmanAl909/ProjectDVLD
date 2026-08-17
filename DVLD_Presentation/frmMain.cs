@@ -70,5 +70,24 @@ namespace DVLD_Presentation
 
             frm.ShowDialog();
         }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddNewLocalApplication frm = new frmAddNewLocalApplication();
+
+            frm.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            releaseDetainedDrivingLicenseToolStripMenuItem.Image = null;
+        }
+
+        private void frmMain_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -393,6 +393,80 @@
   <ItemGroup>
     <None Include="Resources\admission-form1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\drivers-license.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drivers-license1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-driver-license-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image Aug 17, 2026, 05_03_48 AM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detain_license_64x64_v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-test-results-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage_test_type_64x64%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage_application_64x64%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_driving_license_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\renew_driving_license_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\replace_lost_damaged_license_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retake_test_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\release_detained_license_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\local_license_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\international_license_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driving_license_64x64_final%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image Aug 17, 2026, 06_30_40 AM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage_application_check_64x64%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driving_license_car_plus_64x64%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5769563666645717541_m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5769563666645717543_m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5769563666645717546_m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5769563666645717544_m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5769563666645717542_m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5769563666645717550_x.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
