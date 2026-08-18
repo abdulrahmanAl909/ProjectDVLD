@@ -24,7 +24,7 @@ namespace DVLD_Business
 
         public int ApplicationType { set; get; }
 
-        public byte ApplicationStatus { set; get; }
+        public enApplicationStatus ApplicationStatus { set; get; }
 
         public DateTime LastStatusDate { set; get; }
 
@@ -38,7 +38,7 @@ namespace DVLD_Business
             this.ApplicationPersonID = -1;
             this.ApplicationDate = DateTime.Now;
             this.ApplicationType = -1;
-            this.ApplicationStatus = 0;
+            this.ApplicationStatus = enApplicationStatus.AddNewApp;
             this.LastStatusDate = DateTime.Now;
             this.PaidFees = -1;
             this.CreatedByUserID = -1;
@@ -48,7 +48,7 @@ namespace DVLD_Business
             Mode = enMode.Add;
         }
 
-        private clsLoaclApplication(int ApplicationID,int PersonID , DateTime AppDate , int AppType , byte AppStatus ,
+        private clsLoaclApplication(int ApplicationID,int PersonID , DateTime AppDate , int AppType , enApplicationStatus AppStatus ,
             DateTime LastStatusDate , decimal PaidFees , int CreatedByUserID)
         {
             this.ApplicationID = ApplicationID;
@@ -69,7 +69,7 @@ namespace DVLD_Business
         private bool _AddNewApplication()
         {
             this.ApplicationID = clsLocalApplicationData.AddNewApplication(this.ApplicationPersonID,
-                this.ApplicationDate, this.ApplicationType, this.ApplicationStatus, this.LastStatusDate,
+                this.ApplicationDate, this.ApplicationType,(byte) this.ApplicationStatus, this.LastStatusDate,
                 this.PaidFees, this.CreatedByUserID);
 
             return (this.ApplicationID !=-1);
@@ -78,10 +78,9 @@ namespace DVLD_Business
         private bool _UpdateApplication()
         {
             return clsLocalApplicationData.UpdateApplication(this.ApplicationID, this.ApplicationPersonID,
-                this.ApplicationDate, this.ApplicationType, this.ApplicationStatus, this.LastStatusDate,
+                this.ApplicationDate, this.ApplicationType,(byte)this.ApplicationStatus, this.LastStatusDate,
                 this.PaidFees, this.CreatedByUserID);
         }
-
 
         public bool Save()
         {

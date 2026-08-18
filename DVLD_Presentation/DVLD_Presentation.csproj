@@ -468,5 +468,83 @@
   <ItemGroup>
     <None Include="Resources\photo_5769563666645717550_x.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Current_User_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Change_Password_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign_Out_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5773918209433079491_y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5773918209433079492_y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5773918209433079495_m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show_Application_Details_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_New_Application_Lines_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_Application_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Issue_Driving_License_First_Time_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule_Tests_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_Application_40x40_fixed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_Application_40x40_Clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_Application_Original_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_Application_Original_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule_Tests_Original_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Issue_Driving_License_First_Time_40x401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Issue_Driving_License_Original_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show_Person_License_History_Original_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show_License_40x40_Clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Local_Driving_License_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\International_Driving_License_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Local_Driving_License_55x55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\International_Driving_License_55x55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\International_Driving_License_55x551.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
