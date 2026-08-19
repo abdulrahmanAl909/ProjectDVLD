@@ -99,7 +99,6 @@ namespace DVLD_Business
             return clsUserData.GetAllUserByFilter(ColumnName, FilterBy);
         }
 
-
         public static DataTable GetAllUserByFilter(string ColumnName , bool FilterBy)
         {
             return clsUserData.GetAllUserByFilter(ColumnName, FilterBy);

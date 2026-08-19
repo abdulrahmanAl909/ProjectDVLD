@@ -183,6 +183,16 @@ namespace DVLD_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Change_Password_55x55_NoLine {
+            get {
+                object obj = ResourceManager.GetObject("Change_Password_55x55_NoLine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Change_Password_64x64 {
             get {
                 object obj = ResourceManager.GetObject("Change_Password_64x64", resourceCulture);
@@ -226,6 +236,16 @@ namespace DVLD_Presentation.Properties {
         internal static System.Drawing.Bitmap Close {
             get {
                 object obj = ResourceManager.GetObject("Close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Current_User_55x55_NoLine {
+            get {
+                object obj = ResourceManager.GetObject("Current_User_55x55_NoLine", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1016,6 +1036,16 @@ namespace DVLD_Presentation.Properties {
         internal static System.Drawing.Bitmap Show_Person_License_History_Original_40x40 {
             get {
                 object obj = ResourceManager.GetObject("Show_Person_License_History_Original_40x40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sign_Out_55x55 {
+            get {
+                object obj = ResourceManager.GetObject("Sign_Out_55x55", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

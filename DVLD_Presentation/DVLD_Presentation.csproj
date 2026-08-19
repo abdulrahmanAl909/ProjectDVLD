@@ -546,5 +546,14 @@
   <ItemGroup>
     <None Include="Resources\International_Driving_License_55x551.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Current_User_55x55_NoLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Change_Password_55x55_NoLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign_Out_55x55.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

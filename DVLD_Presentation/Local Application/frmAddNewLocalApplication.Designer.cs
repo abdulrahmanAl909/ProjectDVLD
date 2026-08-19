@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPersonalInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
+            this.ctrlFilterPerson1 = new DVLD_Presentation.ctrlFilterPerson();
             this.tpApplicationInfo = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbLicenseClass = new System.Windows.Forms.ComboBox();
@@ -47,23 +48,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.ctrlFilterPerson1 = new DVLD_Presentation.ctrlFilterPerson();
             this.tabControl1.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
             this.tpApplicationInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblHeader
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 23F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(51, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(789, 56);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "New Local Driving Licesne Application";
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Tahoma", 23F);
+            this.lblHeader.ForeColor = System.Drawing.Color.White;
+            this.lblHeader.Location = new System.Drawing.Point(51, 9);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(789, 56);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "New Local Driving Licesne Application";
             // 
             // tabControl1
             // 
@@ -100,6 +100,18 @@
             this.btnNext.Text = "next";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // ctrlFilterPerson1
+            // 
+            this.ctrlFilterPerson1._PersonInfo = null;
+            this.ctrlFilterPerson1.BackColor = System.Drawing.Color.SteelBlue;
+            this.ctrlFilterPerson1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrlFilterPerson1.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.ctrlFilterPerson1.Location = new System.Drawing.Point(3, 3);
+            this.ctrlFilterPerson1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlFilterPerson1.Name = "ctrlFilterPerson1";
+            this.ctrlFilterPerson1.Size = new System.Drawing.Size(803, 575);
+            this.ctrlFilterPerson1.TabIndex = 0;
             // 
             // tpApplicationInfo
             // 
@@ -282,18 +294,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // ctrlFilterPerson1
-            // 
-            this.ctrlFilterPerson1._PersonInfo = null;
-            this.ctrlFilterPerson1.BackColor = System.Drawing.Color.SteelBlue;
-            this.ctrlFilterPerson1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrlFilterPerson1.Font = new System.Drawing.Font("Tahoma", 7F);
-            this.ctrlFilterPerson1.Location = new System.Drawing.Point(3, 3);
-            this.ctrlFilterPerson1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlFilterPerson1.Name = "ctrlFilterPerson1";
-            this.ctrlFilterPerson1.Size = new System.Drawing.Size(803, 575);
-            this.ctrlFilterPerson1.TabIndex = 0;
-            // 
             // frmAddNewLocalApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -303,7 +303,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblHeader);
             this.Name = "frmAddNewLocalApplication";
             this.Text = "frmAddNewLocalApplication";
             this.Load += new System.EventHandler(this.frmAddNewLocalApplication_Load);
@@ -319,7 +319,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpPersonalInfo;
         private System.Windows.Forms.TabPage tpApplicationInfo;

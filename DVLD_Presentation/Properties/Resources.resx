@@ -142,14 +142,14 @@
   <data name="manage_test_type_64x64(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage_test_type_64x64(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="replace_lost_damaged_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\replace_lost_damaged_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="resume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="International_Driving_License_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\International_Driving_License_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-user-logout-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-user-logout-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="replace_lost_damaged_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\replace_lost_damaged_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sign_Out_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sign_Out_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,9 +211,6 @@
   <data name="icons8-vanpool-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-vanpool-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ChatGPT Image Aug 17, 2026, 05_03_48 AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image Aug 17, 2026, 05_03_48 AM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="admission-form1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admission-form1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -250,14 +247,20 @@
   <data name="photo_5769563666645717550_x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\photo_5769563666645717550_x.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="photo_5769563666645717546_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\photo_5769563666645717546_m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="drivers-license" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drivers-license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="woman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\woman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="photo_5769563666645717542_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\photo_5769563666645717542_m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Change_Password_55x55_NoLine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Change_Password_55x55_NoLine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="International_Driving_License_55x551" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\International_Driving_License_55x551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Local_Driving_License_55x55" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Local_Driving_License_55x55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,8 +271,20 @@
   <data name="phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="drivers-license" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\drivers-license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="photo_5769563666645717546_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo_5769563666645717546_m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Current_User_55x55_NoLine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Current_User_55x55_NoLine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="international_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\international_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChatGPT Image Aug 17, 2026, 05_03_48 AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChatGPT Image Aug 17, 2026, 05_03_48 AM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admission-form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admission-form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-users-settings-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-users-settings-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -297,9 +312,6 @@
   </data>
   <data name="icons8-user-logout-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-user-logout-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Issue_Driving_License_First_Time_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Issue_Driving_License_First_Time_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete_Application_40x40_Clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete_Application_40x40_Clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,17 +343,14 @@
   <data name="icons8-user-info-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-user-info-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="username (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\username (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Finally" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Finally.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="local_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\local_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="resume" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\resume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-user-logout-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-user-logout-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edit_Application_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_Application_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,8 +364,8 @@
   <data name="Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="international_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\international_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="username (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\username (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-user-info-48 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-user-info-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -388,8 +397,8 @@
   <data name="Edit_Application_40x40_fixed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_Application_40x40_fixed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="admission-form" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\admission-form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Issue_Driving_License_First_Time_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Issue_Driving_License_First_Time_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DSC_1193" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DSC_1193.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -412,7 +421,7 @@
   <data name="Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="International_Driving_License_55x551" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\International_Driving_License_55x551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sign_Out_55x55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sign_Out_55x55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

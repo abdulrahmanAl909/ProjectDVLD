@@ -13,23 +13,51 @@ namespace DVLD_Presentation
 {
     public partial class frmAddNewLocalApplication : Form
     {
+        enum enMode { AddNewApplication, UpdateApplication }
+        enMode Mode = enMode.AddNewApplication;
+
+        int _AppID;
+        clsLoaclApplication _LoacApplInfo;
+
+        bool allowLoginTab = false;
+
         public frmAddNewLocalApplication()
         {
             InitializeComponent();
+
+            Mode = enMode.AddNewApplication;
         }
 
-        private void _LoadInfoForApplication()
+        public frmAddNewLocalApplication(int AppID)
+        {
+            InitializeComponent();
+
+            _AppID = AppID;
+            Mode = enMode.UpdateApplication;
+        }
+
+        private void LoadData()
         {
             lblApplicationDate.Text = DateTime.Now.ToShortDateString();
             cbLicenseClass.SelectedIndex = 3;
             lblCteatedByUser.Text = clsGlobalSettings.CurrentUser.UserName;
+
+            if(Mode==enMode.AddNewApplication)
+            {
+                lblHeader.Text = "New Local Driving Licesne Application";
+                _LoacApplInfo = new clsLoaclApplication();
+                return;
+            }
+        }
+
+        private void _LoadInfoForApplication()
+        {
+           
         }
 
         private void frmAddNewLocalApplication_Load(object sender, EventArgs e)
         {
             _LoadInfoForApplication();
-
-            MessageBox.Show(cbLicenseClass.SelectedIndex.ToString());
         }
 
         private void btnClose_Click(object sender, EventArgs e)

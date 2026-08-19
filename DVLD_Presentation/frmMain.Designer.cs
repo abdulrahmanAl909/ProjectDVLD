@@ -312,35 +312,35 @@
             // currentUserToolStripMenuItem
             // 
             this.currentUserToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.currentUserToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.International_Driving_License_55x551;
+            this.currentUserToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Current_User_55x55_NoLine;
             this.currentUserToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.currentUserToolStripMenuItem.Name = "currentUserToolStripMenuItem";
-            this.currentUserToolStripMenuItem.Size = new System.Drawing.Size(384, 74);
+            this.currentUserToolStripMenuItem.Size = new System.Drawing.Size(375, 66);
             this.currentUserToolStripMenuItem.Text = "Current User";
             this.currentUserToolStripMenuItem.Click += new System.EventHandler(this.currentUserToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.changePasswordToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Change_Password_64x64;
+            this.changePasswordToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Change_Password_55x55_NoLine;
             this.changePasswordToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(384, 74);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(375, 66);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(381, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(372, 6);
             // 
             // singOutToolStripMenuItem
             // 
             this.singOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.singOutToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Sign_Out_64x64;
+            this.singOutToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Sign_Out_55x55;
             this.singOutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.singOutToolStripMenuItem.Name = "singOutToolStripMenuItem";
-            this.singOutToolStripMenuItem.Size = new System.Drawing.Size(384, 74);
+            this.singOutToolStripMenuItem.Size = new System.Drawing.Size(375, 66);
             this.singOutToolStripMenuItem.Text = "Sing Out";
             this.singOutToolStripMenuItem.Click += new System.EventHandler(this.singOutToolStripMenuItem_Click);
             // 
