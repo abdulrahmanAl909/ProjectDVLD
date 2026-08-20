@@ -1,18 +1,17 @@
 ﻿using DVLD_DataAccess;
+using DVLD_DataAccess.Application;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DVLD_Business
+namespace DVLD_Business.Application
 {
-    public class clsLoaclApplication
+    public class clsApplication
     {
-
-        enum enMode { Add , Update}
+        enum enMode { Add, Update }
         enMode Mode = enMode.Add;
 
         public clsPerson PersonInfo;
@@ -33,7 +32,7 @@ namespace DVLD_Business
 
         public int CreatedByUserID { set; get; }
 
-        public clsLoaclApplication()
+        public clsApplication()
         {
             this.ApplicationID = -1;
             this.ApplicationPersonID = -1;
@@ -49,11 +48,11 @@ namespace DVLD_Business
             Mode = enMode.Add;
         }
 
-        private clsLoaclApplication(int ApplicationID,int PersonID , DateTime AppDate , int AppType , enApplicationStatus AppStatus ,
-            DateTime LastStatusDate , decimal PaidFees , int CreatedByUserID)
+        private clsApplication(int ApplicationID, int PersonID, DateTime AppDate, int AppType, enApplicationStatus AppStatus,
+            DateTime LastStatusDate, decimal PaidFees, int CreatedByUserID)
         {
             this.ApplicationID = ApplicationID;
-            this.ApplicationPersonID = PersonID; 
+            this.ApplicationPersonID = PersonID;
             this.ApplicationDate = AppDate;
             this.ApplicationType = AppType;
             this.ApplicationStatus = AppStatus;
@@ -67,38 +66,38 @@ namespace DVLD_Business
             Mode = enMode.Update;
         }
 
-        private bool _AddNewLocalApplication()
+        private bool _AddNewApplication()
         {
             this.ApplicationID = clsLocalApplicationData.AddNewLocalApplication(this.ApplicationPersonID,
-                this.ApplicationDate, this.ApplicationType,(byte) this.ApplicationStatus, this.LastStatusDate,
+                this.ApplicationDate, this.ApplicationType, (byte)this.ApplicationStatus, this.LastStatusDate,
                 this.PaidFees, this.CreatedByUserID);
 
-            return (this.ApplicationID !=-1);
+            return (this.ApplicationID != -1);
         }
 
-        private bool _UpdateLocalApplication()
+        private bool _UpdateApplication()
         {
             return clsLocalApplicationData.UpdateLocalApplication(this.ApplicationID, this.ApplicationPersonID,
-                this.ApplicationDate, this.ApplicationType,(byte)this.ApplicationStatus, this.LastStatusDate,
+                this.ApplicationDate, this.ApplicationType, (byte)this.ApplicationStatus, this.LastStatusDate,
                 this.PaidFees, this.CreatedByUserID);
         }
 
-        public static DataTable GetAllLocalApplication()
+        public static DataTable GetAllApplication()
         {
-            return clsLocalApplicationData.GetAllLocalApplication();
+            return clsApplicationData.GetAllApplication();
         }
 
-        public static clsLoaclApplication GetApplicationByID(int AppID)
+        public static clsApplication GetApplicationByID(int AppID)
         {
             int PersonID = -1, AppType = -1, CreatedByUserID = -1;
-            decimal PaidFees=-1;
-            DateTime AppDate=DateTime.Now , LastStatusDate = DateTime.Now;
+            decimal PaidFees = -1;
+            DateTime AppDate = DateTime.Now, LastStatusDate = DateTime.Now;
             byte AppStatus = 0;
 
-            if (clsLocalApplicationData.GetApplicationInfoByID(AppID,ref PersonID,ref AppDate,
-                ref AppType,ref AppStatus,ref LastStatusDate,ref PaidFees,ref CreatedByUserID))
+            if (clsApplicationData.GetApplicationInfoByID(AppID, ref PersonID, ref AppDate,
+                ref AppType, ref AppStatus, ref LastStatusDate, ref PaidFees, ref CreatedByUserID))
             {
-                return new clsLoaclApplication(AppID, PersonID, AppDate, AppType,(enApplicationStatus)AppStatus, LastStatusDate, PaidFees, CreatedByUserID);
+                return new clsApplication(AppID, PersonID, AppDate, AppType, (enApplicationStatus)AppStatus, LastStatusDate, PaidFees, CreatedByUserID);
             }
             else
             {
@@ -106,27 +105,12 @@ namespace DVLD_Business
             }
         }
 
-        public static DataTable GetAllApplicationByFilter(string ColumnName, int FilterBy)
-        {
-            return clsLocalApplicationData.GetAllApplicationByFilter(ColumnName, FilterBy);
-        }
-
-        public static DataTable GetAllApplicationByFilter(string ColumnName, string FilterBy)
-        {
-            return clsLocalApplicationData.GetAllApplicationByFilter(ColumnName, FilterBy);
-        }
-
-        public static DataTable GetAllApplicationByFilter(string ColumnName, byte FilterBy)
-        {
-            return clsLocalApplicationData.GetAllApplicationByFilter(ColumnName, FilterBy);
-        }
-
         public bool Save()
         {
             switch (Mode)
             {
                 case enMode.Add:
-                    if(_AddNewLocalApplication())
+                    if (_AddNewApplication())
                     {
                         Mode = enMode.Update;
                         return true;
@@ -136,12 +120,11 @@ namespace DVLD_Business
                         return false;
                     }
                 case enMode.Update:
-                    return _UpdateLocalApplication();
-            
+                    return _UpdateApplication();
+
             }
             return false;
         }
-
 
     }
 }

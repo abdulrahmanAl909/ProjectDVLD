@@ -88,7 +88,7 @@ namespace DVLD_Presentation
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            _UserInfo.PersonInfo = ctrlFilterPerson1._PersonInfo;
+            _UserInfo.PersonInfo = ctrlFilterPerson1.PersonInfo;
 
             if (_UserInfo.PersonInfo != null && !clsUser.IsPersonExist(_UserInfo.PersonInfo.PersonID))
             {
@@ -131,7 +131,7 @@ namespace DVLD_Presentation
             }
             else
             {
-                if (MessageBox.Show("Error: Data Is NOT Saved Successfully", "Error!", MessageBoxButtons.OK) == DialogResult.OK)
+                if (MessageBox.Show("Error: Data Is NOT Saved Successfully", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
                 {
                     this.Close();
                 }
@@ -170,5 +170,6 @@ namespace DVLD_Presentation
                 e.Cancel = true;
             }
         }
+
     }
 }

@@ -15,7 +15,7 @@ namespace DVLD_Presentation
     public partial class ctrlFilterPerson : UserControl
     {
 
-        public clsPerson _PersonInfo { set;  get; }
+        public clsPerson PersonInfo { set;  get; }
 
         public ctrlFilterPerson()
         {
@@ -24,7 +24,7 @@ namespace DVLD_Presentation
 
         private void _GetInfoByDelegate(int PersonID)
         {
-            if (_PersonInfo != null)
+            if (PersonInfo != null)
             {
                 ctrlShowPersonDetails1.LoadDataByPersonID(PersonID);
                 txtFilterBy.Text = PersonID.ToString();
@@ -37,8 +37,8 @@ namespace DVLD_Presentation
 
         private void _GetInfoByFilter(int PersonID)
         {
-            _PersonInfo = clsPerson.GetPersonInfoByID(PersonID);
-            if(_PersonInfo!=null)
+            PersonInfo = clsPerson.GetPersonInfoByID(PersonID);
+            if(PersonInfo!=null)
             {
                 ctrlShowPersonDetails1.LoadDataByPersonID(PersonID);
             }
@@ -50,9 +50,9 @@ namespace DVLD_Presentation
 
         private void _GetInfoByFilter(string NationalNo)
         {
-            _PersonInfo = clsPerson.GetPersonInfoByNationalNo(NationalNo);
+            PersonInfo = clsPerson.GetPersonInfoByNationalNo(NationalNo);
 
-            if (_PersonInfo != null)
+            if (PersonInfo != null)
             {
                 ctrlShowPersonDetails1.LoadDataByNationalNo(NationalNo);
             }

@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Deployment.Internal;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DVLD_DataAccess
+namespace DVLD_DataAccess.Application
 {
-    public class clsLocalApplicationData
+    public class clsApplicationData
     {
-
-        public static DataTable GetAllLocalApplication()
+        public static DataTable GetAllApplication()
         {
             DataTable dataTable = new DataTable();
 
@@ -37,52 +35,10 @@ namespace DVLD_DataAccess
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                if(reader.HasRows)
-                {
-                    dataTable.Load(reader);
-                }
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine("Error " + e.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return dataTable;
-        }
-
-        public static DataTable GetAllApplicationByFilter(string ColumnName, int FilterBy)
-        {
-            DataTable dataTable = new DataTable();
-
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-            string quary = $@"select * From
-                           (SELECT LDLAppID= LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID, DrivingClass= LicenseClasses.ClassName, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Applications.ApplicationDate,PassedTest=0 ,Status= Applications.ApplicationStatus
-                           FROM LocalDrivingLicenseApplications INNER JOIN
-                           Applications ON LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID INNER JOIN
-                           People ON Applications.ApplicantPersonID = People.PersonID INNER JOIN
-                           LicenseClasses ON LocalDrivingLicenseApplications.LicenseClassID = LicenseClasses.LicenseClassID) A1
-                           Where {ColumnName} =@FilterBy";
-
-            SqlCommand command = new SqlCommand(quary, connection);
-
-            command.Parameters.AddWithValue("@FilterBy", FilterBy);
-
-            try
-            {
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
                 if (reader.HasRows)
                 {
                     dataTable.Load(reader);
                 }
-                reader.Close();
             }
             catch (Exception e)
             {
@@ -92,93 +48,12 @@ namespace DVLD_DataAccess
             {
                 connection.Close();
             }
+
             return dataTable;
         }
 
-        public static DataTable GetAllApplicationByFilter(string ColumnName, string FilterBy)
-        {
-            DataTable dataTable = new DataTable();
-
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-            string quary = $@"select * From
-                           (SELECT LDLAppID= LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID, DrivingClass= LicenseClasses.ClassName, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Applications.ApplicationDate,PassedTest=0 ,Status= Applications.ApplicationStatus
-                           FROM LocalDrivingLicenseApplications INNER JOIN
-                           Applications ON LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID INNER JOIN
-                           People ON Applications.ApplicantPersonID = People.PersonID INNER JOIN
-                           LicenseClasses ON LocalDrivingLicenseApplications.LicenseClassID = LicenseClasses.LicenseClassID) A1
-                           Where {ColumnName} LIKE '' +  @FilterBy + '%'";
-
-            SqlCommand command = new SqlCommand(quary, connection);
-
-            command.Parameters.AddWithValue("@FilterBy", FilterBy);
-
-            try
-            {
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    dataTable.Load(reader);
-                }
-                reader.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error " + e.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return dataTable;
-        }
-
-        public static DataTable GetAllApplicationByFilter(string ColumnName, byte FilterBy)
-        {
-            DataTable dataTable = new DataTable();
-
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-            string quary = $@"select * From
-                           (SELECT LDLAppID= LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID, DrivingClass= LicenseClasses.ClassName, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Applications.ApplicationDate,PassedTest=0 ,Status= Applications.ApplicationStatus
-                           FROM LocalDrivingLicenseApplications INNER JOIN
-                           Applications ON LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID INNER JOIN
-                           People ON Applications.ApplicantPersonID = People.PersonID INNER JOIN
-                           LicenseClasses ON LocalDrivingLicenseApplications.LicenseClassID = LicenseClasses.LicenseClassID) A1
-                           Where {ColumnName} =@FilterBy";
-
-            SqlCommand command = new SqlCommand(quary, connection);
-
-            command.Parameters.AddWithValue("@FilterBy", FilterBy);
-
-            try
-            {
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    dataTable.Load(reader);
-                }
-                reader.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error " + e.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return dataTable;
-        }
-
-        public static bool GetApplicationInfoByID(int AppID,ref int AppPersonID,ref DateTime AppDate,ref int AppType,ref byte AppStatus,
-            ref DateTime LastStatusDate,ref decimal PaidFees,ref int CreatedByUserID)
+        public static bool GetApplicationInfoByID(int AppID, ref int AppPersonID, ref DateTime AppDate, ref int AppType, ref byte AppStatus,
+    ref DateTime LastStatusDate, ref decimal PaidFees, ref int CreatedByUserID)
         {
             bool IsFount = false;
 
@@ -201,7 +76,7 @@ namespace DVLD_DataAccess
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                if(reader.Read())
+                if (reader.Read())
                 {
                     IsFount = true;
 
@@ -219,7 +94,7 @@ namespace DVLD_DataAccess
                 }
                 reader.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Error " + e.Message);
             }
@@ -230,8 +105,8 @@ namespace DVLD_DataAccess
             return IsFount;
         }
 
-        public static int AddNewLocalApplication(int AppPersonID , DateTime AppDate , int AppType , byte AppStatus,
-            DateTime LastStatusDate , decimal PaidFees , int CreatedByUserID)
+        public static int AddNewApplication(int AppPersonID, DateTime AppDate, int AppType, byte AppStatus,
+            DateTime LastStatusDate, decimal PaidFees, int CreatedByUserID)
         {
             int ApplicatonID = -1;
 
@@ -264,7 +139,7 @@ namespace DVLD_DataAccess
                     ApplicatonID = insertID;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Error " + e.Message);
             }
@@ -276,7 +151,7 @@ namespace DVLD_DataAccess
             return ApplicatonID;
         }
 
-        public static bool UpdateLocalApplication(int AppID,int AppPersonID, DateTime AppDate, int AppType, byte AppStatus,
+        public static bool UpdateApplication(int AppID, int AppPersonID, DateTime AppDate, int AppType, byte AppStatus,
             DateTime LastStatusDate, decimal PaidFees, int CreatedByUserID)
         {
             int RowAffectid = 0;
@@ -318,10 +193,8 @@ namespace DVLD_DataAccess
             {
                 connection.Close();
             }
-            return (RowAffectid>0);
+            return (RowAffectid > 0);
         }
-
-
 
 
     }

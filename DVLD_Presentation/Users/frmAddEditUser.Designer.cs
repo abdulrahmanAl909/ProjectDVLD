@@ -311,7 +311,7 @@
             // 
             // ctrlFilterPerson1
             // 
-            this.ctrlFilterPerson1._PersonInfo = null;
+            this.ctrlFilterPerson1.PersonInfo = null;
             this.ctrlFilterPerson1.BackColor = System.Drawing.Color.SteelBlue;
             this.ctrlFilterPerson1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ctrlFilterPerson1.Location = new System.Drawing.Point(3, 3);

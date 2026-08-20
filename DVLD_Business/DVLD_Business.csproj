@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="License Class\clsLicenseClass.cs" />
     <Compile Include="Enums\ApplicationStatus.cs" />
     <Compile Include="ApplicationType\clsApplicationType.cs" />
     <Compile Include="Local Application\clsLoaclApplication.cs" />

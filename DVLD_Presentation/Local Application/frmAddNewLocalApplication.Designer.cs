@@ -74,6 +74,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(817, 613);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // tpPersonalInfo
             // 
@@ -103,13 +104,13 @@
             // 
             // ctrlFilterPerson1
             // 
-            this.ctrlFilterPerson1._PersonInfo = null;
             this.ctrlFilterPerson1.BackColor = System.Drawing.Color.SteelBlue;
             this.ctrlFilterPerson1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlFilterPerson1.Font = new System.Drawing.Font("Tahoma", 7F);
             this.ctrlFilterPerson1.Location = new System.Drawing.Point(3, 3);
             this.ctrlFilterPerson1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ctrlFilterPerson1.Name = "ctrlFilterPerson1";
+            this.ctrlFilterPerson1.PersonInfo = null;
             this.ctrlFilterPerson1.Size = new System.Drawing.Size(803, 575);
             this.ctrlFilterPerson1.TabIndex = 0;
             // 
@@ -153,15 +154,6 @@
             this.cbLicenseClass.Font = new System.Drawing.Font("Tahoma", 8F);
             this.cbLicenseClass.ForeColor = System.Drawing.Color.White;
             this.cbLicenseClass.FormattingEnabled = true;
-            this.cbLicenseClass.Items.AddRange(new object[] {
-            "",
-            "Class 1 - Small Motorcycle",
-            "Class 2 - Heavy Motorcycle License",
-            "Class 3 - Ordinaly living license",
-            "Class 4 - Commercial",
-            "Class 5 - Agricultural",
-            "Class 6 - Small and medium bus",
-            "Class 7 - Truck and heavy vehicle"});
             this.cbLicenseClass.Location = new System.Drawing.Point(213, 314);
             this.cbLicenseClass.Name = "cbLicenseClass";
             this.cbLicenseClass.Size = new System.Drawing.Size(297, 27);
@@ -293,6 +285,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmAddNewLocalApplication
             // 
