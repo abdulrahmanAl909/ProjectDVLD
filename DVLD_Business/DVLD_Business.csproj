@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\clsApplication.cs" />
     <Compile Include="License Class\clsLicenseClass.cs" />
     <Compile Include="Enums\ApplicationStatus.cs" />
     <Compile Include="ApplicationType\clsApplicationType.cs" />
@@ -58,5 +59,6 @@
       <Name>DVLD_DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
