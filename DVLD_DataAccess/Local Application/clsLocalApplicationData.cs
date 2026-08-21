@@ -177,23 +177,18 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
-        public static bool GetApplicationInfoByID(int AppID,ref int AppPersonID,ref DateTime AppDate,ref int AppType,ref byte AppStatus,
-            ref DateTime LastStatusDate,ref decimal PaidFees,ref int CreatedByUserID)
+        public static bool GetLocalApplicationByID(int LocalApplicationID,ref int ApplicationID,ref int LicenseClassID)
         {
             bool IsFount = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = @"SELECT LDLAppID= LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID, DrivingClass= LicenseClasses.ClassName, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Applications.ApplicationDate,PassedTest=0 ,Status= Applications.ApplicationStatus
-                           FROM LocalDrivingLicenseApplications INNER JOIN
-                           Applications ON LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID INNER JOIN
-                           People ON Applications.ApplicantPersonID = People.PersonID INNER JOIN
-                           LicenseClasses ON LocalDrivingLicenseApplications.LicenseClassID = LicenseClasses.LicenseClassID
-                           Where LocalDrivingLicenseApplicationID = @AppID";
+            string quary = @"Select * From LocalDrivingLicenseApplications
+                             Where LocalDrivingLicenseApplicationID=@LocalApplicationID";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
-            command.Parameters.AddWithValue("@AppID", AppID);
+            command.Parameters.AddWithValue("@LocalApplicationID", LocalApplicationID);
 
             try
             {
@@ -205,13 +200,8 @@ namespace DVLD_DataAccess
                 {
                     IsFount = true;
 
-                    AppPersonID = (int)reader["ApplicantPersonID"];
-                    AppDate = (DateTime)reader["ApplicationDate"];
-                    AppType = (int)reader["ApplicationTypeID"];
-                    AppStatus = (byte)reader["ApplicationStatus"];
-                    LastStatusDate = (DateTime)reader["LastStatusDate"];
-                    PaidFees = (decimal)reader["PaidFees"];
-                    CreatedByUserID = (int)reader["CreatedByUserID"];
+                    ApplicationID = (int)reader["ApplicationID"];
+                    LicenseClassID = (int)reader["LicenseClassID"];
                 }
                 else
                 {
@@ -227,31 +217,25 @@ namespace DVLD_DataAccess
             {
                 connection.Close();
             }
+
             return IsFount;
         }
 
-        public static int AddNewLocalApplication(int AppPersonID , DateTime AppDate , int AppType , byte AppStatus,
-            DateTime LastStatusDate , decimal PaidFees , int CreatedByUserID)
+        public static int AddNewLocalApplication(int ApplicationID , int LicenseClassID)
         {
-            int ApplicatonID = -1;
+            int AddNewLocalApplication = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = @"
-            INSERT INTO [dbo].[Applications]
-           ([ApplicantPersonID],[ApplicationDate],[ApplicationTypeID],[ApplicationStatus],[LastStatusDate],[PaidFees],[CreatedByUserID])
-            VALUES (@AppPersonID,@AppDate,@AppType,@AppStatus,@LastStatusDate,@PaidFees,@CreatedByUserID);
-            Select SCOPE_IDENTITY()";
+            string quary = @"INSERT INTO [dbo].[LocalDrivingLicenseApplications]
+                            ([ApplicationID],[LicenseClassID])
+                             VALUES(@ApplicationID,@LicenseClassID);
+                             Select SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
-            command.Parameters.AddWithValue("@AppPersonID", AppPersonID);
-            command.Parameters.AddWithValue("@AppDate", AppDate);
-            command.Parameters.AddWithValue("@AppType", AppType);
-            command.Parameters.AddWithValue("@AppStatus", AppStatus);
-            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
-            command.Parameters.AddWithValue("@PaidFees", PaidFees);
-            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
             try
             {
@@ -259,9 +243,9 @@ namespace DVLD_DataAccess
 
                 object result = command.ExecuteScalar();
 
-                if (result != null && int.TryParse(result.ToString(), out int insertID))
+                if (result != null && int.TryParse(result.ToString(), out int insertvalue))
                 {
-                    ApplicatonID = insertID;
+                    AddNewLocalApplication = insertvalue;
                 }
             }
             catch(Exception e)
@@ -272,37 +256,23 @@ namespace DVLD_DataAccess
             {
                 connection.Close();
             }
-
-            return ApplicatonID;
+            return AddNewLocalApplication;
         }
 
-        public static bool UpdateLocalApplication(int AppID,int AppPersonID, DateTime AppDate, int AppType, byte AppStatus,
-            DateTime LastStatusDate, decimal PaidFees, int CreatedByUserID)
+        public static bool UpdateLocalApplication(int LocalApplicationID, int LicenseClassID)
         {
-            int RowAffectid = 0;
+            int RowAffectid = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = @"UPDATE [dbo].[Applications]
-                           SET [ApplicantPersonID] =@AppPersonID
-                           ,[ApplicationDate] =@AppDate
-                           ,[ApplicationTypeID] =@AppType
-                           ,[ApplicationStatus] = @AppStatus
-                           ,[LastStatusDate] =@LastStatusDate
-                           ,[PaidFees] =@PaidFees
-                           ,[CreatedByUserID] = @CreatedByUserID
-                           WHERE ApplicationID = @AppID";
+            string quary = @"UPDATE [dbo].[LocalDrivingLicenseApplications]
+                            SET [LicenseClassID] =@LicenseClassID
+                            WHERE LocalDrivingLicenseApplicationID=@LocalApplicationID";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
-            command.Parameters.AddWithValue("@AppID", AppID);
-            command.Parameters.AddWithValue("@AppPersonID", AppPersonID);
-            command.Parameters.AddWithValue("@AppDate", AppDate);
-            command.Parameters.AddWithValue("@AppType", AppType);
-            command.Parameters.AddWithValue("@AppStatus", AppStatus);
-            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
-            command.Parameters.AddWithValue("@PaidFees", PaidFees);
-            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+            command.Parameters.AddWithValue("@LocalApplicationID", LocalApplicationID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
             try
             {
@@ -310,7 +280,7 @@ namespace DVLD_DataAccess
 
                 RowAffectid = command.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Console.WriteLine("Error " + e.Message);
             }
@@ -318,10 +288,8 @@ namespace DVLD_DataAccess
             {
                 connection.Close();
             }
-            return (RowAffectid>0);
+            return (RowAffectid > 0);
         }
-
-
 
     }
 }

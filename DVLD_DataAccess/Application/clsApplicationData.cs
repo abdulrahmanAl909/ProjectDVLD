@@ -59,12 +59,8 @@ namespace DVLD_DataAccess.Application
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = @"SELECT LDLAppID= LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID, DrivingClass= LicenseClasses.ClassName, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Applications.ApplicationDate,PassedTest=0 ,Status= Applications.ApplicationStatus
-                           FROM LocalDrivingLicenseApplications INNER JOIN
-                           Applications ON LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID INNER JOIN
-                           People ON Applications.ApplicantPersonID = People.PersonID INNER JOIN
-                           LicenseClasses ON LocalDrivingLicenseApplications.LicenseClassID = LicenseClasses.LicenseClassID
-                           Where LocalDrivingLicenseApplicationID = @AppID";
+            string quary = @"SELECT * From Applications
+                            Where ApplicationID = @AppID";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
@@ -151,33 +147,29 @@ namespace DVLD_DataAccess.Application
             return ApplicatonID;
         }
 
-        public static bool UpdateApplication(int AppID, int AppPersonID, DateTime AppDate, int AppType, byte AppStatus,
-            DateTime LastStatusDate, decimal PaidFees, int CreatedByUserID)
+        public static bool UpdateApplication(int AppID, DateTime AppDate, int AppType, byte AppStatus,
+            DateTime LastStatusDate, decimal PaidFees)
         {
             int RowAffectid = 0;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string quary = @"UPDATE [dbo].[Applications]
-                           SET [ApplicantPersonID] =@AppPersonID
-                           ,[ApplicationDate] =@AppDate
+                           SET [ApplicationDate] =@AppDate
                            ,[ApplicationTypeID] =@AppType
                            ,[ApplicationStatus] = @AppStatus
                            ,[LastStatusDate] =@LastStatusDate
                            ,[PaidFees] =@PaidFees
-                           ,[CreatedByUserID] = @CreatedByUserID
                            WHERE ApplicationID = @AppID";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
             command.Parameters.AddWithValue("@AppID", AppID);
-            command.Parameters.AddWithValue("@AppPersonID", AppPersonID);
             command.Parameters.AddWithValue("@AppDate", AppDate);
             command.Parameters.AddWithValue("@AppType", AppType);
             command.Parameters.AddWithValue("@AppStatus", AppStatus);
             command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
-            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
             try
             {

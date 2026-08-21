@@ -17,7 +17,7 @@ namespace DVLD_Presentation
         enum enMode { AddNew, Update }
         enMode Mode = enMode.AddNew;
 
-        int _AppID;
+        int _LocalAppID;
         clsLoaclApplication _LoacApplInfo;
         DateTime dateTime = new DateTime();
 
@@ -30,11 +30,11 @@ namespace DVLD_Presentation
             Mode = enMode.AddNew;
         }
 
-        public frmAddNewLocalApplication(int AppID)
+        public frmAddNewLocalApplication(int LocalAppID)
         {
             InitializeComponent();
 
-            _AppID = AppID;
+            _LocalAppID = LocalAppID;
             Mode = enMode.Update;
         }
 
@@ -46,7 +46,7 @@ namespace DVLD_Presentation
             {
                 cbLicenseClass.Items.Add(row["ClassName"]);
             }
-            cbLicenseClass.SelectedIndex = 2;
+            cbLicenseClass.SelectedIndex = 0;
         }
 
         private void LoadData()
@@ -63,28 +63,30 @@ namespace DVLD_Presentation
                 return;
             }
 
-            _LoacApplInfo.ApplicationInfo = clsApplication.GetApplicationByID(_AppID);
+            _LoacApplInfo = clsLoaclApplication.GetLocalApplicationByID(_LocalAppID);
 
             lblHeader.Text = "Update Local Driving Licesne Application";
             btnSave.Enabled = true;
             allowLoginTab = true;
 
-            lblApplicationID.Text = _LoacApplInfo.ApplicationInfo.ApplicationID.ToString();
+            lblApplicationID.Text = _LoacApplInfo.LocalApplicationID.ToString();
             lblApplicationDate.Text = _LoacApplInfo.ApplicationInfo.ApplicationDate.ToShortDateString();
             lblApplicationFees.Text = _LoacApplInfo.ApplicationInfo.PaidFees.ToString();
             lblCteatedByUser.Text = clsGlobalSettings.CurrentUser.UserName;
 
-            cbLicenseClass.SelectedIndex = _LoacApplInfo.ApplicationInfo.ApplicationType;
+            cbLicenseClass.SelectedIndex = _LoacApplInfo.LicenseClassInfo.LicenseClassID;
+
+            ctrlFilterPerson1.StatusOfUpdate(_LoacApplInfo.ApplicationInfo.ApplicationPersonID);
         }
 
-        private void _LoadInfoForApplication()
-        {
-            LoadData();
-        }
+        //private void _LoadInfoForApplication()
+        //{
+        //    LoadData();
+        //}
 
         private void frmAddNewLocalApplication_Load(object sender, EventArgs e)
         {
-            _LoadInfoForApplication();
+            LoadData();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -111,15 +113,26 @@ namespace DVLD_Presentation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(cbLicenseClass.SelectedIndex==0)
+            {
+                MessageBox.Show("Are Stupit Why Did You Put None????", "Stupit", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Fill Info For Application
             _LoacApplInfo.ApplicationInfo.ApplicationDate = dateTime;
-            _LoacApplInfo.ApplicationInfo.ApplicationType = cbLicenseClass.SelectedIndex+1;
+            _LoacApplInfo.ApplicationInfo.ApplicationType = cbLicenseClass.SelectedIndex;
             _LoacApplInfo.ApplicationInfo.ApplicationStatus = (enApplicationStatus)enApplicationStatus.AddNewApp;
             _LoacApplInfo.ApplicationInfo.LastStatusDate = dateTime;
             _LoacApplInfo.ApplicationInfo.PaidFees = 15;
             _LoacApplInfo.ApplicationInfo.ApplicationPersonID = _LoacApplInfo.ApplicationInfo.PersonInfo.PersonID;
             _LoacApplInfo.ApplicationInfo.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
 
-            if(_LoacApplInfo.ApplicationInfo.Save())
+            //Fill Info For Local Application
+
+            _LoacApplInfo.LicenseClassID = cbLicenseClass.SelectedIndex;
+
+            if(_LoacApplInfo.Save())
             {
                 MessageBox.Show("Data Saved Successfully." , "Saved" , MessageBoxButtons.OK , MessageBoxIcon.Information);
             }
@@ -132,10 +145,10 @@ namespace DVLD_Presentation
             }
 
             lblHeader.Text = "Update Local Driving Licesne Application";
-            lblApplicationID.Text = _LoacApplInfo.ApplicationInfo.ApplicationID.ToString();
+            lblApplicationID.Text = _LoacApplInfo.LocalApplicationID.ToString();
             Mode = enMode.Update;
+            ctrlFilterPerson1.StatusOfUpdate(_LoacApplInfo.ApplicationInfo.ApplicationPersonID);
             allowLoginTab = true;
-
         }
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)

@@ -44,7 +44,6 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
-
         public static DataTable GetClassName()
         {
             DataTable dataTable = new DataTable();
@@ -77,6 +76,55 @@ namespace DVLD_DataAccess
             }
 
             return dataTable;
+        }
+
+        public static bool GetLicenseClassByID(int LicenseClassID,ref string ClassName,ref string ClassDescriptionm,
+          ref byte MinimumAllowedAge,ref byte DefaultValidityLength,ref decimal ClassFees)
+        {
+            bool IsFount = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select * From LicenseClasses
+                             where LicenseClassID=@LicenseClassID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if(reader.Read())
+                {
+                    IsFount = true;
+
+                    ClassName = (string)reader["ClassName"];
+                    ClassDescriptionm = (string)reader["ClassDescriptionm"];
+                    MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
+                    DefaultValidityLength = (byte)reader["DefaultValidityLength"];
+                    ClassFees = (decimal)reader["ClassFees"];
+
+                }
+                else
+                {
+                    IsFount = false;
+                }
+                    reader.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error ", e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsFount;
         }
 
     }

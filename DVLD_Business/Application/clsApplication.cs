@@ -68,7 +68,7 @@ namespace DVLD_Business.Application
 
         private bool _AddNewApplication()
         {
-            this.ApplicationID = clsLocalApplicationData.AddNewLocalApplication(this.ApplicationPersonID,
+            this.ApplicationID = clsApplicationData.AddNewApplication(this.ApplicationPersonID,
                 this.ApplicationDate, this.ApplicationType, (byte)this.ApplicationStatus, this.LastStatusDate,
                 this.PaidFees, this.CreatedByUserID);
 
@@ -77,9 +77,10 @@ namespace DVLD_Business.Application
 
         private bool _UpdateApplication()
         {
-            return clsLocalApplicationData.UpdateLocalApplication(this.ApplicationID, this.ApplicationPersonID,
-                this.ApplicationDate, this.ApplicationType, (byte)this.ApplicationStatus, this.LastStatusDate,
-                this.PaidFees, this.CreatedByUserID);
+            return clsApplicationData.UpdateApplication(this.ApplicationID,this.ApplicationDate
+                , this.ApplicationType, (byte)this.ApplicationStatus, this.LastStatusDate,
+                this.PaidFees);
+
         }
 
         public static DataTable GetAllApplication()

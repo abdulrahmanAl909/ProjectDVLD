@@ -154,6 +154,8 @@
             this.cbLicenseClass.Font = new System.Drawing.Font("Tahoma", 8F);
             this.cbLicenseClass.ForeColor = System.Drawing.Color.White;
             this.cbLicenseClass.FormattingEnabled = true;
+            this.cbLicenseClass.Items.AddRange(new object[] {
+            "None"});
             this.cbLicenseClass.Location = new System.Drawing.Point(213, 314);
             this.cbLicenseClass.Name = "cbLicenseClass";
             this.cbLicenseClass.Size = new System.Drawing.Size(297, 27);

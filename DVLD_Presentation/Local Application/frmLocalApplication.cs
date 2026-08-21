@@ -106,6 +106,20 @@ namespace DVLD_Presentation
             }
         }
 
+        private void btnAddApplication_Click(object sender, EventArgs e)
+        {
+            frmAddNewLocalApplication frm = new frmAddNewLocalApplication();
 
+            frm.ShowDialog();
+            _RefrishLocalApplication();
+        }
+
+        private void editApplicationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAddNewLocalApplication frm = new frmAddNewLocalApplication((int)dgvLocalApplication.CurrentRow.Cells[0].Value);
+
+            frm.ShowDialog();
+            _RefrishLocalApplication();
+        }
     }
 }

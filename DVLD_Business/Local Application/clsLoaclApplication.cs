@@ -18,28 +18,46 @@ namespace DVLD_Business
 
         public clsApplication ApplicationInfo;
 
-        public clsLicenseClass licenseClassInfo;
+        public clsLicenseClass LicenseClassInfo;
 
-        private int _LocalApplicationID = 0;
-        private int _ApplicationID = 0;
-        private int _LicenseClassID = 0;
+        public int LocalApplicationID { set; get; }
+        public int ApplicationID  { set; get; } 
+        public int LicenseClassID { set; get; }
 
         public clsLoaclApplication()
         {
-            this._LocalApplicationID = 0;
-            this._ApplicationID = 0;
-            this._LicenseClassID = 0;
+            this.LocalApplicationID = 0;
+            this.ApplicationID = 0;
+            this.LicenseClassID = 0;
+
+            Mode = enMode.Add;
+
 
             ApplicationInfo = new clsApplication();
         }
 
         private clsLoaclApplication(int LocalApplicationID, int ApplicationID ,int LicenseClassID)
         {
-            this._LocalApplicationID = LocalApplicationID;
-            this._ApplicationID = ApplicationID;
-            this._LicenseClassID = LicenseClassID;
+            this.LocalApplicationID = LocalApplicationID;
+            this.ApplicationID = ApplicationID;
+            this.LicenseClassID = LicenseClassID;
+
+            Mode = enMode.Update;
 
             ApplicationInfo = clsApplication.GetApplicationByID(ApplicationID);
+            LicenseClassInfo = clsLicenseClass.GetLicenseClassByID(LicenseClassID);
+        }
+
+        private bool _AddNewLocalApplication()
+        {
+            this.LocalApplicationID = clsLocalApplicationData.AddNewLocalApplication(ApplicationID, LicenseClassID);
+
+            return (this.LocalApplicationID != -1);
+        }
+
+        private bool _UpdateLocalApplication()
+        {
+            return clsLocalApplicationData.UpdateLocalApplication(this.LocalApplicationID, this.LicenseClassID);
         }
 
         public static DataTable GetAllLocalApplication()
@@ -62,6 +80,49 @@ namespace DVLD_Business
             return clsLocalApplicationData.GetAllApplicationByFilter(ColumnName, FilterBy);
         }
 
+        public static clsLoaclApplication GetLocalApplicationByID(int LocalApplication)
+        {
+            int ApplicationID = 0, LicenseClassID = 0;
+
+            if(clsLocalApplicationData.GetLocalApplicationByID(LocalApplication,ref ApplicationID, ref LicenseClassID))
+            {
+                return new clsLoaclApplication(LocalApplication, ApplicationID, LicenseClassID);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public bool Save()
+        {
+            if (ApplicationInfo.Save())
+            {
+                ApplicationID = ApplicationInfo.ApplicationID;
+                switch (Mode)
+                {
+                    case enMode.Add:
+                        if (_AddNewLocalApplication())
+                        {
+                            Mode = enMode.Update;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
+
+                    case enMode.Update:
+                        return _UpdateLocalApplication();
+                }
+            }
+            else
+            {
+                return false;
+            }
+                return false;
+        }
 
     }
 }

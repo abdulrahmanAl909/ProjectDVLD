@@ -111,7 +111,7 @@
             this.toolStripMenuItem6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(363, 472);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(363, 505);
             // 
             // showToolStripMenuItem
             // 
@@ -134,6 +134,7 @@
             this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
             this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(362, 48);
             this.editApplicationToolStripMenuItem.Text = "Add New Application";
+            this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.btnAddApplication_Click);
             // 
             // editApplicationToolStripMenuItem1
             // 
@@ -142,6 +143,7 @@
             this.editApplicationToolStripMenuItem1.Name = "editApplicationToolStripMenuItem1";
             this.editApplicationToolStripMenuItem1.Size = new System.Drawing.Size(362, 48);
             this.editApplicationToolStripMenuItem1.Text = "Edit Application";
+            this.editApplicationToolStripMenuItem1.Click += new System.EventHandler(this.editApplicationToolStripMenuItem1_Click);
             // 
             // deleteApplicationToolStripMenuItem
             // 
@@ -301,6 +303,7 @@
             this.btnAddApplication.Size = new System.Drawing.Size(148, 66);
             this.btnAddApplication.TabIndex = 8;
             this.btnAddApplication.UseVisualStyleBackColor = false;
+            this.btnAddApplication.Click += new System.EventHandler(this.btnAddApplication_Click);
             // 
             // pictureBox1
             // 
