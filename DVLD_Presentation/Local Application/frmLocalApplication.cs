@@ -121,5 +121,28 @@ namespace DVLD_Presentation
             frm.ShowDialog();
             _RefrishLocalApplication();
         }
+
+        private void cancelApplicatinnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvLocalApplication.CurrentRow.Cells[6].Value.ToString() == "New")
+            {
+                if (MessageBox.Show("Are you sure do want to cancel this application", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    if (clsLoaclApplication.CancelApplication((int)dgvLocalApplication.CurrentRow.Cells[0].Value))
+                    {
+                        MessageBox.Show("Application Cancelled Successfully", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _RefrishLocalApplication();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Application Dose Not Cancelled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("You Can't Change The Application Status", "Change Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

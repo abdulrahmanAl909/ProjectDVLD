@@ -291,5 +291,41 @@ namespace DVLD_DataAccess
             return (RowAffectid > 0);
         }
 
+        public static bool CheckHasOrder(int AppPersonID,int AppType, byte AppStatus)
+        {
+            bool IsHasRow = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select Fount=1 From Applications
+                           where ApplicantPersonID=@AppPersonID and ApplicationTypeID=@AppType
+                           and ApplicationStatus=@AppStatus";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@AppPersonID", AppPersonID);
+            command.Parameters.AddWithValue("@AppType", AppType);
+            command.Parameters.AddWithValue("@AppStatus", AppStatus);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                IsHasRow = reader.HasRows;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (!IsHasRow);
+        }
+
+
     }
 }

@@ -132,16 +132,23 @@ namespace DVLD_Presentation
 
             _LoacApplInfo.LicenseClassID = cbLicenseClass.SelectedIndex;
 
-            if(_LoacApplInfo.Save())
+
+            if (_LoacApplInfo.CheckHasOrder())
             {
-                MessageBox.Show("Data Saved Successfully." , "Saved" , MessageBoxButtons.OK , MessageBoxIcon.Information);
+                if (_LoacApplInfo.Save())
+                {
+                    MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error: Data Is NOT Saved Successfully", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;                    
+                }
             }
             else
             {
-                if (MessageBox.Show("Error: Data Is NOT Saved Successfully", "Error!", MessageBoxButtons.OK , MessageBoxIcon.Error) == DialogResult.OK)
-                {
-                    this.Close();
-                }
+                MessageBox.Show("Choose another License Class, The selected Person Already\nhave an active application for the selected class", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             lblHeader.Text = "Update Local Driving Licesne Application";

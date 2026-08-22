@@ -188,6 +188,38 @@ namespace DVLD_DataAccess.Application
             return (RowAffectid > 0);
         }
 
+        public static bool ChangeStatus(int AppID , byte ApplicationStatus)
+        {
+            int RowAffectid = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"UPDATE [dbo].[Applications]
+                           SET [ApplicationStatus] = @ApplicationStatus
+                           WHERE ApplicationID = @AppID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@AppID", AppID);
+            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+
+            try
+            {
+                connection.Open();
+
+                RowAffectid = command.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (RowAffectid > 0);
+        }
+
 
     }
 }

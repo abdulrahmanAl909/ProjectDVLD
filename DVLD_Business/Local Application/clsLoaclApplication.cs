@@ -94,6 +94,25 @@ namespace DVLD_Business
             }
         }
 
+        public static bool CancelApplication(int LocalApplication)
+        {
+            clsLoaclApplication LocalInfo = clsLoaclApplication.GetLocalApplicationByID(LocalApplication);
+            if(LocalInfo!=null && clsApplication.ChangeStatus(LocalInfo.ApplicationID,enApplicationStatus.Cancelled))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool CheckHasOrder()
+        {
+            return clsLocalApplicationData.CheckHasOrder(ApplicationInfo.ApplicationPersonID,ApplicationInfo.ApplicationType , (byte)enApplicationStatus.AddNewApp);
+        }
+
         public bool Save()
         {
             if (ApplicationInfo.Save())

@@ -106,6 +106,11 @@ namespace DVLD_Business.Application
             }
         }
 
+        public static bool ChangeStatus(int AppID , enApplicationStatus ApplicationStatus)
+        {
+            return clsApplicationData.ChangeStatus(AppID, (byte)ApplicationStatus);
+        }
+
         public bool Save()
         {
             switch (Mode)
