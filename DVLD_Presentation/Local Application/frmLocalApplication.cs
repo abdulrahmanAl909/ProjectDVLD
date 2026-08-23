@@ -144,5 +144,10 @@ namespace DVLD_Presentation
                 MessageBox.Show("You Can't Change The Application Status", "Change Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void deleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

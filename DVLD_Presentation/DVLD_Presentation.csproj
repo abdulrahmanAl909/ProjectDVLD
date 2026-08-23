@@ -59,6 +59,30 @@
     <Compile Include="ApplicationType\frmUpdateApplicationType.Designer.cs">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\frmShowLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\frmShowLicenseInfo.Designer.cs">
+      <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ctrlLicenseDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ctrlLicenseDetails.Designer.cs">
+      <DependentUpon>ctrlLicenseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ctrlL.D.L.ApplicationDetalis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ctrlL.D.L.ApplicationDetalis.Designer.cs">
+      <DependentUpon>ctrlL.D.L.ApplicationDetalis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drivers\frmManageDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drivers\frmManageDrivers.Designer.cs">
+      <DependentUpon>frmManageDrivers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Local Application\frmAddNewLocalApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +197,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationType\frmUpdateApplicationType.resx">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\frmShowLicenseInfo.resx">
+      <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ctrlLicenseDetails.resx">
+      <DependentUpon>ctrlLicenseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ctrlL.D.L.ApplicationDetalis.resx">
+      <DependentUpon>ctrlL.D.L.ApplicationDetalis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drivers\frmManageDrivers.resx">
+      <DependentUpon>frmManageDrivers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Local Application\frmAddNewLocalApplication.resx">
       <DependentUpon>frmAddNewLocalApplication.cs</DependentUpon>
@@ -554,6 +590,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sign_Out_55x55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image Aug 23, 2026, 04_17_11 AM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisionTest_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WriteTest_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StreetTest_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image Aug 23, 2026, 07_30_19 AM.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

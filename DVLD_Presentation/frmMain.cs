@@ -88,6 +88,11 @@ namespace DVLD_Presentation
 
         }
 
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageDrivers frm = new frmManageDrivers();
 
+            frm.ShowDialog();
+        }
     }
 }
