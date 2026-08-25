@@ -45,6 +45,42 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
+        public static string GetTitleName(int ApplicationTypeID)
+        {
+            string TitleName = "";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select ApplicationTypeTitle from ApplicationTypes
+                            where ApplicationTypeID =@ApplicationTypeID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if(result !=null)
+                {
+                    TitleName = result.ToString();
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return TitleName;
+        }
+
         public static bool UpdateFees(int ID , string Title, decimal Fees)
         {
             int RowAffected = -1;

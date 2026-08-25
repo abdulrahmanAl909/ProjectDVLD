@@ -124,6 +124,7 @@
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
             this.showToolStripMenuItem.Size = new System.Drawing.Size(362, 48);
             this.showToolStripMenuItem.Text = "Show Application Details";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -195,6 +196,7 @@
             this.sechduleViToolStripMenuItem.Name = "sechduleViToolStripMenuItem";
             this.sechduleViToolStripMenuItem.Size = new System.Drawing.Size(289, 50);
             this.sechduleViToolStripMenuItem.Text = "Sechdule Vision Test";
+            this.sechduleViToolStripMenuItem.Click += new System.EventHandler(this.sechduleViToolStripMenuItem_Click);
             // 
             // sechduleWriteTestToolStripMenuItem
             // 
@@ -235,12 +237,12 @@
             // 
             // showLicenseToolStripMenuItem
             // 
-            this.showLicenseToolStripMenuItem.Enabled = false;
             this.showLicenseToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Show_License_40x40_Clean;
             this.showLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
             this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(362, 48);
             this.showLicenseToolStripMenuItem.Text = "Show License";
+            this.showLicenseToolStripMenuItem.Click += new System.EventHandler(this.showLicenseToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 

@@ -36,6 +36,11 @@ namespace DVLD_Business
             return clsApplicationsTypeData.GetAllApllicationType();
         }
 
+        public static string GetTitleName(int ApplicationTypeID)
+        {
+            return clsApplicationsTypeData.GetTitleName(ApplicationTypeID);
+        }
+
         public static bool UpdateFees(int ID, string Title , decimal Fees)
         {
             return clsApplicationsTypeData.UpdateFees(ID, Title, Fees);

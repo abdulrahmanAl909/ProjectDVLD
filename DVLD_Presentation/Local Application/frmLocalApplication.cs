@@ -149,5 +149,26 @@ namespace DVLD_Presentation
         {
 
         }
+
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowLicenseInfo frm = new frmShowLicenseInfo();
+
+            frm.ShowDialog();
+        }
+
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowL frm = new frmShowL((int)dgvLocalApplication.CurrentRow.Cells[0].Value);
+
+            frm.ShowDialog();
+        }
+
+        private void sechduleViToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTest frm = new frmTest((int)dgvLocalApplication.CurrentRow.Cells[0].Value);
+
+            frm.ShowDialog();
+        }
     }
 }

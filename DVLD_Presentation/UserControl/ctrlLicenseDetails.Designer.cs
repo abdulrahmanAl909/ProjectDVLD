@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbImagePath = new System.Windows.Forms.PictureBox();
             this.lblIsDetained = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
             this.lblDriverID = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbImagePath = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagePath)).BeginInit();
             this.SuspendLayout();
@@ -97,16 +97,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driver License Info";
-            // 
-            // pbImagePath
-            // 
-            this.pbImagePath.Image = global::DVLD_Presentation.Properties.Resources.businessman;
-            this.pbImagePath.Location = new System.Drawing.Point(416, 27);
-            this.pbImagePath.Name = "pbImagePath";
-            this.pbImagePath.Size = new System.Drawing.Size(250, 197);
-            this.pbImagePath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbImagePath.TabIndex = 26;
-            this.pbImagePath.TabStop = false;
             // 
             // lblIsDetained
             // 
@@ -368,6 +358,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Class          :";
             // 
+            // pbImagePath
+            // 
+            this.pbImagePath.Location = new System.Drawing.Point(416, 31);
+            this.pbImagePath.Name = "pbImagePath";
+            this.pbImagePath.Size = new System.Drawing.Size(264, 187);
+            this.pbImagePath.TabIndex = 26;
+            this.pbImagePath.TabStop = false;
+            // 
             // ctrlLicenseDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -407,11 +405,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pbImagePath;
         private System.Windows.Forms.Label lblIsDetained;
         private System.Windows.Forms.Label lblExpirationDate;
         private System.Windows.Forms.Label lblDriverID;
         private System.Windows.Forms.Label lblDateOfBirth;
         private System.Windows.Forms.Label lblIsActive;
+        private System.Windows.Forms.PictureBox pbImagePath;
     }
 }
