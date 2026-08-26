@@ -25,6 +25,16 @@ namespace DVLD_Presentation
             ctrlL1.LoadDataForLocalApplication(_LpaclID);
         }
 
+        private void btnTestInfo_Click(object sender, EventArgs e)
+        {
+            frmDateOfTest frm = new frmDateOfTest();
 
+            frm.ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

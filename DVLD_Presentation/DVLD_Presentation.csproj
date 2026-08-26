@@ -59,6 +59,18 @@
     <Compile Include="ApplicationType\frmUpdateApplicationType.Designer.cs">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\frmDateOfTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\frmDateOfTest.Designer.cs">
+      <DependentUpon>frmDateOfTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\frmLicenseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\frmLicenseHistory.Designer.cs">
+      <DependentUpon>frmLicenseHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Local Application\frmShowL.D.L.ApplicationDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,8 +222,14 @@
     <EmbeddedResource Include="ApplicationType\frmUpdateApplicationType.resx">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="License\frmLicenseHistory.resx">
+      <DependentUpon>frmLicenseHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local Application\frmShowL.D.L.ApplicationDetails.resx">
       <DependentUpon>frmShowL.D.L.ApplicationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\frmDateOfTest.resx">
+      <DependentUpon>frmDateOfTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
@@ -638,6 +656,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ChatGPT Image Aug 23, 2026, 02_37_44 PM3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image Aug 26, 2026, 07_43_27 AM.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

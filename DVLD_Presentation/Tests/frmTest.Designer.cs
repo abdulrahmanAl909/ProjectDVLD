@@ -85,6 +85,7 @@
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label3
             // 
@@ -130,6 +131,7 @@
             this.btnTestInfo.Size = new System.Drawing.Size(112, 48);
             this.btnTestInfo.TabIndex = 7;
             this.btnTestInfo.UseVisualStyleBackColor = false;
+            this.btnTestInfo.Click += new System.EventHandler(this.btnTestInfo_Click);
             // 
             // ctrlL1
             // 

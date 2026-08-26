@@ -170,5 +170,12 @@ namespace DVLD_Presentation
 
             frm.ShowDialog();
         }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLicenseHistory frm = new frmLicenseHistory(dgvLocalApplication.CurrentRow.Cells[2].Value.ToString());
+
+            frm.ShowDialog();
+        }
     }
 }
