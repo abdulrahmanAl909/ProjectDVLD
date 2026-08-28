@@ -114,7 +114,7 @@
             this.toolStripMenuItem6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(363, 505);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(363, 472);
             // 
             // showToolStripMenuItem
             // 
@@ -237,6 +237,7 @@
             // 
             // showLicenseToolStripMenuItem
             // 
+            this.showLicenseToolStripMenuItem.Enabled = false;
             this.showLicenseToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Show_License_40x40_Clean;
             this.showLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";

@@ -473,6 +473,16 @@ namespace DVLD_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Edit_Test_40x40 {
+            get {
+                object obj = ResourceManager.GetObject("Edit-Test-40x40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap email {
             get {
                 object obj = ResourceManager.GetObject("email", resourceCulture);
@@ -1136,6 +1146,16 @@ namespace DVLD_Presentation.Properties {
         internal static System.Drawing.Bitmap StreetTest_40 {
             get {
                 object obj = ResourceManager.GetObject("StreetTest_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Take_Test_40x40 {
+            get {
+                object obj = ResourceManager.GetObject("Take-Test-40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCountRecord = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnTestInfo = new System.Windows.Forms.Button();
+            this.btnTest = new System.Windows.Forms.Button();
             this.ctrlL1 = new DVLD_Presentation.ctrlL();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,12 +72,40 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(43, 703);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(1124, 107);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editTestToolStripMenuItem,
+            this.takeTestToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(265, 133);
+            // 
+            // editTestToolStripMenuItem
+            // 
+            this.editTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Edit_Test_40x40;
+            this.editTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editTestToolStripMenuItem.Name = "editTestToolStripMenuItem";
+            this.editTestToolStripMenuItem.Size = new System.Drawing.Size(264, 48);
+            this.editTestToolStripMenuItem.Text = "Edit Test";
+            this.editTestToolStripMenuItem.Click += new System.EventHandler(this.editTestToolStripMenuItem_Click);
+            // 
+            // takeTestToolStripMenuItem
+            // 
+            this.takeTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Take_Test_40x40;
+            this.takeTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(264, 48);
+            this.takeTestToolStripMenuItem.Text = "Take Test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
             // 
             // btnClose
             // 
@@ -119,19 +152,19 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // btnTestInfo
+            // btnTest
             // 
-            this.btnTestInfo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnTestInfo.BackgroundImage = global::DVLD_Presentation.Properties.Resources.Add_New_Application_Lines_40x40;
-            this.btnTestInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTestInfo.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnTestInfo.ForeColor = System.Drawing.Color.White;
-            this.btnTestInfo.Location = new System.Drawing.Point(1055, 649);
-            this.btnTestInfo.Name = "btnTestInfo";
-            this.btnTestInfo.Size = new System.Drawing.Size(112, 48);
-            this.btnTestInfo.TabIndex = 7;
-            this.btnTestInfo.UseVisualStyleBackColor = false;
-            this.btnTestInfo.Click += new System.EventHandler(this.btnTestInfo_Click);
+            this.btnTest.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnTest.BackgroundImage = global::DVLD_Presentation.Properties.Resources.Add_New_Application_Lines_40x40;
+            this.btnTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTest.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnTest.ForeColor = System.Drawing.Color.White;
+            this.btnTest.Location = new System.Drawing.Point(1055, 649);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(112, 48);
+            this.btnTest.TabIndex = 7;
+            this.btnTest.UseVisualStyleBackColor = false;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // ctrlL1
             // 
@@ -149,7 +182,7 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1179, 867);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnTestInfo);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.lblCountRecord);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
@@ -161,6 +194,7 @@
             this.Text = "frmVisionTest";
             this.Load += new System.EventHandler(this.frmTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,7 +210,10 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCountRecord;
-        private System.Windows.Forms.Button btnTestInfo;
+        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;
     }
 }

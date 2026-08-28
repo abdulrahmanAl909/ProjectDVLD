@@ -25,7 +25,7 @@ namespace DVLD_Presentation
             ctrlL1.LoadDataForLocalApplication(_LpaclID);
         }
 
-        private void btnTestInfo_Click(object sender, EventArgs e)
+        private void btnTest_Click(object sender, EventArgs e)
         {
             frmDateOfTest frm = new frmDateOfTest();
 
@@ -35,6 +35,20 @@ namespace DVLD_Presentation
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTakeTest frm = new frmTakeTest();
+
+            frm.ShowDialog();
+        }
+
+        private void editTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDateOfTest frm = new frmDateOfTest();
+
+            frm.ShowDialog();
         }
     }
 }

@@ -69,7 +69,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1200, 765);
+            this.ClientSize = new System.Drawing.Size(1200, 779);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ctrlL1);
             this.Controls.Add(this.label1);
