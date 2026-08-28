@@ -30,13 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvShowDriver = new System.Windows.Forms.DataGridView();
             this.lblCountRecord = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtFilterBy = new System.Windows.Forms.TextBox();
+            this.cbIsActive = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowDriver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,16 +64,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Record:";
             // 
-            // dataGridView1
+            // dgvShowDriver
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 303);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1107, 262);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvShowDriver.AllowUserToAddRows = false;
+            this.dgvShowDriver.AllowUserToDeleteRows = false;
+            this.dgvShowDriver.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvShowDriver.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvShowDriver.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShowDriver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShowDriver.Location = new System.Drawing.Point(9, 303);
+            this.dgvShowDriver.Name = "dgvShowDriver";
+            this.dgvShowDriver.ReadOnly = true;
+            this.dgvShowDriver.RowHeadersVisible = false;
+            this.dgvShowDriver.RowHeadersWidth = 62;
+            this.dgvShowDriver.RowTemplate.Height = 29;
+            this.dgvShowDriver.Size = new System.Drawing.Size(1107, 262);
+            this.dgvShowDriver.TabIndex = 2;
             // 
             // lblCountRecord
             // 
@@ -84,18 +92,18 @@
             this.lblCountRecord.TabIndex = 3;
             this.lblCountRecord.Text = "12";
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.Navy;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(949, 574);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 59);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClose.BackColor = System.Drawing.Color.Navy;
+            this.btnClose.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(949, 574);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(166, 59);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -113,11 +121,17 @@
             this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
-            "None"});
+            "None",
+            "DriverID",
+            "PersonID",
+            "NationalNo",
+            "FullName",
+            "IsActive"});
             this.cbFilterBy.Location = new System.Drawing.Point(117, 263);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(243, 27);
             this.cbFilterBy.TabIndex = 6;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -129,23 +143,51 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // txtFilterBy
+            // 
+            this.txtFilterBy.Location = new System.Drawing.Point(376, 263);
+            this.txtFilterBy.Name = "txtFilterBy";
+            this.txtFilterBy.Size = new System.Drawing.Size(247, 27);
+            this.txtFilterBy.TabIndex = 8;
+            this.txtFilterBy.Visible = false;
+            this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
+            this.txtFilterBy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterBy_KeyPress);
+            // 
+            // cbIsActive
+            // 
+            this.cbIsActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIsActive.FormattingEnabled = true;
+            this.cbIsActive.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.cbIsActive.Location = new System.Drawing.Point(386, 263);
+            this.cbIsActive.Name = "cbIsActive";
+            this.cbIsActive.Size = new System.Drawing.Size(255, 27);
+            this.cbIsActive.TabIndex = 9;
+            this.cbIsActive.Visible = false;
+            this.cbIsActive.SelectedIndexChanged += new System.EventHandler(this.cbIsActive_SelectedIndexChanged);
+            // 
             // frmManageDrivers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1128, 640);
+            this.Controls.Add(this.cbIsActive);
+            this.Controls.Add(this.txtFilterBy);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbFilterBy);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblCountRecord);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvShowDriver);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmManageDrivers";
             this.Text = "frmManageDrivers";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmManageDrivers_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowDriver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,11 +198,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvShowDriver;
         private System.Windows.Forms.Label lblCountRecord;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtFilterBy;
+        private System.Windows.Forms.ComboBox cbIsActive;
     }
 }

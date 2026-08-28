@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\clsApplication.cs" />
+    <Compile Include="Driver\clsDriver.cs" />
     <Compile Include="License Class\clsLicenseClass.cs" />
     <Compile Include="Enums\ApplicationStatus.cs" />
     <Compile Include="ApplicationType\clsApplicationType.cs" />
