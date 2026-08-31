@@ -23,6 +23,10 @@ namespace DVLD_Business
             return clsTestTypeData.UpdateTestType(ID, Title, Description, Fees);
         }
 
+        public static int GetTestTypeFees(int TestTypeID)
+        {
+            return clsTestTypeData.GetTesTypeFees(TestTypeID);
+        }
 
     }
 }

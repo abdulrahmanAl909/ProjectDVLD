@@ -303,6 +303,46 @@ namespace DVLD_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Aug_29__2026__06_57_41_AM__1_ {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Aug 29, 2026, 06_57_41 AM (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Aug_29__2026__06_57_41_AM__2_ {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Aug 29, 2026, 06_57_41 AM (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Aug_29__2026__08_54_51_AM55 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Aug 29, 2026, 08_54_51 AM55", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Aug_29__2026__08_59_25_AM555 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Aug 29, 2026, 08_59_25 AM555", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close {
             get {
                 object obj = ResourceManager.GetObject("Close", resourceCulture);

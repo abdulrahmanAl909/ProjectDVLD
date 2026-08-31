@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblWhitchTest = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pbTestImage = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,36 +43,36 @@
             this.lblFees = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblTotalFees = new System.Windows.Forms.Label();
-            this.lblRAppFees = new System.Windows.Forms.Label();
             this.lblRTestAppID = new System.Windows.Forms.Label();
+            this.lblRAppFees = new System.Windows.Forms.Label();
+            this.lblTotalFees = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.gbTitle = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbTitle.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblWhitchTest
+            // lblTitle
             // 
-            this.lblWhitchTest.AutoSize = true;
-            this.lblWhitchTest.Location = new System.Drawing.Point(259, 121);
-            this.lblWhitchTest.Name = "lblWhitchTest";
-            this.lblWhitchTest.Size = new System.Drawing.Size(46, 29);
-            this.lblWhitchTest.TabIndex = 0;
-            this.lblWhitchTest.Text = "???";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(259, 121);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(46, 29);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "???";
             // 
-            // pictureBox1
+            // pbTestImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(103, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(377, 92);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pbTestImage.Location = new System.Drawing.Point(103, 26);
+            this.pbTestImage.Name = "pbTestImage";
+            this.pbTestImage.Size = new System.Drawing.Size(377, 92);
+            this.pbTestImage.TabIndex = 1;
+            this.pbTestImage.TabStop = false;
             // 
             // label1
             // 
@@ -189,6 +189,7 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(22, 512);
@@ -198,45 +199,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Retake Test Info";
             // 
-            // label7
+            // lblRTestAppID
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label7.Location = new System.Drawing.Point(19, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 29);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "R.App Fees   :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label8.Location = new System.Drawing.Point(379, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 29);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Total Fees:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label9.Location = new System.Drawing.Point(19, 103);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(168, 29);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "R.Test.App.ID:";
-            // 
-            // lblTotalFees
-            // 
-            this.lblTotalFees.AutoSize = true;
-            this.lblTotalFees.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblTotalFees.Location = new System.Drawing.Point(503, 48);
-            this.lblTotalFees.Name = "lblTotalFees";
-            this.lblTotalFees.Size = new System.Drawing.Size(46, 29);
-            this.lblTotalFees.TabIndex = 16;
-            this.lblTotalFees.Text = "???";
+            this.lblRTestAppID.AutoSize = true;
+            this.lblRTestAppID.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblRTestAppID.Location = new System.Drawing.Point(179, 103);
+            this.lblRTestAppID.Name = "lblRTestAppID";
+            this.lblRTestAppID.Size = new System.Drawing.Size(46, 29);
+            this.lblRTestAppID.TabIndex = 14;
+            this.lblRTestAppID.Text = "???";
             // 
             // lblRAppFees
             // 
@@ -248,15 +219,45 @@
             this.lblRAppFees.TabIndex = 15;
             this.lblRAppFees.Text = "???";
             // 
-            // lblRTestAppID
+            // lblTotalFees
             // 
-            this.lblRTestAppID.AutoSize = true;
-            this.lblRTestAppID.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblRTestAppID.Location = new System.Drawing.Point(179, 103);
-            this.lblRTestAppID.Name = "lblRTestAppID";
-            this.lblRTestAppID.Size = new System.Drawing.Size(46, 29);
-            this.lblRTestAppID.TabIndex = 14;
-            this.lblRTestAppID.Text = "???";
+            this.lblTotalFees.AutoSize = true;
+            this.lblTotalFees.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTotalFees.Location = new System.Drawing.Point(503, 48);
+            this.lblTotalFees.Name = "lblTotalFees";
+            this.lblTotalFees.Size = new System.Drawing.Size(46, 29);
+            this.lblTotalFees.TabIndex = 16;
+            this.lblTotalFees.Text = "???";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label9.Location = new System.Drawing.Point(19, 103);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(168, 29);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "R.Test.App.ID:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label8.Location = new System.Drawing.Point(379, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(132, 29);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Total Fees:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label7.Location = new System.Drawing.Point(19, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(165, 29);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "R.App Fees   :";
             // 
             // btnSave
             // 
@@ -284,8 +285,8 @@
             this.gbTitle.Controls.Add(this.label3);
             this.gbTitle.Controls.Add(this.label2);
             this.gbTitle.Controls.Add(this.label1);
-            this.gbTitle.Controls.Add(this.pictureBox1);
-            this.gbTitle.Controls.Add(this.lblWhitchTest);
+            this.gbTitle.Controls.Add(this.pbTestImage);
+            this.gbTitle.Controls.Add(this.lblTitle);
             this.gbTitle.Font = new System.Drawing.Font("Tahoma", 12F);
             this.gbTitle.ForeColor = System.Drawing.Color.White;
             this.gbTitle.Location = new System.Drawing.Point(21, 12);
@@ -313,12 +314,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(732, 796);
+            this.ClientSize = new System.Drawing.Size(738, 796);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbTitle);
             this.Name = "frmDateOfTest";
             this.Text = "frmDateOfTest";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmDateOfTest_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbTitle.ResumeLayout(false);
@@ -329,8 +331,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblWhitchTest;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox pbTestImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

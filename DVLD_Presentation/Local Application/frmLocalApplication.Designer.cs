@@ -114,7 +114,7 @@
             this.toolStripMenuItem6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(363, 472);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(363, 505);
             // 
             // showToolStripMenuItem
             // 
@@ -200,21 +200,21 @@
             // 
             // sechduleWriteTestToolStripMenuItem
             // 
-            this.sechduleWriteTestToolStripMenuItem.Enabled = false;
             this.sechduleWriteTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.WriteTest_40;
             this.sechduleWriteTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sechduleWriteTestToolStripMenuItem.Name = "sechduleWriteTestToolStripMenuItem";
             this.sechduleWriteTestToolStripMenuItem.Size = new System.Drawing.Size(289, 50);
             this.sechduleWriteTestToolStripMenuItem.Text = "Sechdule Write Test";
+            this.sechduleWriteTestToolStripMenuItem.Click += new System.EventHandler(this.sechduleWriteTestToolStripMenuItem_Click);
             // 
             // sechduleStreetTestToolStripMenuItem
             // 
-            this.sechduleStreetTestToolStripMenuItem.Enabled = false;
             this.sechduleStreetTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.StreetTest_40;
             this.sechduleStreetTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sechduleStreetTestToolStripMenuItem.Name = "sechduleStreetTestToolStripMenuItem";
             this.sechduleStreetTestToolStripMenuItem.Size = new System.Drawing.Size(289, 50);
             this.sechduleStreetTestToolStripMenuItem.Text = "Sechdule Street Test";
+            this.sechduleStreetTestToolStripMenuItem.Click += new System.EventHandler(this.sechduleStreetTestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 

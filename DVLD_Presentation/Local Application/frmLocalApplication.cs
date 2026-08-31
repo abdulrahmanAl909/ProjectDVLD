@@ -164,18 +164,33 @@ namespace DVLD_Presentation
             frm.ShowDialog();
         }
 
-        private void sechduleViToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTest frm = new frmTest((int)dgvLocalApplication.CurrentRow.Cells[0].Value);
-
-            frm.ShowDialog();
-        }
-
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLicenseHistory frm = new frmLicenseHistory(dgvLocalApplication.CurrentRow.Cells[2].Value.ToString());
 
             frm.ShowDialog();
         }
+
+        private void sechduleViToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTest frm = new frmTest((int)dgvLocalApplication.CurrentRow.Cells[0].Value, enTestType.VisionTest);
+
+            frm.ShowDialog();
+        }
+
+        private void sechduleWriteTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTest frm = new frmTest((int)dgvLocalApplication.CurrentRow.Cells[0].Value, enTestType.WriteTest);
+
+            frm.ShowDialog();
+        }
+
+        private void sechduleStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTest frm = new frmTest((int)dgvLocalApplication.CurrentRow.Cells[0].Value, enTestType.StreetTest);
+
+            frm.ShowDialog();
+        }
+
     }
 }

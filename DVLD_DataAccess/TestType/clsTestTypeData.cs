@@ -82,5 +82,40 @@ namespace DVLD_DataAccess
             return RowAffected > 0;
         }
 
+        public static int GetTesTypeFees(int TestTypeID)
+        {
+            int Fees = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select TestTypeFees From TestTypes
+                            where TestTypeID=@TestTypeID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertvalue))
+                {
+                    Fees = insertvalue;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error" + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Fees;
+        }
+
     }
 }

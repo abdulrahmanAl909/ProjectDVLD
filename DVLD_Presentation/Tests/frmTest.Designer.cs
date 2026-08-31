@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCountRecord = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnTest = new System.Windows.Forms.Button();
             this.ctrlL1 = new DVLD_Presentation.ctrlL();
+            this.pbTestImage = new System.Windows.Forms.PictureBox();
+            this.btnTest = new System.Windows.Forms.Button();
+            this.editTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 20F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(287, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(474, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Vision Test Appointments";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Palatino Linotype", 20F);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(374, 69);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(474, 54);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Vision Test Appointments";
             // 
             // label2
             // 
@@ -87,25 +87,7 @@
             this.editTestToolStripMenuItem,
             this.takeTestToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(265, 133);
-            // 
-            // editTestToolStripMenuItem
-            // 
-            this.editTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Edit_Test_40x40;
-            this.editTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editTestToolStripMenuItem.Name = "editTestToolStripMenuItem";
-            this.editTestToolStripMenuItem.Size = new System.Drawing.Size(264, 48);
-            this.editTestToolStripMenuItem.Text = "Edit Test";
-            this.editTestToolStripMenuItem.Click += new System.EventHandler(this.editTestToolStripMenuItem_Click);
-            // 
-            // takeTestToolStripMenuItem
-            // 
-            this.takeTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Take_Test_40x40;
-            this.takeTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
-            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(264, 48);
-            this.takeTestToolStripMenuItem.Text = "Take Test";
-            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(178, 100);
             // 
             // btnClose
             // 
@@ -142,15 +124,24 @@
             this.lblCountRecord.TabIndex = 6;
             this.lblCountRecord.Text = "???";
             // 
-            // pictureBox1
+            // ctrlL1
             // 
-            this.pictureBox1.Image = global::DVLD_Presentation.Properties.Resources.ChatGPT_Image_Aug_23__2026__02_37_44_PM3;
-            this.pictureBox1.Location = new System.Drawing.Point(296, -3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(486, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.ctrlL1.BackColor = System.Drawing.Color.SteelBlue;
+            this.ctrlL1.Font = new System.Drawing.Font("Tahoma", 7.75F);
+            this.ctrlL1.Location = new System.Drawing.Point(25, 111);
+            this.ctrlL1.Name = "ctrlL1";
+            this.ctrlL1.Size = new System.Drawing.Size(1151, 540);
+            this.ctrlL1.TabIndex = 1;
+            // 
+            // pbTestImage
+            // 
+            this.pbTestImage.Image = global::DVLD_Presentation.Properties.Resources.ChatGPT_Image_Aug_23__2026__02_37_44_PM3;
+            this.pbTestImage.Location = new System.Drawing.Point(383, 0);
+            this.pbTestImage.Name = "pbTestImage";
+            this.pbTestImage.Size = new System.Drawing.Size(414, 66);
+            this.pbTestImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTestImage.TabIndex = 8;
+            this.pbTestImage.TabStop = false;
             // 
             // btnTest
             // 
@@ -166,14 +157,23 @@
             this.btnTest.UseVisualStyleBackColor = false;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // ctrlL1
+            // editTestToolStripMenuItem
             // 
-            this.ctrlL1.BackColor = System.Drawing.Color.SteelBlue;
-            this.ctrlL1.Font = new System.Drawing.Font("Tahoma", 7.75F);
-            this.ctrlL1.Location = new System.Drawing.Point(25, 111);
-            this.ctrlL1.Name = "ctrlL1";
-            this.ctrlL1.Size = new System.Drawing.Size(1151, 540);
-            this.ctrlL1.TabIndex = 1;
+            this.editTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Edit_Test_40x40;
+            this.editTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editTestToolStripMenuItem.Name = "editTestToolStripMenuItem";
+            this.editTestToolStripMenuItem.Size = new System.Drawing.Size(177, 48);
+            this.editTestToolStripMenuItem.Text = "Edit Test";
+            this.editTestToolStripMenuItem.Click += new System.EventHandler(this.editTestToolStripMenuItem_Click);
+            // 
+            // takeTestToolStripMenuItem
+            // 
+            this.takeTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Take_Test_40x40;
+            this.takeTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(177, 48);
+            this.takeTestToolStripMenuItem.Text = "Take Test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
             // 
             // frmTest
             // 
@@ -181,7 +181,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1179, 867);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbTestImage);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.lblCountRecord);
             this.Controls.Add(this.label3);
@@ -189,13 +189,13 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ctrlL1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Name = "frmTest";
             this.Text = "frmVisionTest";
             this.Load += new System.EventHandler(this.frmTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +203,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
         private ctrlL ctrlL1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -211,7 +211,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCountRecord;
         private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbTestImage;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;

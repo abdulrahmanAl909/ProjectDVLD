@@ -42,11 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\clsApplication.cs" />
+    <Compile Include="Test\clsTest.cs" />
+    <Compile Include="TestAppointment\clsTestAppointment.cs" />
     <Compile Include="Driver\clsDriver.cs" />
     <Compile Include="License Class\clsLicenseClass.cs" />
     <Compile Include="Enums\ApplicationStatus.cs" />
     <Compile Include="ApplicationType\clsApplicationType.cs" />
     <Compile Include="Local Application\clsLoaclApplication.cs" />
+    <Compile Include="Enums\TestType.cs" />
     <Compile Include="TestType\clsTestType.cs" />
     <Compile Include="Country\clsCountry.cs" />
     <Compile Include="People\clsPerson.cs" />
