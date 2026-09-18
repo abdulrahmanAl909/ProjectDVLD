@@ -14,6 +14,10 @@ namespace DVLD_Presentation
 {
     public partial class frmTakeTest : Form
     {
+        public delegate void DataBackHandler(bool TestResult,int TestAppointmentID);
+
+        public event DataBackHandler DataBack; 
+
         enTestType _TestType = enTestType.VisionTest;
 
         clsTakeTest TakeTestInfo;
@@ -105,6 +109,7 @@ namespace DVLD_Presentation
                 MessageBox.Show("Error: Data Is NOT Saved Successfully", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            DataBack?.Invoke(TakeTestInfo.TestResult,TakeTestInfo.TestAppointmentID);
 
             this.Close();
         }
@@ -112,3 +117,4 @@ namespace DVLD_Presentation
 
     }
 }
+

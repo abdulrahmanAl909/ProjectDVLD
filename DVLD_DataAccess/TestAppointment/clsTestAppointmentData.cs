@@ -111,7 +111,6 @@ namespace DVLD_DataAccess
             return IsFount;
         }
 
-
         public static int AddNewAppointment(int TestTypeID, int LocalLicenseApplicationID,DateTime AppointmentDate,
             decimal PaidFees, int CreateByUserID, bool IsLocked, int RetakeTestApplicationID)
         {
@@ -236,6 +235,41 @@ namespace DVLD_DataAccess
                 connection.Close();
             }
             return (Count != 0);
+        }
+
+        public static bool ChangeIsLockedToTure(int TestAppointmentID, bool IsLocked)
+        {
+            int RowAffectid = 0;
+
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"UPDATE [dbo].[TestAppointments]
+                            SET [IsLocked] = @IsLocked
+                            WHERE TestAppointmentID = @TestAppointmentID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+            command.Parameters.AddWithValue("@IsLocked", IsLocked);
+
+
+            try
+            {
+                connection.Open();
+
+                RowAffectid = command.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (RowAffectid > 0);
         }
 
     }

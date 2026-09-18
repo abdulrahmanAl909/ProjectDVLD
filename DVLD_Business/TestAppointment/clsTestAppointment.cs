@@ -117,6 +117,11 @@ namespace DVLD_Business
             return clsTestAppointmentData.IsAppointmentExist(LocalID,TestType ,Islocked);
         }
 
+        public static bool ChangeIsLockedToTrue(int TestAppointmentID)
+        {
+            return clsTestAppointmentData.ChangeIsLockedToTure(TestAppointmentID, true);
+        }
+
         public bool Save()
         {
             switch (Mode)

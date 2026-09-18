@@ -92,8 +92,21 @@ namespace DVLD_Presentation
         {
             frmTakeTest frm = new frmTakeTest((int)dgvTestAppointment.CurrentRow.Cells[0].Value , _TestType);
 
+            frm.DataBack += TestResult;
+
             frm.ShowDialog();
+
             _LoadDataForTestAppointment();
+        }
+
+        private void TestResult(bool TestResult, int TestAppointmentID)
+        {
+            this.ResultOfTakeTest = TestResult;
+
+            if(!clsTestAppointment.ChangeIsLockedToTrue(TestAppointmentID))
+            {
+                MessageBox.Show("Spmething is Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void editTestToolStripMenuItem_Click(object sender, EventArgs e)
