@@ -1,6 +1,7 @@
 ﻿using DVLD_DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace DVLD_Business
         enum enMode { Add , Update}
         enMode Mode = enMode.Add;
 
-        clsLoaclApplication LocalInfo;
+        public clsLoaclApplication LocalInfo;
 
         public int TestAppointmentID { set; get; }
 
@@ -40,6 +41,10 @@ namespace DVLD_Business
             this.CreateByUserID = -1;
             this.IsLocked = false;
             this.RetakeTestApplicationID = -1;
+
+            //LocalInfo = clsLoaclApplication.GetLocalApplicationByID(this.LocalLicenseApplicationID);
+
+            Mode = enMode.Add;
         }
 
         private clsTestAppointment(int TestAppointmentID, int TestTypeID,int LocalLicenseApplicationID
@@ -53,11 +58,19 @@ namespace DVLD_Business
             this.CreateByUserID = CreateByUserID;
             this.IsLocked = IsLocked;
             this.RetakeTestApplicationID = RetakeTestApplicationID;
+
+            LocalInfo = clsLoaclApplication.GetLocalApplicationByID(LocalLicenseApplicationID);
+
+            Mode = enMode.Update;
         }
 
+        public clsTestAppointment(int LocalID)
+        {
+            LocalInfo = clsLoaclApplication.GetLocalApplicationByID(LocalID);
+        }
         private bool _AddTestAppointment()
         {
-            this.TestTypeID = clsTestAppointmentData.AddNewAppointment(TestTypeID, LocalLicenseApplicationID
+            this.TestAppointmentID = clsTestAppointmentData.AddNewAppointment(TestTypeID, LocalLicenseApplicationID
                 , AppointmentDate, PaidFees, CreateByUserID, IsLocked, RetakeTestApplicationID);
 
             return (this.TestAppointmentID != -1);
@@ -66,6 +79,42 @@ namespace DVLD_Business
         private bool _UpdateTestAppointment()
         {
             return clsTestAppointmentData.UpdateAppointment(this.TestAppointmentID, this.AppointmentDate);
+        }
+
+        public static clsTestAppointment GetTestAppointmentByID(int TestAppointmentID)
+        {
+           int TestTypeID = -1, LocalLicenseApplicationID = -1, CreateByUserID = -1, RetakeTestApplicationID = -1;
+           DateTime AppointmentDate = DateTime.Now;
+           decimal PaidFees = -1;
+           bool IsLocked = false;
+
+            if(clsTestAppointmentData.GetTestAppointmentByID(TestAppointmentID ,ref TestTypeID
+                ,ref LocalLicenseApplicationID, ref AppointmentDate,ref PaidFees,ref CreateByUserID
+                ,ref IsLocked , ref RetakeTestApplicationID))
+            {
+                return new clsTestAppointment(TestAppointmentID, TestTypeID,LocalLicenseApplicationID,
+                    AppointmentDate, PaidFees, CreateByUserID, IsLocked, RetakeTestApplicationID);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public static DataTable GetAllTestAppointment(int LocalID, int TestType)
+        {
+            return clsTestAppointmentData.GetAllTestAppointment(LocalID, TestType);
+        }
+
+        //public void FillInfoForLocalApplication(int LocalApplication)
+        //{
+        //    LocalInfo = clsLoaclApplication.GetLocalApplicationByID(LocalApplication);
+        //}
+
+        public static bool IsAppointmentExsit(int LocalID,int TestType , bool Islocked)
+        {
+            return clsTestAppointmentData.IsAppointmentExist(LocalID,TestType ,Islocked);
         }
 
         public bool Save()

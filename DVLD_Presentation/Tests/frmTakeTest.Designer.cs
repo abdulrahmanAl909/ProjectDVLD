@@ -44,8 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbWhitchTest = new System.Windows.Forms.PictureBox();
-            this.lblWhitchTest = new System.Windows.Forms.Label();
+            this.pbTestImage = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.rbPass = new System.Windows.Forms.RadioButton();
@@ -53,7 +53,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.gbTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWhitchTest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -85,8 +85,8 @@
             this.gbTitle.Controls.Add(this.label3);
             this.gbTitle.Controls.Add(this.label2);
             this.gbTitle.Controls.Add(this.label1);
-            this.gbTitle.Controls.Add(this.pbWhitchTest);
-            this.gbTitle.Controls.Add(this.lblWhitchTest);
+            this.gbTitle.Controls.Add(this.pbTestImage);
+            this.gbTitle.Controls.Add(this.lblTitle);
             this.gbTitle.Font = new System.Drawing.Font("Tahoma", 12F);
             this.gbTitle.ForeColor = System.Drawing.Color.White;
             this.gbTitle.Location = new System.Drawing.Point(41, 26);
@@ -101,9 +101,9 @@
             this.lblTestID.AutoSize = true;
             this.lblTestID.Location = new System.Drawing.Point(158, 488);
             this.lblTestID.Name = "lblTestID";
-            this.lblTestID.Size = new System.Drawing.Size(46, 29);
+            this.lblTestID.Size = new System.Drawing.Size(166, 29);
             this.lblTestID.TabIndex = 15;
-            this.lblTestID.Text = "???";
+            this.lblTestID.Text = "Not Taken Yet";
             // 
             // label8
             // 
@@ -221,22 +221,22 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "D.L App ID:";
             // 
-            // pbWhitchTest
+            // pbTestImage
             // 
-            this.pbWhitchTest.Location = new System.Drawing.Point(118, 26);
-            this.pbWhitchTest.Name = "pbWhitchTest";
-            this.pbWhitchTest.Size = new System.Drawing.Size(377, 92);
-            this.pbWhitchTest.TabIndex = 1;
-            this.pbWhitchTest.TabStop = false;
+            this.pbTestImage.Location = new System.Drawing.Point(118, 26);
+            this.pbTestImage.Name = "pbTestImage";
+            this.pbTestImage.Size = new System.Drawing.Size(377, 92);
+            this.pbTestImage.TabIndex = 1;
+            this.pbTestImage.TabStop = false;
             // 
-            // lblWhitchTest
+            // lblTitle
             // 
-            this.lblWhitchTest.AutoSize = true;
-            this.lblWhitchTest.Location = new System.Drawing.Point(259, 121);
-            this.lblWhitchTest.Name = "lblWhitchTest";
-            this.lblWhitchTest.Size = new System.Drawing.Size(46, 29);
-            this.lblWhitchTest.TabIndex = 0;
-            this.lblWhitchTest.Text = "???";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(259, 121);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(46, 29);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "???";
             // 
             // btnSave
             // 
@@ -249,6 +249,7 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label7
             // 
@@ -323,9 +324,10 @@
             this.Controls.Add(this.gbTitle);
             this.Name = "frmTakeTest";
             this.Text = "frmTakeTest";
+            this.Load += new System.EventHandler(this.frmTakeTest_Load);
             this.gbTitle.ResumeLayout(false);
             this.gbTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWhitchTest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,8 +350,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pbWhitchTest;
-        private System.Windows.Forms.Label lblWhitchTest;
+        private System.Windows.Forms.PictureBox pbTestImage;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblTestID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

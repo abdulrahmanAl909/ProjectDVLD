@@ -1,6 +1,6 @@
 ﻿namespace DVLD_Presentation
 {
-    partial class frmDateOfTest
+    partial class frmTestAppointment
     {
         /// <summary>
         /// Required designer variable.
@@ -60,15 +60,16 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(259, 121);
+            this.lblTitle.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblTitle.Location = new System.Drawing.Point(170, 135);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(46, 29);
+            this.lblTitle.Size = new System.Drawing.Size(77, 48);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "???";
             // 
             // pbTestImage
             // 
-            this.pbTestImage.Location = new System.Drawing.Point(103, 26);
+            this.pbTestImage.Location = new System.Drawing.Point(109, 23);
             this.pbTestImage.Name = "pbTestImage";
             this.pbTestImage.Size = new System.Drawing.Size(377, 92);
             this.pbTestImage.TabIndex = 1;
@@ -268,6 +269,7 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // gbTitle
             // 
@@ -309,7 +311,7 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmDateOfTest
+            // frmTestAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -317,7 +319,7 @@
             this.ClientSize = new System.Drawing.Size(738, 796);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbTitle);
-            this.Name = "frmDateOfTest";
+            this.Name = "frmTestAppointment";
             this.Text = "frmDateOfTest";
             this.Load += new System.EventHandler(this.frmDateOfTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).EndInit();

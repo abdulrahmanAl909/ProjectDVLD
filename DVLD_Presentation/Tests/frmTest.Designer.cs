@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTestAppointment = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCountRecord = new System.Windows.Forms.Label();
-            this.ctrlL1 = new DVLD_Presentation.ctrlL();
             this.pbTestImage = new System.Windows.Forms.PictureBox();
             this.btnTest = new System.Windows.Forms.Button();
-            this.editTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ctrlL1 = new DVLD_Presentation.ctrlL();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestAppointment)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).BeginInit();
             this.SuspendLayout();
@@ -68,17 +68,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = " Appointments";
             // 
-            // dataGridView1
+            // dgvTestAppointment
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 703);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1124, 107);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvTestAppointment.AllowUserToAddRows = false;
+            this.dgvTestAppointment.AllowUserToDeleteRows = false;
+            this.dgvTestAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTestAppointment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTestAppointment.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTestAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTestAppointment.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvTestAppointment.Location = new System.Drawing.Point(43, 703);
+            this.dgvTestAppointment.Name = "dgvTestAppointment";
+            this.dgvTestAppointment.ReadOnly = true;
+            this.dgvTestAppointment.RowHeadersVisible = false;
+            this.dgvTestAppointment.RowHeadersWidth = 62;
+            this.dgvTestAppointment.RowTemplate.Height = 29;
+            this.dgvTestAppointment.Size = new System.Drawing.Size(1124, 107);
+            this.dgvTestAppointment.TabIndex = 3;
             // 
             // contextMenuStrip1
             // 
@@ -88,6 +94,24 @@
             this.takeTestToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(178, 100);
+            // 
+            // editTestToolStripMenuItem
+            // 
+            this.editTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Edit_Test_40x40;
+            this.editTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editTestToolStripMenuItem.Name = "editTestToolStripMenuItem";
+            this.editTestToolStripMenuItem.Size = new System.Drawing.Size(177, 48);
+            this.editTestToolStripMenuItem.Text = "Edit Test";
+            this.editTestToolStripMenuItem.Click += new System.EventHandler(this.editTestToolStripMenuItem_Click);
+            // 
+            // takeTestToolStripMenuItem
+            // 
+            this.takeTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Take_Test_40x40;
+            this.takeTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(177, 48);
+            this.takeTestToolStripMenuItem.Text = "Take Test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
             // 
             // btnClose
             // 
@@ -124,15 +148,6 @@
             this.lblCountRecord.TabIndex = 6;
             this.lblCountRecord.Text = "???";
             // 
-            // ctrlL1
-            // 
-            this.ctrlL1.BackColor = System.Drawing.Color.SteelBlue;
-            this.ctrlL1.Font = new System.Drawing.Font("Tahoma", 7.75F);
-            this.ctrlL1.Location = new System.Drawing.Point(25, 111);
-            this.ctrlL1.Name = "ctrlL1";
-            this.ctrlL1.Size = new System.Drawing.Size(1151, 540);
-            this.ctrlL1.TabIndex = 1;
-            // 
             // pbTestImage
             // 
             this.pbTestImage.Image = global::DVLD_Presentation.Properties.Resources.ChatGPT_Image_Aug_23__2026__02_37_44_PM3;
@@ -157,23 +172,15 @@
             this.btnTest.UseVisualStyleBackColor = false;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // editTestToolStripMenuItem
+            // ctrlL1
             // 
-            this.editTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Edit_Test_40x40;
-            this.editTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editTestToolStripMenuItem.Name = "editTestToolStripMenuItem";
-            this.editTestToolStripMenuItem.Size = new System.Drawing.Size(177, 48);
-            this.editTestToolStripMenuItem.Text = "Edit Test";
-            this.editTestToolStripMenuItem.Click += new System.EventHandler(this.editTestToolStripMenuItem_Click);
-            // 
-            // takeTestToolStripMenuItem
-            // 
-            this.takeTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.Take_Test_40x40;
-            this.takeTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
-            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(177, 48);
-            this.takeTestToolStripMenuItem.Text = "Take Test";
-            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
+            this.ctrlL1.BackColor = System.Drawing.Color.SteelBlue;
+            this.ctrlL1.Font = new System.Drawing.Font("Tahoma", 7.75F);
+            this.ctrlL1.Location = new System.Drawing.Point(25, 111);
+            this.ctrlL1.Name = "ctrlL1";
+            this.ctrlL1.Size = new System.Drawing.Size(1151, 540);
+            this.ctrlL1.TabIndex = 1;
+            this.ctrlL1.Load += new System.EventHandler(this.ctrlL1_Load);
             // 
             // frmTest
             // 
@@ -186,14 +193,14 @@
             this.Controls.Add(this.lblCountRecord);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTestAppointment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ctrlL1);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmTest";
             this.Text = "frmVisionTest";
             this.Load += new System.EventHandler(this.frmTest_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestAppointment)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).EndInit();
             this.ResumeLayout(false);
@@ -206,7 +213,7 @@
         private System.Windows.Forms.Label lblTitle;
         private ctrlL ctrlL1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTestAppointment;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCountRecord;

@@ -82,9 +82,9 @@ namespace DVLD_DataAccess
             return RowAffected > 0;
         }
 
-        public static int GetTesTypeFees(int TestTypeID)
+        public static decimal GetTesTypeFees(int TestTypeID)
         {
-            int Fees = -1;
+            decimal Fees = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -101,7 +101,7 @@ namespace DVLD_DataAccess
 
                 object result = command.ExecuteScalar();
 
-                if (result != null && int.TryParse(result.ToString(), out int insertvalue))
+                if (result != null && decimal.TryParse(result.ToString(), out decimal insertvalue))
                 {
                     Fees = insertvalue;
                 }

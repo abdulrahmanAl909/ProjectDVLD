@@ -1,4 +1,5 @@
-﻿using DVLD_Presentation.Properties;
+﻿using DVLD_Business;
+using DVLD_Presentation.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +14,22 @@ namespace DVLD_Presentation
 {
     public partial class frmTest : Form
     {
-        int _LpaclID = -1;
+        int _LoaclID = -1;
         enTestType _TestType = enTestType.VisionTest;
+
+        bool ResultOfTakeTest;
+
+        private void _LoadDataForTestAppointment()
+        {
+            dgvTestAppointment.DataSource = clsTestAppointment.GetAllTestAppointment(_LoaclID, (int)_TestType);
+            lblCountRecord.Text = dgvTestAppointment.RowCount.ToString();
+        }
 
         public frmTest(int LocalID,enTestType TestType)
         {
             InitializeComponent();
 
-            _LpaclID = LocalID;
+            _LoaclID = LocalID;
             _TestType = TestType;
         }
 
@@ -46,17 +55,32 @@ namespace DVLD_Presentation
             }
         }
 
+        private void ctrlL1_Load(object sender, EventArgs e)
+        {
+            _LoadDataForTestAppointment();
+        }
+
         private void frmTest_Load(object sender, EventArgs e)
         {
-            ctrlL1.LoadDataForLocalApplication(_LpaclID);
+            ctrlL1.LoadDataForLocalApplication(_LoaclID);
+
             _FillInfoForTest();
         }
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            frmDateOfTest frm = new frmDateOfTest();
+            if(clsTestAppointment.IsAppointmentExsit(_LoaclID,(int)_TestType,false))
+            {
+                MessageBox.Show("Person Already have an active appointment for this test, You cannot" +
+                    "add new appointment", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            frmTestAppointment frm = new frmTestAppointment(_LoaclID, _TestType);
 
             frm.ShowDialog();
+            _LoadDataForTestAppointment();
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -66,16 +90,19 @@ namespace DVLD_Presentation
 
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTakeTest frm = new frmTakeTest();
+            frmTakeTest frm = new frmTakeTest((int)dgvTestAppointment.CurrentRow.Cells[0].Value , _TestType);
 
             frm.ShowDialog();
+            _LoadDataForTestAppointment();
         }
 
         private void editTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDateOfTest frm = new frmDateOfTest();
+            frmTestAppointment frm = new frmTestAppointment((int)dgvTestAppointment.CurrentRow.Cells[0].Value,_LoaclID,_TestType);
 
             frm.ShowDialog();
+            _LoadDataForTestAppointment();
         }
+
     }
 }

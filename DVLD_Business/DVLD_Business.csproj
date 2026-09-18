@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\clsApplication.cs" />
-    <Compile Include="Test\clsTest.cs" />
+    <Compile Include="Test\clsTakeTest.cs" />
     <Compile Include="TestAppointment\clsTestAppointment.cs" />
     <Compile Include="Driver\clsDriver.cs" />
     <Compile Include="License Class\clsLicenseClass.cs" />

@@ -12,7 +12,6 @@ namespace DVLD_Business
     public class clsTestType
     {
 
-
         public static DataTable GetAllTestType()
         {
             return clsTestTypeData.GetAllTestType();
@@ -23,7 +22,7 @@ namespace DVLD_Business
             return clsTestTypeData.UpdateTestType(ID, Title, Description, Fees);
         }
 
-        public static int GetTestTypeFees(int TestTypeID)
+        public static decimal GetTestTypeFees(int TestTypeID)
         {
             return clsTestTypeData.GetTesTypeFees(TestTypeID);
         }
