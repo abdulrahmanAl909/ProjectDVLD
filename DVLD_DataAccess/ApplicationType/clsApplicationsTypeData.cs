@@ -115,5 +115,41 @@ namespace DVLD_DataAccess
 
             return RowAffected > 0;
         }
+
+        public static decimal GetPaidFees(int ApplicationTypeID)
+        {
+            decimal Fees = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select ApplicationFees From ApplicationTypes
+                             where ApplicationTypeID=@ApplicationTypeID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && decimal.TryParse(result.ToString() , out decimal newvalue))
+                {
+                    Fees = newvalue;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return Fees;
+        }
     }
 }

@@ -121,10 +121,10 @@ namespace DVLD_Presentation
 
             // Fill Info For Application
             _LoacApplInfo.ApplicationInfo.ApplicationDate = dateTime;
-            _LoacApplInfo.ApplicationInfo.ApplicationType = cbLicenseClass.SelectedIndex;
+            _LoacApplInfo.ApplicationInfo.ApplicationType =(int)enApplicationType.AddNewLocalDrivingLicense;
             _LoacApplInfo.ApplicationInfo.ApplicationStatus = (enApplicationStatus)enApplicationStatus.AddNewApp;
             _LoacApplInfo.ApplicationInfo.LastStatusDate = dateTime;
-            _LoacApplInfo.ApplicationInfo.PaidFees = 15;
+            _LoacApplInfo.ApplicationInfo.PaidFees = clsApplicationType.GetPaidFees((int)enApplicationType.AddNewLocalDrivingLicense);
             _LoacApplInfo.ApplicationInfo.ApplicationPersonID = _LoacApplInfo.ApplicationInfo.PersonInfo.PersonID;
             _LoacApplInfo.ApplicationInfo.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
 

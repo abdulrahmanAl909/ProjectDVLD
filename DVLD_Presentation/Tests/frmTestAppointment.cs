@@ -15,6 +15,7 @@ namespace DVLD_Presentation
     {      
         enum enMode { Add, Update }
         enMode Mode = enMode.Add;
+
         enTestType _TestType = enTestType.VisionTest;
 
         decimal PaidFees;
@@ -22,6 +23,7 @@ namespace DVLD_Presentation
         clsTestAppointment TestAppointmentInfo;
         private int TestAppointmentID;
         private int LocalID;
+        bool RetakeTest = true;
 
         //private void _FillInfoFprLocalApplication()
         //{
@@ -76,25 +78,55 @@ namespace DVLD_Presentation
 
             TestAppointmentInfo = clsTestAppointment.GetTestAppointmentByID(TestAppointmentID);
 
+            // there is error here becase the date
             dtpDate.Value = TestAppointmentInfo.AppointmentDate;
         }
 
-        public frmTestAppointment(int TestAppointmentID, int LocalID, enTestType TestType)
+        public frmTestAppointment(int TestAppointmentID,int LocalID,enTestType TestType,bool TheTestResult = true)
         {
             InitializeComponent();
+
+            if(TheTestResult==false)
+            {
+                dtpDate.Enabled = false;
+                btnSave.Enabled = false;
+                gbRetakeTest.Enabled = true;
+                lblWorngForRetakeTest.Visible = true;
+            }
 
             this._TestType = TestType;
             this.TestAppointmentID = TestAppointmentID;
             this.LocalID = LocalID;
+
             // Fill Object LocalApplication
             TestAppointmentInfo = new clsTestAppointment(LocalID);
 
             Mode = enMode.Update;
         }
 
-        public frmTestAppointment(int LocalID, enTestType TestType)
+        public frmTestAppointment(int LocalID, enTestType TestType, bool TheTestResult=true)
         {
             InitializeComponent();
+
+            if(TheTestResult==false)
+            {
+                RetakeTest = TheTestResult;
+
+                gbRetakeTest.Enabled = true;
+
+                decimal RetakeTestFeed = clsTestType.GetTestTypeFees((int)_TestType);
+
+                if (decimal.TryParse(lblRAppFees.Text,out decimal Value))
+                {
+                    RetakeTestFeed += Value;
+                }
+                else
+                {
+                    MessageBox.Show("It Must Be All Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                lblTotalFees.Text = RetakeTestFeed.ToString();
+            }
 
             this._TestType = TestType;
             this.LocalID = LocalID;
@@ -117,6 +149,7 @@ namespace DVLD_Presentation
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
+
             TestAppointmentInfo.TestTypeID = (int)_TestType;
             TestAppointmentInfo.LocalLicenseApplicationID = LocalID;
             TestAppointmentInfo.PaidFees = this.PaidFees;
@@ -124,6 +157,11 @@ namespace DVLD_Presentation
             TestAppointmentInfo.CreateByUserID = clsGlobalSettings.CurrentUser.UserID;
             TestAppointmentInfo.IsLocked = false;
             TestAppointmentInfo.RetakeTestApplicationID = -1;
+
+            if (RetakeTest == false)
+            {
+
+            }
 
             if (TestAppointmentInfo.Save())
             {
@@ -136,8 +174,9 @@ namespace DVLD_Presentation
                     this.Close();
                 }
             }
-
+           
             Mode = enMode.Update;
         }
+
     }
 }

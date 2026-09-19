@@ -17,12 +17,17 @@ namespace DVLD_Presentation
         int _LoaclID = -1;
         enTestType _TestType = enTestType.VisionTest;
 
-        bool ResultOfTakeTest;
+        bool? ResultOfTakeTest=null;
 
         private void _LoadDataForTestAppointment()
         {
             dgvTestAppointment.DataSource = clsTestAppointment.GetAllTestAppointment(_LoaclID, (int)_TestType);
             lblCountRecord.Text = dgvTestAppointment.RowCount.ToString();
+
+            if(dgvTestAppointment.Rows.Count!=0)
+            {
+                ResultOfTakeTest = clsTakeTest.CheckTestResult((int)dgvTestAppointment.CurrentRow.Cells[0].Value);
+            }
         }
 
         public frmTest(int LocalID,enTestType TestType)
@@ -76,6 +81,23 @@ namespace DVLD_Presentation
                 return;
             }
 
+            // if he pass the test and else to fail the test
+            if(ResultOfTakeTest==true)
+            {
+                MessageBox.Show("This person already passed this test before,you can olny retake failed" +
+                    " test", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if(ResultOfTakeTest==false)
+            {
+                //go to test appoiment for retake test
+                frmTestAppointment frm1 = new frmTestAppointment(_LoaclID, _TestType ,false);
+
+                frm1.ShowDialog();
+                _LoadDataForTestAppointment();
+                return;
+            }
+
             frmTestAppointment frm = new frmTestAppointment(_LoaclID, _TestType);
 
             frm.ShowDialog();
@@ -105,12 +127,21 @@ namespace DVLD_Presentation
 
             if(!clsTestAppointment.ChangeIsLockedToTrue(TestAppointmentID))
             {
-                MessageBox.Show("Spmething is Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Something is Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void editTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(ResultOfTakeTest==false)
+            {
+                frmTestAppointment frm1 = new frmTestAppointment((int)dgvTestAppointment.CurrentRow.Cells[0].Value, _LoaclID, _TestType, false);
+
+                frm1.ShowDialog();
+                _LoadDataForTestAppointment();
+                return;
+            }
+
             frmTestAppointment frm = new frmTestAppointment((int)dgvTestAppointment.CurrentRow.Cells[0].Value,_LoaclID,_TestType);
 
             frm.ShowDialog();

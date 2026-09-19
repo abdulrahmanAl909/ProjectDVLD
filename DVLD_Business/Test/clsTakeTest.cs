@@ -40,5 +40,10 @@ namespace DVLD_Business
             TestAppointmentInfo = clsTestAppointment.GetTestAppointmentByID(TestAppointmentID);
         }
 
+        public static bool? CheckTestResult(int AppointmentID)
+        {
+            return clsTakeTestData.CheckTestResult(AppointmentID);
+        }
+
     }
 }

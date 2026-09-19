@@ -60,6 +60,42 @@ namespace DVLD_DataAccess
             return TestID;
         }
 
+        public static bool? CheckTestResult(int AppointmentID)
+        {
+            bool? TestResult = null;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select TestResult From Tests
+                             where TestAppointmentID = @AppointmentID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
+
+            try
+            {
+                connection.Open();
+
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && bool.TryParse(result.ToString(), out bool insertvalue))
+                {
+                    TestResult = insertvalue;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return TestResult; 
+        }
 
 
     }

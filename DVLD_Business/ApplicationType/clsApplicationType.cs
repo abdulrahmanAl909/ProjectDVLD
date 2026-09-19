@@ -46,5 +46,10 @@ namespace DVLD_Business
             return clsApplicationsTypeData.UpdateFees(ID, Title, Fees);
         }
 
+        public static decimal GetPaidFees(int ApplicationTypeID)
+        {
+            return clsApplicationsTypeData.GetPaidFees(ApplicationTypeID);
+        }
+
     }
 }
