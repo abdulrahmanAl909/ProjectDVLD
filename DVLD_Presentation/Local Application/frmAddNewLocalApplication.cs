@@ -126,7 +126,7 @@ namespace DVLD_Presentation
             _LoacApplInfo.ApplicationInfo.LastStatusDate = dateTime;
             _LoacApplInfo.ApplicationInfo.PaidFees = clsApplicationType.GetPaidFees((int)enApplicationType.AddNewLocalDrivingLicense);
             _LoacApplInfo.ApplicationInfo.ApplicationPersonID = _LoacApplInfo.ApplicationInfo.PersonInfo.PersonID;
-            _LoacApplInfo.ApplicationInfo.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
+            _LoacApplInfo.ApplicationInfo.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;                                        
 
             //Fill Info For Local Application
 

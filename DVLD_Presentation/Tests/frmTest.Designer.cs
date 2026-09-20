@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblCountRecord = new System.Windows.Forms.Label();
             this.pbTestImage = new System.Windows.Forms.PictureBox();
-            this.btnTest = new System.Windows.Forms.Button();
+            this.btnAddTestAppointment = new System.Windows.Forms.Button();
             this.ctrlL1 = new DVLD_Presentation.ctrlL();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestAppointment)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -158,19 +158,19 @@
             this.pbTestImage.TabIndex = 8;
             this.pbTestImage.TabStop = false;
             // 
-            // btnTest
+            // btnAddTestAppointment
             // 
-            this.btnTest.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnTest.BackgroundImage = global::DVLD_Presentation.Properties.Resources.Add_New_Application_Lines_40x40;
-            this.btnTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTest.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnTest.ForeColor = System.Drawing.Color.White;
-            this.btnTest.Location = new System.Drawing.Point(1055, 649);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(112, 48);
-            this.btnTest.TabIndex = 7;
-            this.btnTest.UseVisualStyleBackColor = false;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            this.btnAddTestAppointment.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddTestAppointment.BackgroundImage = global::DVLD_Presentation.Properties.Resources.Add_New_Application_Lines_40x40;
+            this.btnAddTestAppointment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddTestAppointment.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnAddTestAppointment.ForeColor = System.Drawing.Color.White;
+            this.btnAddTestAppointment.Location = new System.Drawing.Point(1055, 649);
+            this.btnAddTestAppointment.Name = "btnAddTestAppointment";
+            this.btnAddTestAppointment.Size = new System.Drawing.Size(112, 48);
+            this.btnAddTestAppointment.TabIndex = 7;
+            this.btnAddTestAppointment.UseVisualStyleBackColor = false;
+            this.btnAddTestAppointment.Click += new System.EventHandler(this.btnAddTestAppointment_Click_1);
             // 
             // ctrlL1
             // 
@@ -189,7 +189,7 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1179, 867);
             this.Controls.Add(this.pbTestImage);
-            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.btnAddTestAppointment);
             this.Controls.Add(this.lblCountRecord);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
@@ -217,7 +217,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCountRecord;
-        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnAddTestAppointment;
         private System.Windows.Forms.PictureBox pbTestImage;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editTestToolStripMenuItem;

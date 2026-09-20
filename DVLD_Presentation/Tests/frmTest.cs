@@ -24,9 +24,16 @@ namespace DVLD_Presentation
             dgvTestAppointment.DataSource = clsTestAppointment.GetAllTestAppointment(_LoaclID, (int)_TestType);
             lblCountRecord.Text = dgvTestAppointment.RowCount.ToString();
 
-            if(dgvTestAppointment.Rows.Count!=0)
+            // هذا كله علشان ياشر على اخر واحد
+            if (dgvTestAppointment.Rows.Count != 0)
             {
-                ResultOfTakeTest = clsTakeTest.CheckTestResult((int)dgvTestAppointment.CurrentRow.Cells[0].Value);
+                int LastRowIndex = dgvTestAppointment.Rows.Count - 1;
+
+                dgvTestAppointment.CurrentCell =
+                    dgvTestAppointment.Rows[LastRowIndex].Cells[0];
+
+                ResultOfTakeTest = clsTakeTest.CheckTestResult(
+                    (int)dgvTestAppointment.CurrentRow.Cells[0].Value);
             }
         }
 
@@ -72,9 +79,9 @@ namespace DVLD_Presentation
             _FillInfoForTest();
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
+        private void btnAddTestAppointment_Click_1(object sender, EventArgs e)
         {
-            if(clsTestAppointment.IsAppointmentExsit(_LoaclID,(int)_TestType,false))
+            if (clsTestAppointment.IsAppointmentExsit(_LoaclID,(int)_TestType,false))
             {
                 MessageBox.Show("Person Already have an active appointment for this test, You cannot" +
                     "add new appointment", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -112,6 +119,11 @@ namespace DVLD_Presentation
 
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if ((bool)dgvTestAppointment.CurrentRow.Cells[3].Value == true)
+            {
+                MessageBox.Show("Are you Stupit you take the test", "Stupit", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             frmTakeTest frm = new frmTakeTest((int)dgvTestAppointment.CurrentRow.Cells[0].Value , _TestType);
 
             frm.DataBack += TestResult;
@@ -133,13 +145,16 @@ namespace DVLD_Presentation
 
         private void editTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(ResultOfTakeTest==false)
+            if ((bool)dgvTestAppointment.CurrentRow.Cells[3].Value == true)
             {
-                frmTestAppointment frm1 = new frmTestAppointment((int)dgvTestAppointment.CurrentRow.Cells[0].Value, _LoaclID, _TestType, false);
+                if (ResultOfTakeTest == false)
+                {
+                    frmTestAppointment frm1 = new frmTestAppointment((int)dgvTestAppointment.CurrentRow.Cells[0].Value, _LoaclID, _TestType, false);
 
-                frm1.ShowDialog();
-                _LoadDataForTestAppointment();
-                return;
+                    frm1.ShowDialog();
+                    _LoadDataForTestAppointment();
+                    return;
+                }
             }
 
             frmTestAppointment frm = new frmTestAppointment((int)dgvTestAppointment.CurrentRow.Cells[0].Value,_LoaclID,_TestType);
@@ -147,6 +162,5 @@ namespace DVLD_Presentation
             frm.ShowDialog();
             _LoadDataForTestAppointment();
         }
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DVLD_Business;
+using DVLD_Business.Application;
 using DVLD_Presentation.Properties;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,8 @@ namespace DVLD_Presentation
         private int LocalID;
         bool RetakeTest = true;
 
+        //مشكلة صعبه وحليتها بطريقه غيبه
+        int PersonID = -1;
         //private void _FillInfoFprLocalApplication()
         //{
         //    lblDLAppID.Text = TestAppointmentInfo.LocalInfo.LocalApplicationID.ToString();
@@ -69,6 +72,7 @@ namespace DVLD_Presentation
             dtpDate.MinDate = DateTime.Now;
             PaidFees = clsTestType.GetTestTypeFees((int)_TestType);
             lblFees.Text = PaidFees.ToString();
+            this.PersonID= TestAppointmentInfo.LocalInfo.ApplicationInfo.PersonInfo.PersonID;
 
             if (Mode == enMode.Add)
             {
@@ -79,9 +83,32 @@ namespace DVLD_Presentation
             TestAppointmentInfo = clsTestAppointment.GetTestAppointmentByID(TestAppointmentID);
 
             // there is error here becase the date
+            dtpDate.MinDate = TestAppointmentInfo.AppointmentDate;
             dtpDate.Value = TestAppointmentInfo.AppointmentDate;
         }
 
+        private void _FillDataForRetake()
+        {
+            clsApplication ApplicationInfo = new clsApplication();
+
+            ApplicationInfo.ApplicationDate = DateTime.Now;
+            ApplicationInfo.ApplicationType = (int)enApplicationType.RetakeTest;
+            ApplicationInfo.ApplicationStatus = (enApplicationStatus)enApplicationStatus.AddNewApp;
+            ApplicationInfo.LastStatusDate = DateTime.Now;
+            ApplicationInfo.PaidFees = clsApplicationType.GetPaidFees((int)enApplicationType.AddNewLocalDrivingLicense);
+            ApplicationInfo.ApplicationPersonID = this.PersonID;
+            ApplicationInfo.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
+
+            if (!ApplicationInfo.Save())
+            {
+                MessageBox.Show("Error: Data Is NOT Saved Successfully", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            TestAppointmentInfo.RetakeTestApplicationID = ApplicationInfo.ApplicationID;
+            lblRTestAppID.Text = TestAppointmentInfo.RetakeTestApplicationID.ToString();
+        }
+
+        // if he pass the test it will be true the obisitve false
         public frmTestAppointment(int TestAppointmentID,int LocalID,enTestType TestType,bool TheTestResult = true)
         {
             InitializeComponent();
@@ -156,11 +183,15 @@ namespace DVLD_Presentation
             TestAppointmentInfo.AppointmentDate = dtpDate.Value;
             TestAppointmentInfo.CreateByUserID = clsGlobalSettings.CurrentUser.UserID;
             TestAppointmentInfo.IsLocked = false;
-            TestAppointmentInfo.RetakeTestApplicationID = -1;
 
+            // this statament he did not pass the tset
             if (RetakeTest == false)
             {
-
+                _FillDataForRetake();
+            }
+            else
+            {
+                TestAppointmentInfo.RetakeTestApplicationID = -1;
             }
 
             if (TestAppointmentInfo.Save())
@@ -176,6 +207,7 @@ namespace DVLD_Presentation
             }
            
             Mode = enMode.Update;
+            this.Close();
         }
 
     }
