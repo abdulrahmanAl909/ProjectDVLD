@@ -124,11 +124,17 @@ namespace DVLD_Presentation
                 MessageBox.Show("Are you Stupit you take the test", "Stupit", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            frmTakeTest frm = new frmTakeTest((int)dgvTestAppointment.CurrentRow.Cells[0].Value , _TestType);
+            
+            frmTakeTest frm = new frmTakeTest((int)dgvTestAppointment.CurrentRow.Cells[0].Value, _TestType);
 
             frm.DataBack += TestResult;
 
             frm.ShowDialog();
+
+            if(ResultOfTakeTest==true)
+            {
+                ctrlL1.ChangePassTest(_LoaclID);
+            }
 
             _LoadDataForTestAppointment();
         }
@@ -162,5 +168,6 @@ namespace DVLD_Presentation
             frm.ShowDialog();
             _LoadDataForTestAppointment();
         }
+
     }
 }

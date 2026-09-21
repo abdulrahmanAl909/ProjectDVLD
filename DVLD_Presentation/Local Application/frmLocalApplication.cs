@@ -176,6 +176,7 @@ namespace DVLD_Presentation
             frmTest frm = new frmTest((int)dgvLocalApplication.CurrentRow.Cells[0].Value, enTestType.VisionTest);
 
             frm.ShowDialog();
+            _RefrishLocalApplication();
         }
 
         private void sechduleWriteTestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,6 +184,7 @@ namespace DVLD_Presentation
             frmTest frm = new frmTest((int)dgvLocalApplication.CurrentRow.Cells[0].Value, enTestType.WriteTest);
 
             frm.ShowDialog();
+            _RefrishLocalApplication();
         }
 
         private void sechduleStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -190,7 +192,77 @@ namespace DVLD_Presentation
             frmTest frm = new frmTest((int)dgvLocalApplication.CurrentRow.Cells[0].Value, enTestType.StreetTest);
 
             frm.ShowDialog();
+            _RefrishLocalApplication();
+
         }
 
+        private void cmsMenuApplication_Opening(object sender, CancelEventArgs e)
+        {
+            int PassedTest = (int)dgvLocalApplication.CurrentRow.Cells[5].Value;
+
+            /*if (PassedTest == 0)
+            {
+                sechduleViToolStripMenuItem.Enabled = true;
+            }
+            else if (PassedTest == 1)
+            {
+                sechduleWriteTestToolStripMenuItem.Enabled = true;
+            }
+            else if (PassedTest == 2)
+            {
+                sechduleStreetTestToolStripMenuItem.Enabled = true;
+            }
+            else if (PassedTest == 3)
+            {
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
+            }*/
+
+            switch (PassedTest)
+            {
+
+                case 0:
+                    sechduleViToolStripMenuItem.Enabled = true;
+                    sechduleTestsToolStripMenuItem.Enabled = true;
+                    sechduleWriteTestToolStripMenuItem.Enabled = false;
+                    sechduleStreetTestToolStripMenuItem.Enabled = false;
+                    issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                    break;
+
+                case 1:
+                    sechduleWriteTestToolStripMenuItem.Enabled = true;
+                    sechduleTestsToolStripMenuItem.Enabled = true;
+                    sechduleViToolStripMenuItem.Enabled = false;
+                    sechduleStreetTestToolStripMenuItem.Enabled = false;
+                    issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                    break;
+
+                case 2:
+                    sechduleStreetTestToolStripMenuItem.Enabled = true;
+                    sechduleTestsToolStripMenuItem.Enabled = true;
+                    sechduleViToolStripMenuItem.Enabled = false;
+                    sechduleWriteTestToolStripMenuItem.Enabled = false;
+                    issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                    break;
+
+
+                case 3:
+                    issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
+                    sechduleTestsToolStripMenuItem.Enabled = false;
+                    sechduleViToolStripMenuItem.Enabled = false;
+                    sechduleWriteTestToolStripMenuItem.Enabled = false;
+                    sechduleStreetTestToolStripMenuItem.Enabled = false;
+                    break;
+
+            }
+
+        }
+
+        private void issueDrivingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIssueDriverLicenseFirstTime frm = new frmIssueDriverLicenseFirstTime((int)dgvLocalApplication.CurrentRow.Cells[0].Value);
+
+            frm.ShowDialog();
+
+        }
     }
 }

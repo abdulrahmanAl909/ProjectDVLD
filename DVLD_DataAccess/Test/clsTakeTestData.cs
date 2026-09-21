@@ -97,6 +97,47 @@ namespace DVLD_DataAccess
             return TestResult; 
         }
 
+        public static int CountTrial(int LocalID ,int TestTypeID)
+        {
+            int CountTrial = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select Count(*) FROM  TestAppointments INNER JOIN
+             LocalDrivingLicenseApplications ON TestAppointments.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID INNER JOIN
+             Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID
+             where TestAppointments.LocalDrivingLicenseApplicationID=@LocalID and TestTypeID=@TestTypeID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@LocalID", LocalID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+
+            try
+            {
+                connection.Open();
+
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertvalue))
+                {
+                    CountTrial = insertvalue;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return CountTrial;
+        }
+            
 
     }
 }

@@ -29,7 +29,7 @@ namespace DVLD_Presentation
 
             lblLocalID.Text = LoaclInfo.LocalApplicationID.ToString();
             lblWhtichLivense.Text = LoaclInfo.LicenseClassInfo.ClassName;
-
+            lblPassTest.Text = clsLoaclApplication.GetCountForPassedTest(LoaclID).ToString();
 
             // Fill Application
 
@@ -45,12 +45,18 @@ namespace DVLD_Presentation
             PersonID = LoaclInfo.ApplicationInfo.ApplicationPersonID;
         }
 
+        public void ChangePassTest(int LocalID)
+        {
+            lblPassTest.Text = clsLoaclApplication.GetCountForPassedTest(LocalID).ToString();
+        }
+
         private void llShowPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             PersonDetails frm = new PersonDetails(PersonID);
 
             frm.ShowDialog();
         }
+
 
 
     }

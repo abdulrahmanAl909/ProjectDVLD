@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Deployment.Internal;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,13 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = @"SELECT LDLAppID= LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID, DrivingClass= LicenseClasses.ClassName, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Applications.ApplicationDate,PassedTest=0 ,Status=
+            string quary = @"SELECT LDLAppID= LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID, DrivingClass= LicenseClasses.ClassName, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Applications.ApplicationDate,PassedTest=
+             (SELECT Count(*) FROM TestAppointments INNER JOIN
+             Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID INNER JOIN
+             TestTypes ON TestAppointments.TestTypeID = TestTypes.TestTypeID
+             where LocalDrivingLicenseApplicationID=LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID and TestResult=1)
+
+            ,Status=
                              case 
                              When ApplicationStatus=1 then 'New'
                              When ApplicationStatus=2 then 'Cancelled'
@@ -326,6 +333,44 @@ namespace DVLD_DataAccess
             return (!IsHasRow);
         }
 
+        public static int GetCountForPassedTest(int LocalID)
+        {
+            int Count = -1;
 
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"SELECT Count(*)
+                             FROM   TestAppointments INNER JOIN
+                             Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID INNER JOIN
+                             TestTypes ON TestAppointments.TestTypeID = TestTypes.TestTypeID
+                             where LocalDrivingLicenseApplicationID=@LocalID and TestResult=1";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@LocalID", LocalID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertvalue))
+                {
+                    Count = insertvalue;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Count;
+        }
     }
+
+
 }

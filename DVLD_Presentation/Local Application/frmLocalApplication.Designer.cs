@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvLocalApplication = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenuApplication = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.editApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +61,7 @@
             this.btnAddApplication = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalApplication)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            this.cmsMenuApplication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +84,7 @@
             this.dgvLocalApplication.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvLocalApplication.BackgroundColor = System.Drawing.Color.White;
             this.dgvLocalApplication.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocalApplication.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvLocalApplication.ContextMenuStrip = this.cmsMenuApplication;
             this.dgvLocalApplication.Location = new System.Drawing.Point(17, 320);
             this.dgvLocalApplication.Name = "dgvLocalApplication";
             this.dgvLocalApplication.ReadOnly = true;
@@ -94,10 +94,10 @@
             this.dgvLocalApplication.Size = new System.Drawing.Size(1253, 214);
             this.dgvLocalApplication.TabIndex = 2;
             // 
-            // contextMenuStrip1
+            // cmsMenuApplication
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsMenuApplication.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.cmsMenuApplication.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showToolStripMenuItem,
             this.toolStripMenuItem1,
             this.editApplicationToolStripMenuItem,
@@ -113,8 +113,9 @@
             this.showLicenseToolStripMenuItem,
             this.toolStripMenuItem6,
             this.showPersonLicenseHistoryToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(363, 505);
+            this.cmsMenuApplication.Name = "contextMenuStrip1";
+            this.cmsMenuApplication.Size = new System.Drawing.Size(363, 505);
+            this.cmsMenuApplication.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMenuApplication_Opening);
             // 
             // showToolStripMenuItem
             // 
@@ -191,6 +192,7 @@
             // 
             // sechduleViToolStripMenuItem
             // 
+            this.sechduleViToolStripMenuItem.Enabled = false;
             this.sechduleViToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.VisionTest_40;
             this.sechduleViToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sechduleViToolStripMenuItem.Name = "sechduleViToolStripMenuItem";
@@ -200,6 +202,7 @@
             // 
             // sechduleWriteTestToolStripMenuItem
             // 
+            this.sechduleWriteTestToolStripMenuItem.Enabled = false;
             this.sechduleWriteTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.WriteTest_40;
             this.sechduleWriteTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sechduleWriteTestToolStripMenuItem.Name = "sechduleWriteTestToolStripMenuItem";
@@ -209,6 +212,7 @@
             // 
             // sechduleStreetTestToolStripMenuItem
             // 
+            this.sechduleStreetTestToolStripMenuItem.Enabled = false;
             this.sechduleStreetTestToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.StreetTest_40;
             this.sechduleStreetTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sechduleStreetTestToolStripMenuItem.Name = "sechduleStreetTestToolStripMenuItem";
@@ -229,6 +233,7 @@
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Name = "issueDrivingLicenseFirstTimeToolStripMenuItem";
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Size = new System.Drawing.Size(362, 48);
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Text = "Issue Driving License (First Time)";
+            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Click += new System.EventHandler(this.issueDrivingLicenseFirstTimeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -403,7 +408,7 @@
             this.Text = "frmLocalApplication";
             this.Load += new System.EventHandler(this.frmLocalApplication_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalApplication)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.cmsMenuApplication.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -422,7 +427,7 @@
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.Button btnAddApplication;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip cmsMenuApplication;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editApplicationToolStripMenuItem;

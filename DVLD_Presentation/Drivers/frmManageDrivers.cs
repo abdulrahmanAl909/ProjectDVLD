@@ -87,11 +87,11 @@ namespace DVLD_Presentation
             {
                 if (cbIsActive.Text == "Yes")
                 {
-                    dgvShowDriver.DataSource = clsDriver.GetAllDriverByFilter(cbFilterBy.Text, "1");
+                    dgvShowDriver.DataSource = clsDriver.GetAllDriverByFilter("ActiveLicense", "1");
                 }
                 else
                 {
-                    dgvShowDriver.DataSource = clsDriver.GetAllDriverByFilter(cbFilterBy.Text, "0");
+                    dgvShowDriver.DataSource = clsDriver.GetAllDriverByFilter("ActiveLicense", "0");
                 }
                 lblCountRecord.Text = dgvShowDriver.RowCount.ToString();
             }

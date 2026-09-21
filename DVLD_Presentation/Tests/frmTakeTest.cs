@@ -64,6 +64,8 @@ namespace DVLD_Presentation
             lblName.Text = TakeTestInfo.TestAppointmentInfo.LocalInfo.ApplicationInfo.PersonInfo.FullName;
             dtpDate.Value = TakeTestInfo.TestAppointmentInfo.AppointmentDate;
             lblFees.Text = TakeTestInfo.TestAppointmentInfo.PaidFees.ToString();
+            lblTrial.Text = clsTakeTest.CountTrial(TakeTestInfo.TestAppointmentInfo.LocalLicenseApplicationID,(int)_TestType).ToString();
+            dtpDate.Enabled = false;
 
             rbPass.Checked = true;
         }

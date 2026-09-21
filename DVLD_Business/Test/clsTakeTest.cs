@@ -45,5 +45,10 @@ namespace DVLD_Business
             return clsTakeTestData.CheckTestResult(AppointmentID);
         }
 
+        public static int CountTrial(int LocalID , int TestTypeID)
+        {
+            return clsTakeTestData.CountTrial(LocalID, TestTypeID);
+        }
+
     }
 }

@@ -108,6 +108,24 @@ namespace DVLD_Business
 
         }
 
+        public static bool CompeletedApplicatiom(int LocalApplication)
+        {
+            clsLoaclApplication LocalInfo = clsLoaclApplication.GetLocalApplicationByID(LocalApplication);
+            if (LocalInfo != null && clsApplication.ChangeStatus(LocalInfo.ApplicationID, enApplicationStatus.Completed))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static int GetCountForPassedTest(int LocalID)
+        {
+            return clsLocalApplicationData.GetCountForPassedTest(LocalID);
+        }
+
         public bool CheckHasOrder()
         {
             return clsLocalApplicationData.CheckHasOrder(ApplicationInfo.ApplicationPersonID,ApplicationInfo.ApplicationType , (byte)enApplicationStatus.AddNewApp);

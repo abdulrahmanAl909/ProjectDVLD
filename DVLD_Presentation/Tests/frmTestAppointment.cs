@@ -71,6 +71,7 @@ namespace DVLD_Presentation
             dtpDate.Value = DateTime.Now;
             dtpDate.MinDate = DateTime.Now;
             PaidFees = clsTestType.GetTestTypeFees((int)_TestType);
+            lblTrial.Text = clsTakeTest.CountTrial(LocalID, (int)_TestType).ToString();
             lblFees.Text = PaidFees.ToString();
             this.PersonID= TestAppointmentInfo.LocalInfo.ApplicationInfo.PersonInfo.PersonID;
 
