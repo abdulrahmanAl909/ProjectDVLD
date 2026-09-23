@@ -81,6 +81,7 @@
             this.btnIssue.TabIndex = 4;
             this.btnIssue.Text = "Issue";
             this.btnIssue.UseVisualStyleBackColor = false;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
             // ctrlL1
             // 

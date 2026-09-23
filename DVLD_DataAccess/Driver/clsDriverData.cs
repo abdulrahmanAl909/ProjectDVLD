@@ -127,7 +127,6 @@ namespace DVLD_DataAccess
             return dataTable;
         }
 
-
         public static int AddNewDriver(int PersonID, int CreatedByUserID, DateTime CreatedDate)
         {
             int NewDriver = -1;
@@ -166,6 +165,41 @@ namespace DVLD_DataAccess
             }
 
             return NewDriver;
+        }
+
+        public static int IsDriverExist(int PersonID)
+        {
+            int DriverID =-1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select DriverID From Drivers
+                             where PersonID =@PersonID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertvalue))
+                {
+                    DriverID = insertvalue;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DriverID;
         }
     }
 }

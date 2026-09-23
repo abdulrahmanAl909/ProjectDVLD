@@ -200,23 +200,96 @@ namespace DVLD_Presentation
         {
             int PassedTest = (int)dgvLocalApplication.CurrentRow.Cells[5].Value;
 
-            /*if (PassedTest == 0)
+            string ApplicationStatus = (string)dgvLocalApplication.CurrentRow.Cells[6].Value;
+
+            if(ApplicationStatus=="Cancelled")
+            {
+                MessageBox.Show("This Application Was Cancelled", "Cancelled Application!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Cancel = true;
+                return;
+            }
+
+            if (PassedTest == 0)
             {
                 sechduleViToolStripMenuItem.Enabled = true;
+                sechduleTestsToolStripMenuItem.Enabled = true;
+                sechduleWriteTestToolStripMenuItem.Enabled = false;
+                sechduleStreetTestToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+
+                // اللي تحت علشان الحذف والاضافة
+
+                editApplicationToolStripMenuItem.Enabled = true;
+                editApplicationToolStripMenuItem1.Enabled = true;
+                deleteApplicationToolStripMenuItem.Enabled = true;
+                cancelApplicatinnToolStripMenuItem.Enabled = true;
+
+                showLicenseToolStripMenuItem.Enabled = false;
             }
             else if (PassedTest == 1)
             {
                 sechduleWriteTestToolStripMenuItem.Enabled = true;
+                sechduleTestsToolStripMenuItem.Enabled = true;
+                sechduleViToolStripMenuItem.Enabled = false;
+                sechduleStreetTestToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+
+                editApplicationToolStripMenuItem.Enabled = true;
+                editApplicationToolStripMenuItem1.Enabled = true;
+                deleteApplicationToolStripMenuItem.Enabled = true;
+                cancelApplicatinnToolStripMenuItem.Enabled = true;
+
+                showLicenseToolStripMenuItem.Enabled = false;
             }
             else if (PassedTest == 2)
             {
                 sechduleStreetTestToolStripMenuItem.Enabled = true;
+                sechduleTestsToolStripMenuItem.Enabled = true;
+                sechduleViToolStripMenuItem.Enabled = false;
+                sechduleWriteTestToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+
+                editApplicationToolStripMenuItem.Enabled = true;
+                editApplicationToolStripMenuItem1.Enabled = true;
+                deleteApplicationToolStripMenuItem.Enabled = true;
+                cancelApplicatinnToolStripMenuItem.Enabled = true;
+
+                showLicenseToolStripMenuItem.Enabled = false;
             }
-            else if (PassedTest == 3)
+            else if (PassedTest == 3 && ApplicationStatus!="Completed")
             {
                 issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
-            }*/
+                sechduleTestsToolStripMenuItem.Enabled = false;
+                sechduleViToolStripMenuItem.Enabled = false;
+                sechduleWriteTestToolStripMenuItem.Enabled = false;
+                sechduleStreetTestToolStripMenuItem.Enabled = false;
 
+
+                editApplicationToolStripMenuItem.Enabled = true;
+                editApplicationToolStripMenuItem1.Enabled = true;
+                deleteApplicationToolStripMenuItem.Enabled = true;
+                cancelApplicatinnToolStripMenuItem.Enabled = true;
+
+                showLicenseToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                sechduleTestsToolStripMenuItem.Enabled = false;
+                sechduleViToolStripMenuItem.Enabled = false;
+                sechduleWriteTestToolStripMenuItem.Enabled = false;
+                sechduleStreetTestToolStripMenuItem.Enabled = false;
+
+                editApplicationToolStripMenuItem.Enabled = false;
+                editApplicationToolStripMenuItem1.Enabled = false;
+                deleteApplicationToolStripMenuItem.Enabled = false;
+                cancelApplicatinnToolStripMenuItem.Enabled = false;
+
+                showLicenseToolStripMenuItem.Enabled = true;
+
+            }
+
+            /*
             switch (PassedTest)
             {
 
@@ -253,8 +326,7 @@ namespace DVLD_Presentation
                     sechduleStreetTestToolStripMenuItem.Enabled = false;
                     break;
 
-            }
-
+            }*/
         }
 
         private void issueDrivingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
