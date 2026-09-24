@@ -103,7 +103,7 @@ namespace DVLD_DataAccess
                     IsFount = true;
 
                     ClassName = (string)reader["ClassName"];
-                    ClassDescriptionm = (string)reader["ClassDescriptionm"];
+                    ClassDescriptionm = (string)reader["ClassDescription"];
                     MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
                     DefaultValidityLength = (byte)reader["DefaultValidityLength"];
                     ClassFees = (decimal)reader["ClassFees"];

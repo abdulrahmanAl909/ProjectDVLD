@@ -2,6 +2,7 @@
 using DVLD_DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -36,7 +37,7 @@ namespace DVLD_Business
 
         public bool IsActive { set; get; }
 
-        public byte IssueReason { set; get; }
+        public enIssueReason IssueReason { set; get; }
 
         public int CreatedByUserID { set; get; }
 
@@ -52,7 +53,7 @@ namespace DVLD_Business
             this.Notes = "";
             this.PaidFees = -1;
             this.IsActive = false;
-            this.IssueReason = 1;
+            this.IssueReason = enIssueReason.FirstTime;
             this.CreatedByUserID = -1;
 
             ApplicationInfo = new clsApplication();
@@ -61,7 +62,7 @@ namespace DVLD_Business
         }
 
         private clsLicense(int LicenseID,int ApplicationID , int DriverID , int LicenseClass ,DateTime IssueDate 
-            ,DateTime ExpirationDate,string Notes,decimal PaidFees,bool IsActive,byte IssueReason,int CreatedByUserID)
+            ,DateTime ExpirationDate,string Notes,decimal PaidFees,bool IsActive, enIssueReason IssueReason,int CreatedByUserID)
         {
             this.LicenseID = LicenseID;
             this.ApplicationID = ApplicationID;
@@ -91,9 +92,14 @@ namespace DVLD_Business
         public bool AddNewLicense()
         {
             this.LicenseID = clsLicenseData.AddNewLicense(ApplicationID, DriverID, LicenseClass, IssueDate
-                , ExpirationDate, Notes, PaidFees, IsActive, IssueReason, CreatedByUserID);
+                , ExpirationDate, Notes, PaidFees, IsActive,(byte)IssueReason, CreatedByUserID);
 
             return (this.LicenseID != -1);
+        }
+
+        public static DataTable GetLicense(int DriverID)
+        {
+            return clsLicenseData.GetLicense(DriverID);
         }
 
         public static clsLicense GetLicenseByID(int LicenseID)
@@ -103,19 +109,29 @@ namespace DVLD_Business
             string Notes = "";
             decimal PaidFees = 1;
             bool IsActive = false;
-            byte IssueReason = 1;
+            byte IssueReason =1;
             
             if(clsLicenseData.GetLicenseByID(LicenseID,ref ApplicationID,ref DriverID , ref LicenseClass
-                ,ref IssueDate, ref ExpirationDate,ref Notes , ref PaidFees , ref IsActive , ref IssueReason
+                ,ref IssueDate, ref ExpirationDate,ref Notes , ref PaidFees , ref IsActive ,ref IssueReason
                 ,ref CreatedByUserID))
             {
                 return new clsLicense(LicenseID, ApplicationID, DriverID, LicenseClass, IssueDate
-                    , ExpirationDate, Notes, PaidFees, IsActive, IssueReason, CreatedByUserID);
+                    , ExpirationDate, Notes, PaidFees, IsActive,(enIssueReason)IssueReason, CreatedByUserID);
             }
             else
             {
                 return null;
             }
+        }
+
+        public static int GetLicenseIDByApplicationID(int ApplicationID)
+        {
+            return clsLicenseData.GetLicenseIDByApplicationID(ApplicationID);
+        }
+
+        public static bool IsDriverHasLicense(int DriverID , int LicenseClassID)
+        {
+            return clsLicenseData.IsDriverHasLicense(DriverID, LicenseClassID);
         }
 
     }

@@ -172,6 +172,12 @@ namespace DVLD_Business
         {
             return clsPersonData.GetAllPeopleByFilter(ColumnName, FilterBy);
         }
+
+        public static int GetPersonIDByNationalNo(string NationalNo)
+        {
+            return clsPersonData.GetPersonIDByNationalNo(NationalNo);
+        }
+
         public bool SavePerson()
         {
             switch (Mode)

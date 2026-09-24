@@ -94,6 +94,11 @@ namespace DVLD_Business
             }
         }
 
+        public static bool DeleteApplication(int LocalID)
+        {
+            return clsLocalApplicationData.DeleteApplication(LocalID);
+        }
+
         public static bool CancelApplication(int LocalApplication)
         {
             clsLoaclApplication LocalInfo = clsLoaclApplication.GetLocalApplicationByID(LocalApplication);
@@ -124,6 +129,11 @@ namespace DVLD_Business
         public static int GetCountForPassedTest(int LocalID)
         {
             return clsLocalApplicationData.GetCountForPassedTest(LocalID);
+        }
+
+        public static int GetApplicationIDByLocalID(int LocalID)
+        {
+            return clsLocalApplicationData.GetApplicationIDByLocalID(LocalID);
         }
 
         public bool CheckHasOrder()

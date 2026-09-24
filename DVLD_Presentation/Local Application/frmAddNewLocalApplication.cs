@@ -113,6 +113,15 @@ namespace DVLD_Presentation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            int DriverID = clsDriver.IsDriverExist(_LoacApplInfo.ApplicationInfo.PersonInfo.PersonID);
+
+            if(clsLicense.IsDriverHasLicense(DriverID , cbLicenseClass.SelectedIndex))
+            {
+                MessageBox.Show("Person already have a license with same applied driving class" +
+                    ", Choose diffrent driving license", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if(cbLicenseClass.SelectedIndex==0)
             {
                 MessageBox.Show("Are Stupit Why Did You Put None????", "Stupit", MessageBoxButtons.OK, MessageBoxIcon.Error);

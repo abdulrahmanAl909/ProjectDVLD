@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pbImagePath = new System.Windows.Forms.PictureBox();
             this.lblIsDetained = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
             this.lblDriverID = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbImagePath = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagePath)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driver License Info";
+            // 
+            // pbImagePath
+            // 
+            this.pbImagePath.Location = new System.Drawing.Point(522, 31);
+            this.pbImagePath.Name = "pbImagePath";
+            this.pbImagePath.Size = new System.Drawing.Size(264, 187);
+            this.pbImagePath.TabIndex = 26;
+            this.pbImagePath.TabStop = false;
             // 
             // lblIsDetained
             // 
@@ -174,9 +182,9 @@
             this.label11.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label11.Location = new System.Drawing.Point(411, 227);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(187, 29);
+            this.label11.Size = new System.Drawing.Size(184, 29);
             this.label11.TabIndex = 18;
-            this.label11.Text = "Is Active         ?";
+            this.label11.Text = "Is Active         :";
             // 
             // label10
             // 
@@ -184,9 +192,9 @@
             this.label10.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label10.Location = new System.Drawing.Point(411, 455);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(186, 29);
+            this.label10.Size = new System.Drawing.Size(183, 29);
             this.label10.TabIndex = 17;
-            this.label10.Text = "Is Detained     ?";
+            this.label10.Text = "Is Detained     :";
             // 
             // label9
             // 
@@ -357,14 +365,6 @@
             this.label1.Size = new System.Drawing.Size(155, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Class          :";
-            // 
-            // pbImagePath
-            // 
-            this.pbImagePath.Location = new System.Drawing.Point(416, 31);
-            this.pbImagePath.Name = "pbImagePath";
-            this.pbImagePath.Size = new System.Drawing.Size(264, 187);
-            this.pbImagePath.TabIndex = 26;
-            this.pbImagePath.TabStop = false;
             // 
             // ctrlLicenseDetails
             // 

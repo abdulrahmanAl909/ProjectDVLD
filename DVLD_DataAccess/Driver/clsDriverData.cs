@@ -16,10 +16,15 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = @"SELECT Drivers.DriverID, Drivers.PersonID, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Drivers.CreatedDate,ActiveLicense=CAST(IsActive AS VARCHAR(5))
-                             FROM Drivers INNER JOIN
-                             Licenses ON Drivers.DriverID = Licenses.DriverID INNER JOIN
-                             People ON Drivers.PersonID = People.PersonID";
+            string quary = @"SELECT  Drivers.DriverID, Drivers.PersonID,People.NationalNo,FullName = People.FirstName + ' ' + People.SecondName + ' ' + ISNULL(People.ThirdName,'') + ' ' + People.LastName, 
+                                Drivers.CreatedDate, ActiveLicense = CAST(L.IsActive AS VARCHAR(5))
+                            FROM Drivers INNER JOIN People ON Drivers.PersonID = People.PersonID
+                            CROSS APPLY (
+                            SELECT TOP 1 IsActive 
+                            FROM Licenses 
+                            WHERE Licenses.DriverID = Drivers.DriverID 
+                            ORDER BY IsActive DESC
+                            ) L;";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
@@ -53,12 +58,19 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = $@"Select * From 
-                             (SELECT Drivers.DriverID, Drivers.PersonID, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Drivers.CreatedDate,ActiveLicense=CAST(IsActive AS VARCHAR(5))
-                             FROM Drivers INNER JOIN
-                             Licenses ON Drivers.DriverID = Licenses.DriverID INNER JOIN
-                             People ON Drivers.PersonID = People.PersonID)A
-                             Where {ColumnName} = @FilterBy";
+            string quary = $@"SELECT * FROM (
+                             SELECT Drivers.DriverID, Drivers.PersonID, People.NationalNo,FullName = People.FirstName + ' ' + People.SecondName + ' ' + ISNULL(People.ThirdName,'') + ' ' + People.LastName, 
+                                 Drivers.CreatedDate, ActiveLicense = CAST(L.IsActive AS VARCHAR(5))
+                             FROM Drivers 
+                             INNER JOIN People ON Drivers.PersonID = People.PersonID
+                             CROSS APPLY (
+                                 SELECT TOP 1 IsActive 
+                                 FROM Licenses 
+                                 WHERE Licenses.DriverID = Drivers.DriverID 
+                                 ORDER BY IsActive DESC
+                             ) L
+                         ) AS MainTable
+                         WHERE {ColumnName} = @FilterBy;";
 
             SqlCommand command = new SqlCommand(quary, connection);
 
@@ -93,12 +105,17 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = $@"Select * From(
-                             SELECT Drivers.DriverID, Drivers.PersonID, People.NationalNo,FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, Drivers.CreatedDate,ActiveLicense=CAST(IsActive AS VARCHAR(5))
-                             FROM Drivers INNER JOIN
-                             Licenses ON Drivers.DriverID = Licenses.DriverID INNER JOIN
-                             People ON Drivers.PersonID = People.PersonID)A
-                             Where {ColumnName} LIKE '' +  @FilterBy + '%'";
+            string quary = $@"SELECT * FROM (
+                            SELECT Drivers.DriverID, Drivers.PersonID, People.NationalNo,FullName = People.FirstName + ' ' + People.SecondName + ' ' + ISNULL(People.ThirdName,'') + ' ' + People.LastName, Drivers.CreatedDate,ActiveLicense = CAST(L.IsActive AS VARCHAR(5))                           FROM Drivers 
+                            INNER JOIN People ON Drivers.PersonID = People.PersonID
+                            CROSS APPLY (
+                                SELECT TOP 1 IsActive 
+                                FROM Licenses 
+                                WHERE Licenses.DriverID = Drivers.DriverID 
+                                ORDER BY IsActive DESC
+                            ) L
+                        ) AS MainTable
+                        WHERE {ColumnName} LIKE '' + @FilterBy + '%';";
 
             SqlCommand command = new SqlCommand(quary, connection);
 

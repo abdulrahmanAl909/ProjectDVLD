@@ -298,6 +298,37 @@ namespace DVLD_DataAccess
             return (RowAffectid > 0);
         }
 
+        public static bool DeleteApplication(int LocalID)
+        {
+            int RowAffectid = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"DELETE FROM [dbo].[LocalDrivingLicenseApplications]
+                             WHERE LocalDrivingLicenseApplicationID = @LocalID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@LocalID", LocalID);
+
+            try
+            {
+                connection.Open();
+
+                RowAffectid = command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error" + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (RowAffectid > 0);
+        }
+
+
         public static bool CheckHasOrder(int AppPersonID,int AppType, byte AppStatus)
         {
             bool IsHasRow = false;
@@ -370,6 +401,43 @@ namespace DVLD_DataAccess
             }
             return Count;
         }
+
+        public static int GetApplicationIDByLocalID(int LocalID)
+        {
+            int ApplicationID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select ApplicationID from LocalDrivingLicenseApplications
+                             where LocalDrivingLicenseApplicationID =@LocalID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@LocalID", LocalID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertvalue))
+                {
+                    ApplicationID = insertvalue;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return ApplicationID;
+
+        }
+
     }
 
 

@@ -74,6 +74,7 @@
             this.Controls.Add(this.ctrlLicenseDetails1);
             this.Name = "frmShowLicenseInfo";
             this.Text = "frmShowLicenseInfo";
+            this.Load += new System.EventHandler(this.frmShowLicenseInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

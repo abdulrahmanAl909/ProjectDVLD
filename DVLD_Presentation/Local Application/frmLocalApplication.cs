@@ -147,26 +147,23 @@ namespace DVLD_Presentation
 
         private void deleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmShowLicenseInfo frm = new frmShowLicenseInfo();
-
-            frm.ShowDialog();
+            if (MessageBox.Show("Are you sure you want to delete this Application ", "Confirm" ,MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (clsLoaclApplication.DeleteApplication((int)dgvLocalApplication.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Application Delete Successfully");
+                    _RefrishLocalApplication();
+                }
+                else
+                {
+                    MessageBox.Show("Application is NOT Delete");
+                }
+            }
         }
 
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmShowL frm = new frmShowL((int)dgvLocalApplication.CurrentRow.Cells[0].Value);
-
-            frm.ShowDialog();
-        }
-
-        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmLicenseHistory frm = new frmLicenseHistory(dgvLocalApplication.CurrentRow.Cells[2].Value.ToString());
 
             frm.ShowDialog();
         }
@@ -334,7 +331,27 @@ namespace DVLD_Presentation
             frmIssueDriverLicenseFirstTime frm = new frmIssueDriverLicenseFirstTime((int)dgvLocalApplication.CurrentRow.Cells[0].Value);
 
             frm.ShowDialog();
-
+            _RefrishLocalApplication();
         }
+
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ApplicationID = clsLoaclApplication.GetApplicationIDByLocalID((int)dgvLocalApplication.CurrentRow.Cells[0].Value);
+
+            int LicenseID = clsLicense.GetLicenseIDByApplicationID(ApplicationID);
+
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(LicenseID);
+
+            frm.ShowDialog();
+        }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLicenseHistory frm = new frmLicenseHistory(dgvLocalApplication.CurrentRow.Cells[2].Value.ToString());
+
+            frm.ShowDialog();
+        }
+
+
     }
 }

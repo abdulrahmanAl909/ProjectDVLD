@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,16 @@ namespace DVLD_Presentation
             _NationalNo = NationalNo;
         }
 
+        private void LoadDataForLocal()
+        {
+            int PersonID = clsPerson.GetPersonIDByNationalNo(_NationalNo);
+
+            int DriverID = clsDriver.IsDriverExist(PersonID);
+
+            dgvDataForLocalLicense.DataSource = clsLicense.GetLicense(DriverID);
+            lblCountRecord.Text = dgvDataForLocalLicense.RowCount.ToString();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -28,7 +39,11 @@ namespace DVLD_Presentation
 
         private void frmLicenseHistory_Load(object sender, EventArgs e)
         {
+            LoadDataForLocal();
+
             ctrlShowPersonDetails1.LoadDataByNationalNo(_NationalNo);
         }
+
+
     }
 }
