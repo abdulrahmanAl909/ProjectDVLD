@@ -143,6 +143,7 @@
             this.interToolStripMenuItem1.Name = "interToolStripMenuItem1";
             this.interToolStripMenuItem1.Size = new System.Drawing.Size(308, 50);
             this.interToolStripMenuItem1.Text = "International License";
+            this.interToolStripMenuItem1.Click += new System.EventHandler(this.interToolStripMenuItem1_Click);
             // 
             // renToolStripMenuItem
             // 
@@ -228,6 +229,7 @@
             this.interToolStripMenuItem.Name = "interToolStripMenuItem";
             this.interToolStripMenuItem.Size = new System.Drawing.Size(477, 66);
             this.interToolStripMenuItem.Text = "International Lincene Applications";
+            this.interToolStripMenuItem.Click += new System.EventHandler(this.interToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 

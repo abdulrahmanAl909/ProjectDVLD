@@ -543,6 +543,26 @@ namespace DVLD_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_rqqv6lrqqv6lrqqv {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_rqqv6lrqqv6lrqqv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_y58l95y58l95y58l {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_y58l95y58l95y58l", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_30x30 {
             get {
                 object obj = ResourceManager.GetObject("icon_30x30", resourceCulture);
@@ -1146,6 +1166,36 @@ namespace DVLD_Presentation.Properties {
         internal static System.Drawing.Bitmap Show_License_40x40_Clean {
             get {
                 object obj = ResourceManager.GetObject("Show_License_40x40_Clean", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_license_details_48 {
+            get {
+                object obj = ResourceManager.GetObject("show_license_details_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_person_details_48 {
+            get {
+                object obj = ResourceManager.GetObject("show_person_details_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_person_license_history_48 {
+            get {
+                object obj = ResourceManager.GetObject("show_person_license_history_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -59,6 +59,30 @@
     <Compile Include="ApplicationType\frmUpdateApplicationType.Designer.cs">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
     </Compile>
+    <Compile Include="International License\frmInternationalApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="International License\frmInternationalApplication.Designer.cs">
+      <DependentUpon>frmInternationalApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ctrlApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ctrlApplicationInfo.Designer.cs">
+      <DependentUpon>ctrlApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ctrlFilterLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ctrlFilterLicense.Designer.cs">
+      <DependentUpon>ctrlFilterLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="International License\frmIssueInternationalLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="International License\frmIssueInternationalLicense.Designer.cs">
+      <DependentUpon>frmIssueInternationalLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Local Application\frmIssueDriverLicenseFirstTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +257,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationType\frmUpdateApplicationType.resx">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="International License\frmInternationalApplication.resx">
+      <DependentUpon>frmInternationalApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ctrlApplicationInfo.resx">
+      <DependentUpon>ctrlApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ctrlFilterLicense.resx">
+      <DependentUpon>ctrlFilterLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="International License\frmIssueInternationalLicense.resx">
+      <DependentUpon>frmIssueInternationalLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Local Application\frmIssueDriverLicenseFirstTime.resx">
       <DependentUpon>frmIssueDriverLicenseFirstTime.cs</DependentUpon>
@@ -695,6 +731,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ChatGPT Image Aug 29, 2026, 08_59_25 AM555.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_y58l95y58l95y58l.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_rqqv6lrqqv6lrqqv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_person_details_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_license_details_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_person_license_history_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

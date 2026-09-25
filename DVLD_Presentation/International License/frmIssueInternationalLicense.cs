@@ -10,20 +10,21 @@ using System.Windows.Forms;
 
 namespace DVLD_Presentation
 {
-    public partial class frmShowLicenseInfo : Form
+    public partial class frmIssueInternationalLicense : Form
     {
-        int _LicenseID;
-
-        public frmShowLicenseInfo(int LicenseID)
+        public frmIssueInternationalLicense()
         {
             InitializeComponent();
-
-            this._LicenseID = LicenseID;
         }
 
-        private void frmShowLicenseInfo_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            ctrlLicenseDetails1.LoadDataForLicense(_LicenseID);
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -220,6 +220,40 @@ namespace DVLD_DataAccess.Application
             return (RowAffectid > 0);
         }
 
+        public static int GetPersonIDByApplicationID(int AppID)
+        {
+            int PersonID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select ApplicantPersonID From Applications
+                             where ApplicationID =@AppID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@AppID", AppID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertvalue))
+                {
+                    PersonID = insertvalue;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return PersonID;
+        }
 
     }
 }

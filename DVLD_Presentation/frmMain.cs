@@ -94,5 +94,19 @@ namespace DVLD_Presentation
 
             frm.ShowDialog();
         }
+
+        private void interToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInternationalApplication frm = new frmInternationalApplication();
+
+            frm.ShowDialog();
+        }
+
+        private void interToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmIssueInternationalLicense frm = new frmIssueInternationalLicense();
+
+            frm.ShowDialog();
+        }
     }
 }

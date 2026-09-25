@@ -118,23 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ChatGPT Image Aug 29, 2026, 08_54_51 AM55" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image Aug 29, 2026, 08_54_51 AM55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Issue_Driving_License_First_Time_40x401" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Issue_Driving_License_First_Time_40x401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="retake_test_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\retake_test_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="show_license_details_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\show_license_details_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChatGPT Image Aug 29, 2026, 06_57_41 AM (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChatGPT Image Aug 29, 2026, 06_57_41 AM (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Application" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Application.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sign_Out_55x55" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sign_Out_55x55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="resume (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resume (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drivers-license1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drivers-license1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +154,8 @@
   <data name="manage_test_type_64x64(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage_test_type_64x64(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="replace_lost_damaged_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\replace_lost_damaged_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-users-settings-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-users-settings-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="International_Driving_License_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\International_Driving_License_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,6 +184,9 @@
   <data name="Show_License_40x40_Clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Show_License_40x40_Clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="people1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\people1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="International_Driving_License_55x55" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\International_Driving_License_55x55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,14 +214,11 @@
   <data name="ChatGPT Image Aug 23, 2026, 02_14_05 PM2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChatGPT Image Aug 23, 2026, 02_14_05 PM2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="drivers-license" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\drivers-license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-close-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-close-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-test-results-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-test-results-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChatGPT Image Aug 23, 2026, 12_35_35 PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image Aug 23, 2026, 12_35_35 PM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-user-information-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-user-information-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -225,6 +231,9 @@
   </data>
   <data name="photo_5769563666645717541_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\photo_5769563666645717541_m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="show_person_details_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\show_person_details_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-vanpool-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-vanpool-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,8 +274,8 @@
   <data name="Current_User_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Current_User_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="photo_5769563666645717550_x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\photo_5769563666645717550_x.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="replace_lost_damaged_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\replace_lost_damaged_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="photo_5769563666645717546_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\photo_5769563666645717546_m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,17 +283,11 @@
   <data name="woman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\woman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DSC_1193" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DSC_1193.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="photo_5769563666645717542_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\photo_5769563666645717542_m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="International_Driving_License_55x551" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\International_Driving_License_55x551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Issue_Driving_License_First_Time_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Issue_Driving_License_First_Time_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Local_Driving_License_55x55" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Local_Driving_License_55x55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,14 +301,20 @@
   <data name="Current_User_55x55_NoLine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Current_User_55x55_NoLine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="international_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\international_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ChatGPT Image Aug 23, 2026, 04_17_11 AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChatGPT Image Aug 23, 2026, 04_17_11 AM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ChatGPT Image Aug 17, 2026, 05_03_48 AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChatGPT Image Aug 17, 2026, 05_03_48 AM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-users-settings-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-users-settings-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="admission-form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admission-form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChatGPT Image Aug 23, 2026, 12_35_35 PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChatGPT Image Aug 23, 2026, 12_35_35 PM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Change_Password_55x55_NoLine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Change_Password_55x55_NoLine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,17 +334,14 @@
   <data name="ChatGPT Image Aug 29, 2026, 06_57_41 AM (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChatGPT Image Aug 29, 2026, 06_57_41 AM (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="retake_test_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\retake_test_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="drivers-license" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drivers-license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cancel_Application_Original_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_Application_Original_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-user-logout-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-user-logout-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="username (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\username (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete_Application_40x40_Clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete_Application_40x40_Clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -385,8 +391,8 @@
   <data name="ChatGPT Image Aug 23, 2026, 07_30_19 AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChatGPT Image Aug 23, 2026, 07_30_19 AM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="resume" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\resume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WriteTest_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WriteTest_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edit_Application_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_Application_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -394,14 +400,17 @@
   <data name="driving_license_64x64_final(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\driving_license_64x64_final(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-close-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-close-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="resume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="photo_5773918209433079495_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo_5773918209433079495_m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="international_license_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\international_license_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="username (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\username (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-user-info-48 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-user-info-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -409,8 +418,8 @@
   <data name="driving_license_car_plus_64x64(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\driving_license_car_plus_64x64(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="photo_5773918209433079495_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\photo_5773918209433079495_m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="photo_5769563666645717550_x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo_5769563666645717550_x.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ChatGPT Image Aug 26, 2026, 07_43_27 AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChatGPT Image Aug 26, 2026, 07_43_27 AM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -430,8 +439,8 @@
   <data name="delete-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete-user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WriteTest_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WriteTest_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Gemini_Generated_Image_rqqv6lrqqv6lrqqv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gemini_Generated_Image_rqqv6lrqqv6lrqqv.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="manage_application_64x64(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage_application_64x64(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -445,17 +454,23 @@
   <data name="Edit_Application_40x40_fixed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_Application_40x40_fixed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="admission-form" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\admission-form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Issue_Driving_License_First_Time_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Issue_Driving_License_First_Time_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ChatGPT Image Aug 29, 2026, 06_57_41 AM (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image Aug 29, 2026, 06_57_41 AM (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DSC_1193" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DSC_1193.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChatGPT Image Aug 29, 2026, 08_59_25 AM555" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChatGPT Image Aug 29, 2026, 08_59_25 AM555.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gemini_Generated_Image_y58l95y58l95y58l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gemini_Generated_Image_y58l95y58l95y58l.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="magnifying-glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnifying-glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="resume (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\resume (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sign_Out_55x55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sign_Out_55x55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Change_Password_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Change_Password_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -463,13 +478,13 @@
   <data name="Drivers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Drivers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="people1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\people1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ChatGPT Image Aug 29, 2026, 08_54_51 AM55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChatGPT Image Aug 29, 2026, 08_54_51 AM55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ChatGPT Image Aug 29, 2026, 08_59_25 AM555" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image Aug 29, 2026, 08_59_25 AM555.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="show_person_license_history_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\show_person_license_history_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

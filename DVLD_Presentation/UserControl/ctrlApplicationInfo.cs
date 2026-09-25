@@ -10,20 +10,16 @@ using System.Windows.Forms;
 
 namespace DVLD_Presentation
 {
-    public partial class frmShowLicenseInfo : Form
+    public partial class ctrlApplicationInfo : UserControl
     {
-        int _LicenseID;
-
-        public frmShowLicenseInfo(int LicenseID)
+        public ctrlApplicationInfo()
         {
             InitializeComponent();
-
-            this._LicenseID = LicenseID;
         }
 
-        private void frmShowLicenseInfo_Load(object sender, EventArgs e)
+        private void label16_Click(object sender, EventArgs e)
         {
-            ctrlLicenseDetails1.LoadDataForLicense(_LicenseID);
+
         }
     }
 }

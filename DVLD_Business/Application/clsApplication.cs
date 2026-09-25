@@ -111,6 +111,11 @@ namespace DVLD_Business.Application
             return clsApplicationData.ChangeStatus(AppID, (byte)ApplicationStatus);
         }
 
+        public static int GetPersonIDByApplicationID(int AppID)
+        {
+            return clsApplicationData.GetPersonIDByApplicationID(AppID);
+        }
+
         public bool Save()
         {
             switch (Mode)
