@@ -125,6 +125,13 @@ namespace DVLD_Presentation
             frm.ShowDialog();
         }
 
+        private void showLicenseHisrotyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PersonID =clsApplication.GetPersonIDByApplicationID((int)dgvInternationalLicense.CurrentRow.Cells[1].Value);
 
+            frmLicenseHistory frm = new frmLicenseHistory(PersonID);
+
+            frm.ShowDialog();
+        }
     }
 }

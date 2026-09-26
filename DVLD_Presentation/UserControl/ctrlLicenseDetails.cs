@@ -19,40 +19,48 @@ namespace DVLD_Presentation
         }
 
 
-        public void LoadDataForLicense(int LicenseID)
+        public bool LoadDataForLicense(int LicenseID)
         {
             clsLicense LicenseInfo = clsLicense.GetLicenseByID(LicenseID);
 
-            lblClass.Text = LicenseInfo.LicenseClassInfo.ClassName;
-            lblName.Text = LicenseInfo.ApplicationInfo.PersonInfo.FullName;
-            lblLicenseID.Text = LicenseID.ToString();
-            lblNationalNo.Text = LicenseInfo.ApplicationInfo.PersonInfo.NationalNo;
-            lblGendor.Text = LicenseInfo.ApplicationInfo.PersonInfo.Gendor.ToString();
-            lblIssueDate.Text = LicenseInfo.IssueDate.ToShortDateString();
-            lblIssueReason.Text = LicenseInfo.IssueReason.ToString();
-            lblIsActive.Text = LicenseInfo.IsActive.ToString();
-            lblDateOfBirth.Text = LicenseInfo.ApplicationInfo.PersonInfo.DateOfBirth.ToShortDateString();
-            lblDriverID.Text = LicenseInfo.DriverID.ToString();
-            lblExpirationDate.Text = LicenseInfo.ExpirationDate.ToShortDateString();
-
-            if(LicenseInfo.Notes == "")
+            if (LicenseInfo != null)
             {
-                lblNotes.Text = "No Notes";
+                lblClass.Text = LicenseInfo.LicenseClassInfo.ClassName;
+                lblName.Text = LicenseInfo.ApplicationInfo.PersonInfo.FullName;
+                lblLicenseID.Text = LicenseID.ToString();
+                lblNationalNo.Text = LicenseInfo.ApplicationInfo.PersonInfo.NationalNo;
+                lblGendor.Text = LicenseInfo.ApplicationInfo.PersonInfo.Gendor.ToString();
+                lblIssueDate.Text = LicenseInfo.IssueDate.ToShortDateString();
+                lblIssueReason.Text = LicenseInfo.IssueReason.ToString();
+                lblIsActive.Text = LicenseInfo.IsActive.ToString();
+                lblDateOfBirth.Text = LicenseInfo.ApplicationInfo.PersonInfo.DateOfBirth.ToShortDateString();
+                lblDriverID.Text = LicenseInfo.DriverID.ToString();
+                lblExpirationDate.Text = LicenseInfo.ExpirationDate.ToShortDateString();
+
+                if (LicenseInfo.Notes == "")
+                {
+                    lblNotes.Text = "No Notes";
+                }
+                else
+                {
+                    lblNotes.Text = LicenseInfo.Notes;
+                }
+
+                if (LicenseInfo.IsActive)
+                {
+                    lblIsDetained.Text = "No";
+                }
+                else
+                {
+                    lblIsDetained.Text = "Yes";
+                }
+                return true;
             }
             else
             {
-                lblNotes.Text = LicenseInfo.Notes;
+                MessageBox.Show("No License With License ID = " + LicenseID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-
-            if (LicenseInfo.IsActive)
-            {
-                lblIsDetained.Text = "No";
-            }
-            else
-            {
-                lblIsDetained.Text = "Yes";
-            }
-
         }
 
 

@@ -14,22 +14,26 @@ namespace DVLD_Presentation
     public partial class frmLicenseHistory : Form
     {
 
-        string _NationalNo = "";
-        public frmLicenseHistory(string NationalNo)
+        int _PersonID;
+
+        public frmLicenseHistory(int PersonID )
         {
             InitializeComponent();
 
-            _NationalNo = NationalNo;
+            _PersonID = PersonID;
         }
 
-        private void LoadDataForLocal()
+        private void LoadData()
         {
-            int PersonID = clsPerson.GetPersonIDByNationalNo(_NationalNo);
+            int DriverID = clsDriver.IsDriverExist(_PersonID);
 
-            int DriverID = clsDriver.IsDriverExist(PersonID);
-
+            // for Local License 
             dgvDataForLocalLicense.DataSource = clsLicense.GetLicense(DriverID);
-            lblCountRecord.Text = dgvDataForLocalLicense.RowCount.ToString();
+            lblCountRecordFroLocal.Text = dgvDataForLocalLicense.RowCount.ToString();
+
+            //For International License
+            dgvLoadDataForInternational.DataSource = clsInternationalLicense.GetInternationalLicense(DriverID);
+            lblCountRecordForInternational.Text = dgvLoadDataForInternational.RowCount.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,9 +43,9 @@ namespace DVLD_Presentation
 
         private void frmLicenseHistory_Load(object sender, EventArgs e)
         {
-            LoadDataForLocal();
+            LoadData();
 
-            ctrlShowPersonDetails1.LoadDataByNationalNo(_NationalNo);
+            ctrlShowPersonDetails1.LoadDataByPersonID(_PersonID);
         }
 
 

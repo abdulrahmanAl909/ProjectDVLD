@@ -283,6 +283,16 @@ namespace DVLD_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Aug_23__2026__07_30_19_AM1 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Aug 23, 2026, 07_30_19 AM1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChatGPT_Image_Aug_23__2026__12_35_35_PM {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image Aug 23, 2026, 12_35_35 PM", resourceCulture);
@@ -416,6 +426,26 @@ namespace DVLD_Presentation.Properties {
         internal static System.Drawing.Bitmap detain_license_64x64_v2 {
             get {
                 object obj = ResourceManager.GetObject("detain_license_64x64_v2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap driver_license {
+            get {
+                object obj = ResourceManager.GetObject("driver-license", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap driver_license__1_ {
+            get {
+                object obj = ResourceManager.GetObject("driver-license (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

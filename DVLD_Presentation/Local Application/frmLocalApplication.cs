@@ -347,7 +347,9 @@ namespace DVLD_Presentation
 
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLicenseHistory frm = new frmLicenseHistory(dgvLocalApplication.CurrentRow.Cells[2].Value.ToString());
+            int PersonID = clsPerson.GetPersonIDByNationalNo(dgvLocalApplication.CurrentRow.Cells[2].Value.ToString());
+
+            frmLicenseHistory frm = new frmLicenseHistory(PersonID);
 
             frm.ShowDialog();
         }

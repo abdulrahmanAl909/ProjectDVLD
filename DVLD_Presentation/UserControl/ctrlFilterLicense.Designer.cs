@@ -32,11 +32,11 @@
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFilterLicense = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ctrlLicenseDetails2 = new DVLD_Presentation.ctrlLicenseDetails();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtFilter = new System.Windows.Forms.TextBox();
             this.btnFilterLicense = new System.Windows.Forms.Button();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ctrlLicenseDetails2 = new DVLD_Presentation.ctrlLicenseDetails();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,6 @@
             this.txtFilterLicense.Name = "txtFilterLicense";
             this.txtFilterLicense.Size = new System.Drawing.Size(374, 27);
             this.txtFilterLicense.TabIndex = 1;
-            this.txtFilterLicense.TextChanged += new System.EventHandler(this.txtFilterLicense_TextChanged);
             // 
             // label1
             // 
@@ -85,14 +84,6 @@
             this.label1.Size = new System.Drawing.Size(132, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "License ID:";
-            // 
-            // ctrlLicenseDetails2
-            // 
-            this.ctrlLicenseDetails2.BackColor = System.Drawing.Color.SteelBlue;
-            this.ctrlLicenseDetails2.Location = new System.Drawing.Point(0, 121);
-            this.ctrlLicenseDetails2.Name = "ctrlLicenseDetails2";
-            this.ctrlLicenseDetails2.Size = new System.Drawing.Size(821, 547);
-            this.ctrlLicenseDetails2.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -108,25 +99,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filter License";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label2.Location = new System.Drawing.Point(28, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "License ID:";
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.BackColor = System.Drawing.Color.SteelBlue;
-            this.txtFilter.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.txtFilter.Location = new System.Drawing.Point(154, 51);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(264, 27);
-            this.txtFilter.TabIndex = 1;
-            // 
             // btnFilterLicense
             // 
             this.btnFilterLicense.BackColor = System.Drawing.Color.SteelBlue;
@@ -137,6 +109,36 @@
             this.btnFilterLicense.Size = new System.Drawing.Size(75, 52);
             this.btnFilterLicense.TabIndex = 2;
             this.btnFilterLicense.UseVisualStyleBackColor = false;
+            this.btnFilterLicense.Click += new System.EventHandler(this.btnFilterLicense_Click);
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.BackColor = System.Drawing.Color.SteelBlue;
+            this.txtFilter.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtFilter.ForeColor = System.Drawing.Color.White;
+            this.txtFilter.Location = new System.Drawing.Point(154, 51);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(264, 32);
+            this.txtFilter.TabIndex = 1;
+            this.txtFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterBy_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label2.Location = new System.Drawing.Point(28, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "License ID:";
+            // 
+            // ctrlLicenseDetails2
+            // 
+            this.ctrlLicenseDetails2.BackColor = System.Drawing.Color.SteelBlue;
+            this.ctrlLicenseDetails2.Location = new System.Drawing.Point(0, 121);
+            this.ctrlLicenseDetails2.Name = "ctrlLicenseDetails2";
+            this.ctrlLicenseDetails2.Size = new System.Drawing.Size(821, 547);
+            this.ctrlLicenseDetails2.TabIndex = 0;
             // 
             // ctrlFilterLicense
             // 

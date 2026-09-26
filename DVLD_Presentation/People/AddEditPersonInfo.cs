@@ -256,7 +256,6 @@ namespace DVLD_Presentation
                 {
                     this.Close();
                 }
-                
             }
 
             lblPersonID.Visible = true;
