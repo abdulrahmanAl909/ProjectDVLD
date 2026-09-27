@@ -134,5 +134,10 @@ namespace DVLD_Business
             return clsLicenseData.IsDriverHasLicense(DriverID, LicenseClassID);
         }
 
+        public static bool ChangeActive(int LicenseID , bool TheFinalResultIsActive)
+        {
+            return clsLicenseData.ChangeActive(LicenseID, TheFinalResultIsActive);
+        }
+
     }
 }

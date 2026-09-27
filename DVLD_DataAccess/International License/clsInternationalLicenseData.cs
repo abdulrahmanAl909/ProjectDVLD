@@ -283,5 +283,38 @@ namespace DVLD_DataAccess
             return IsFount;
         }
 
+        public static bool ChangeActive(int InternationalLicenseID, bool TheFinalResultIsActive)
+        {
+            int RowAffectid = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"UPDATE [dbo].[InternationalLicenses]
+                             SET [IsActive] = @TheFinalResultIsActive
+                             WHERE InternationalLicenseID = @InternationalLicenseID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@InternationalLicenseID", InternationalLicenseID);
+            command.Parameters.AddWithValue("@TheFinalResultIsActive", TheFinalResultIsActive);
+
+            try
+            {
+                connection.Open();
+
+                RowAffectid = command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error" + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return (RowAffectid > 0);
+        }
+
     }
 }

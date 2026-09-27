@@ -153,6 +153,7 @@
             this.renToolStripMenuItem.Name = "renToolStripMenuItem";
             this.renToolStripMenuItem.Size = new System.Drawing.Size(419, 64);
             this.renToolStripMenuItem.Text = "Renew Driving License";
+            this.renToolStripMenuItem.Click += new System.EventHandler(this.renToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 

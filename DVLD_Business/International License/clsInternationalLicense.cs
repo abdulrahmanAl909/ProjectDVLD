@@ -115,6 +115,11 @@ namespace DVLD_Business
             return (this.InternationalLicenseID != -1);
         }
 
+        public static bool ChangeActive(int InternationalLicenseID, bool TheFinalResultIsActive)
+        {
+            return clsInternationalLicenseData.ChangeActive(InternationalLicenseID, TheFinalResultIsActive);
+        }
+
 
     }
 }

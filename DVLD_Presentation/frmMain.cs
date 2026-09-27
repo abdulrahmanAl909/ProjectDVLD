@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -105,6 +106,13 @@ namespace DVLD_Presentation
         private void interToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmIssueInternationalLicense frm = new frmIssueInternationalLicense();
+
+            frm.ShowDialog();
+        }
+
+        private void renToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRenewLicense frm = new frmRenewLicense();
 
             frm.ShowDialog();
         }

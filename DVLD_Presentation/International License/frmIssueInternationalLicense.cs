@@ -94,7 +94,7 @@ namespace DVLD_Presentation
             InternationalInfo.ApplicationInfo.ApplicationPersonID = InternationalInfo.LicenseInfo.ApplicationInfo.ApplicationPersonID;
             InternationalInfo.ApplicationInfo.ApplicationDate = DateTime.Now;
             InternationalInfo.ApplicationInfo.ApplicationType = (int)enApplicationType.NewInternationalLicense;
-            InternationalInfo.ApplicationInfo.ApplicationStatus = enApplicationStatus.AddNewApp;
+            InternationalInfo.ApplicationInfo.ApplicationStatus = enApplicationStatus.Completed;
             InternationalInfo.ApplicationInfo.LastStatusDate = DateTime.Now;
             InternationalInfo.ApplicationInfo.PaidFees = FeesForApplicationType;
             InternationalInfo.ApplicationInfo.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;

@@ -48,6 +48,19 @@ namespace DVLD_Presentation
             ctrlShowPersonDetails1.LoadDataByPersonID(_PersonID);
         }
 
+        private void showLicenseInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowLicenseInfo frm = new frmShowLicenseInfo((int)dgvDataForLocalLicense.CurrentRow.Cells[0].Value);
 
+            frm.ShowDialog();
+        }
+
+
+        private void showLicenseInfoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmInternationalLicenseInfo frm = new frmInternationalLicenseInfo((int)dgvLoadDataForInternational.CurrentRow.Cells[0].Value);
+
+            frm.ShowDialog();
+        }
     }
 }

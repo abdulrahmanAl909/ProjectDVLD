@@ -236,5 +236,39 @@ namespace DVLD_DataAccess
             return (IsFount);
         }
 
+        public static bool ChangeActive(int LicenseID, bool TheFinalResultIsActive)
+        {
+            int RowAffectid = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"UPDATE [dbo].[Licenses]
+                             SET [IsActive] = @TheFinalResultIsActive
+                             WHERE LicenseID = @LicenseID";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+            command.Parameters.AddWithValue("@TheFinalResultIsActive", TheFinalResultIsActive);
+
+            try
+            {
+                connection.Open();
+
+                RowAffectid = command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error" + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return (RowAffectid > 0);
+        }
+
+
     }
 }
