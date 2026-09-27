@@ -36,6 +36,7 @@ namespace DVLD_Presentation
                 lblDateOfBirth.Text = LicenseInfo.ApplicationInfo.PersonInfo.DateOfBirth.ToShortDateString();
                 lblDriverID.Text = LicenseInfo.DriverID.ToString();
                 lblExpirationDate.Text = LicenseInfo.ExpirationDate.ToShortDateString();
+                lblIsDetained.Text = "No";
 
                 if (LicenseInfo.Notes == "")
                 {
@@ -44,15 +45,6 @@ namespace DVLD_Presentation
                 else
                 {
                     lblNotes.Text = LicenseInfo.Notes;
-                }
-
-                if (LicenseInfo.IsActive)
-                {
-                    lblIsDetained.Text = "No";
-                }
-                else
-                {
-                    lblIsDetained.Text = "Yes";
                 }
                 return true;
             }

@@ -116,5 +116,12 @@ namespace DVLD_Presentation
 
             frm.ShowDialog();
         }
+
+        private void reToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReplacementDamageOrLost frm = new frmReplacementDamageOrLost();
+
+            frm.ShowDialog();
+        }
     }
 }

@@ -168,6 +168,7 @@
             this.reToolStripMenuItem.Name = "reToolStripMenuItem";
             this.reToolStripMenuItem.Size = new System.Drawing.Size(419, 64);
             this.reToolStripMenuItem.Text = "Replace Lost/Damaged License";
+            this.reToolStripMenuItem.Click += new System.EventHandler(this.reToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
