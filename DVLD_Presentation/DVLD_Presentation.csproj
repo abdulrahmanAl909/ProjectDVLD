@@ -59,6 +59,24 @@
     <Compile Include="ApplicationType\frmUpdateApplicationType.Designer.cs">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetainsLicense\frmManageDetain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetainsLicense\frmManageDetain.Designer.cs">
+      <DependentUpon>frmManageDetain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetainsLicense\frmDetainLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetainsLicense\frmDetainLicense.Designer.cs">
+      <DependentUpon>frmDetainLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetainsLicense\frmReleaseLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetainsLicense\frmReleaseLicense.Designer.cs">
+      <DependentUpon>frmReleaseLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Replacemet For Damage or Lost\frmReplacementDamageOrLost.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +299,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationType\frmUpdateApplicationType.resx">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetainsLicense\frmDetainLicense.resx">
+      <DependentUpon>frmDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetainsLicense\frmManageDetain.resx">
+      <DependentUpon>frmManageDetain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetainsLicense\frmReleaseLicense.resx">
+      <DependentUpon>frmReleaseLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Renew License\frmRenewLicense.resx">
       <DependentUpon>frmRenewLicense.cs</DependentUpon>
@@ -791,6 +818,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\driver-license %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage_detained_license.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\release_detained_license.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detain_license.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage_detained_license %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detain_license %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\release_detained_license1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\release_detained_license2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detain_license %281%291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -123,5 +123,12 @@ namespace DVLD_Presentation
 
             frm.ShowDialog();
         }
+
+        private void manageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageDetain frm = new frmManageDetain();
+
+            frm.ShowDialog();
+        }
     }
 }
