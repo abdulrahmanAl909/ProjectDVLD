@@ -157,7 +157,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnSave.Location = new System.Drawing.Point(761, 423);
+            this.btnSave.Location = new System.Drawing.Point(893, 423);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(139, 54);
             this.btnSave.TabIndex = 28;
@@ -169,7 +169,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnClose.Location = new System.Drawing.Point(585, 423);
+            this.btnClose.Location = new System.Drawing.Point(717, 423);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(139, 54);
             this.btnClose.TabIndex = 27;

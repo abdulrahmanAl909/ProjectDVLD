@@ -178,6 +178,11 @@ namespace DVLD_Business
             return clsPersonData.GetPersonIDByNationalNo(NationalNo);
         }
 
+        public static bool IsNationalNoExist(string NationalNo)
+        {
+            return clsPersonData.IsNationalNoExist(NationalNo);
+        }
+
         public bool SavePerson()
         {
             switch (Mode)
@@ -198,6 +203,8 @@ namespace DVLD_Business
             }
             return false;
         }
+
+        
 
 
     }

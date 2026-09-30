@@ -215,7 +215,6 @@ namespace DVLD_Presentation
             }
 
             int CountryID = clsCountry.GetCountryByName(cbCountry.Text).CountryID;
-            _PersonInfo.NationalNo = txtNationalNo.Text;
             _PersonInfo.FirstName = txtFirstName.Text;
             _PersonInfo.SecondName = txtSecondName.Text;
             _PersonInfo.ThirdName = txtThirdName.Text;
@@ -226,7 +225,17 @@ namespace DVLD_Presentation
             _PersonInfo.Phone = mtxtPhoneNumber.Text;
             _PersonInfo.CountryID = CountryID;
 
-            if(rbMale.Checked)
+            if(clsPerson.IsNationalNoExist(txtNationalNo.Text))
+            {
+                MessageBox.Show("Chooes another Name for National No", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                _PersonInfo.NationalNo = txtNationalNo.Text;
+            }
+
+            if (rbMale.Checked)
             {
                 _PersonInfo.Gendor = enGendor.Male;
                 pbImagePath.Image = Resources.businessman;

@@ -618,5 +618,43 @@ namespace DVLD_DataAccess
 
         }
 
+        public static bool IsNationalNoExist(string NationalNo)
+        {
+            bool isFount = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select Fount=1 From People
+                             where NationalNo=@NationalNo";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                isFount = reader.HasRows;
+
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+                isFount = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFount;
+        }
+
+
     }
 }
