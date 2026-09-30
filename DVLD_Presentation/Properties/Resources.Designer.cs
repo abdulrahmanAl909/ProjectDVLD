@@ -353,6 +353,26 @@ namespace DVLD_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Sep_29__2026__04_42_54_PM {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Sep 29, 2026, 04_42_54 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Sep_29__2026__04_44_26_PM {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Sep 29, 2026, 04_44_26 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close {
             get {
                 object obj = ResourceManager.GetObject("Close", resourceCulture);
@@ -1176,6 +1196,16 @@ namespace DVLD_Presentation.Properties {
         internal static System.Drawing.Bitmap release_detained_license2 {
             get {
                 object obj = ResourceManager.GetObject("release_detained_license2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap release_detained_license3 {
+            get {
+                object obj = ResourceManager.GetObject("release_detained_license3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

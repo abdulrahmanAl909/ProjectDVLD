@@ -54,6 +54,12 @@ namespace DVLD_Presentation
             }
         }
 
+        public void ShowLicenseInfo(int LicenseID)
+        {
+            ctrlLicenseDetails2.LoadDataForLicense(LicenseID);
+            groupBox1.Enabled = true;
+            ctrlLicenseDetails2.Enabled = true;
+        }
 
     }
 }

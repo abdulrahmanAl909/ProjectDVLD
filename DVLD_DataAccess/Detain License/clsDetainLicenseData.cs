@@ -19,14 +19,24 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = @"SELECT DetainedLicenses.DetainID, DetainedLicenses.LicenseID, DetainedLicenses.DetainDate, DetainedLicenses.IsReleased,
-                             DetainedLicenses.FineFees, DetainedLicenses.ReleaseDate, People.NationalNo,
-                              FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, 
+            string quary = @"SELECT DetainedLicenses.DetainID,
+                              DetainedLicenses.LicenseID,DetainedLicenses.DetainDate,DetainedLicenses.IsReleased,
+                              DetainedLicenses.FineFees,  DetainedLicenses.ReleaseDate,People.NationalNo,
+                              FullName = People.FirstName + ' ' 
+                                       + People.SecondName + ' ' 
+                                       + ISNULL(People.ThirdName, '') + ' ' 
+                                       + People.LastName,
                               DetainedLicenses.ReleaseApplicationID
-                              FROM   DetainedLicenses INNER JOIN
-                              Applications ON DetainedLicenses.ReleaseApplicationID = Applications.ApplicationID INNER JOIN
-                              People ON Applications.ApplicantPersonID = People.PersonID";
-
+                       FROM DetainedLicenses
+                       INNER JOIN Licenses 
+                           ON DetainedLicenses.LicenseID = Licenses.LicenseID
+                       INNER JOIN Drivers 
+                           ON Licenses.DriverID = Drivers.DriverID
+                       INNER JOIN People 
+                           ON Drivers.PersonID = People.PersonID
+                       LEFT JOIN Applications 
+                           ON DetainedLicenses.ReleaseApplicationID = Applications.ApplicationID";
+                             
             SqlCommand command = new SqlCommand(quary, connection);
 
             try
@@ -128,19 +138,106 @@ namespace DVLD_DataAccess
             return IsFount;
         }
 
+        public static bool GetDetainByLicenseID(ref int DetainID, int LicenseID, ref DateTime DetainDate, ref decimal FineFees,
+    ref int CreatedByUserID, ref bool IsReleased, ref DateTime ReleaseDate, ref int ReleasedByUserID, ref int ReleaseApplicationID)
+        {
+            bool IsFount = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string quary = @"select * From DetainedLicenses
+                             where LicenseID =@LicenseID ";
+
+            SqlCommand command = new SqlCommand(quary, connection);
+
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IsFount = true;
+
+                    DetainID = (int)reader["DetainID"];
+                    DetainDate = (DateTime)reader["DetainDate"];
+                    FineFees = (decimal)reader["FineFees"];
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
+                    IsReleased = (bool)reader["IsReleased"];
+
+                    if (reader["DetainDate"] != DBNull.Value)
+                    {
+                        DetainDate = (DateTime)reader["DetainDate"];
+                    }
+                    else
+                    {
+                        DetainDate = DateTime.Now;
+                    }
+
+
+                    if (reader["ReleasedByUserID"] != DBNull.Value)
+                    {
+                        ReleasedByUserID = (int)reader["ReleasedByUserID"];
+                    }
+                    else
+                    {
+                        ReleasedByUserID = -1;
+                    }
+
+
+                    if (reader["ReleaseApplicationID"] != DBNull.Value)
+                    {
+                        ReleaseApplicationID = (int)reader["ReleaseApplicationID"];
+                    }
+                    else
+                    {
+                        ReleaseApplicationID = -1;
+                    }
+
+                }
+                else
+                {
+                    IsFount = false;
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFount;
+        }
+
         public static DataTable GetAllDetainsByFilter(string ColumnName, int FilterBy)
         {
             DataTable dataTable = new DataTable();
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = $@"SELECT DetainedLicenses.DetainID, DetainedLicenses.LicenseID, DetainedLicenses.DetainDate, DetainedLicenses.IsReleased,
-                             DetainedLicenses.FineFees, DetainedLicenses.ReleaseDate, People.NationalNo,
-                              FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, 
+            string quary = $@"SELECT DetainedLicenses.DetainID,
+                              DetainedLicenses.LicenseID,DetainedLicenses.DetainDate,DetainedLicenses.IsReleased,
+                              DetainedLicenses.FineFees,  DetainedLicenses.ReleaseDate,People.NationalNo,
+                              FullName = People.FirstName + ' ' 
+                                       + People.SecondName + ' ' 
+                                       + ISNULL(People.ThirdName, '') + ' ' 
+                                       + People.LastName,
                               DetainedLicenses.ReleaseApplicationID
-                              FROM   DetainedLicenses INNER JOIN
-                              Applications ON DetainedLicenses.ReleaseApplicationID = Applications.ApplicationID INNER JOIN
-                              People ON Applications.ApplicantPersonID = People.PersonID
+                       FROM DetainedLicenses
+                       INNER JOIN Licenses 
+                           ON DetainedLicenses.LicenseID = Licenses.LicenseID
+                       INNER JOIN Drivers 
+                           ON Licenses.DriverID = Drivers.DriverID
+                       INNER JOIN People 
+                           ON Drivers.PersonID = People.PersonID
+                       LEFT JOIN Applications 
+                           ON DetainedLicenses.ReleaseApplicationID = Applications.ApplicationID
                            Where {ColumnName} = @FilterBy";
 
             SqlCommand command = new SqlCommand(quary, connection);
@@ -176,14 +273,23 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = $@"Select * From(
-                             SELECT DetainedLicenses.DetainID, DetainedLicenses.LicenseID, DetainedLicenses.DetainDate, DetainedLicenses.IsReleased,
-                             DetainedLicenses.FineFees, DetainedLicenses.ReleaseDate, People.NationalNo,
-                              FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, 
+            string quary = $@"Select * From(SELECT DetainedLicenses.DetainID,
+                              DetainedLicenses.LicenseID,DetainedLicenses.DetainDate,DetainedLicenses.IsReleased,
+                              DetainedLicenses.FineFees,  DetainedLicenses.ReleaseDate,People.NationalNo,
+                              FullName = People.FirstName + ' ' 
+                                       + People.SecondName + ' ' 
+                                       + ISNULL(People.ThirdName, '') + ' ' 
+                                       + People.LastName,
                               DetainedLicenses.ReleaseApplicationID
-                              FROM   DetainedLicenses INNER JOIN
-                              Applications ON DetainedLicenses.ReleaseApplicationID = Applications.ApplicationID INNER JOIN
-                              People ON Applications.ApplicantPersonID = People.PersonID)A
+                       FROM DetainedLicenses
+                       INNER JOIN Licenses 
+                           ON DetainedLicenses.LicenseID = Licenses.LicenseID
+                       INNER JOIN Drivers 
+                           ON Licenses.DriverID = Drivers.DriverID
+                       INNER JOIN People 
+                           ON Drivers.PersonID = People.PersonID
+                       LEFT JOIN Applications 
+                           ON DetainedLicenses.ReleaseApplicationID = Applications.ApplicationID)A
                               Where {ColumnName} LIKE '' +  @FilterBy + '%'";
 
             SqlCommand command = new SqlCommand(quary, connection);
@@ -219,13 +325,23 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string quary = $@"SELECT DetainedLicenses.DetainID, DetainedLicenses.LicenseID, DetainedLicenses.DetainDate, DetainedLicenses.IsReleased,
-                             DetainedLicenses.FineFees, DetainedLicenses.ReleaseDate, People.NationalNo,
-                              FullName= People.FirstName + ' ' + People.SecondName+ ' ' +isnull(People.ThirdName,'')+ ' ' + People.LastName, 
+            string quary = $@"SELECT DetainedLicenses.DetainID,
+                              DetainedLicenses.LicenseID,DetainedLicenses.DetainDate,DetainedLicenses.IsReleased,
+                              DetainedLicenses.FineFees,  DetainedLicenses.ReleaseDate,People.NationalNo,
+                              FullName = People.FirstName + ' ' 
+                                       + People.SecondName + ' ' 
+                                       + ISNULL(People.ThirdName, '') + ' ' 
+                                       + People.LastName,
                               DetainedLicenses.ReleaseApplicationID
-                              FROM   DetainedLicenses INNER JOIN
-                              Applications ON DetainedLicenses.ReleaseApplicationID = Applications.ApplicationID INNER JOIN
-                              People ON Applications.ApplicantPersonID = People.PersonID
+                       FROM DetainedLicenses
+                       INNER JOIN Licenses 
+                           ON DetainedLicenses.LicenseID = Licenses.LicenseID
+                       INNER JOIN Drivers 
+                           ON Licenses.DriverID = Drivers.DriverID
+                       INNER JOIN People 
+                           ON Drivers.PersonID = People.PersonID
+                       LEFT JOIN Applications 
+                           ON DetainedLicenses.ReleaseApplicationID = Applications.ApplicationID
                              Where {ColumnName} = @FilterBy";
 
             SqlCommand command = new SqlCommand(quary, connection);
@@ -410,7 +526,6 @@ namespace DVLD_DataAccess
             }
             return IsFount;
         }
-
 
     }
 }

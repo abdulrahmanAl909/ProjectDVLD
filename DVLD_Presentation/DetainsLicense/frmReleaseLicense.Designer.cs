@@ -33,6 +33,8 @@
             this.btnRelease = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblFineFees1 = new System.Windows.Forms.Label();
             this.lblCreateByUser = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -43,12 +45,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblRLAppID = new System.Windows.Forms.Label();
             this.lblDetainDate = new System.Windows.Forms.Label();
-            this.lblFineFees = new System.Windows.Forms.Label();
             this.lblDetainID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblFineFees = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.ctrlFilterLicense1 = new DVLD_Presentation.ctrlFilterLicense();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -65,6 +67,7 @@
             this.llLicenseInfo.TabIndex = 27;
             this.llLicenseInfo.TabStop = true;
             this.llLicenseInfo.Text = "License Info";
+            this.llLicenseInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llLicenseInfo_LinkClicked);
             // 
             // llLicenseHistory
             // 
@@ -77,6 +80,7 @@
             this.llLicenseHistory.TabIndex = 26;
             this.llLicenseHistory.TabStop = true;
             this.llLicenseHistory.Text = "Show Licenses History";
+            this.llLicenseHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llLicenseHistory_LinkClicked);
             // 
             // btnRelease
             // 
@@ -90,6 +94,7 @@
             this.btnRelease.TabIndex = 25;
             this.btnRelease.Text = "Release";
             this.btnRelease.UseVisualStyleBackColor = false;
+            this.btnRelease.Click += new System.EventHandler(this.btnRelease_Click);
             // 
             // btnClose
             // 
@@ -102,9 +107,12 @@
             this.btnClose.TabIndex = 24;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lblFineFees1);
             this.groupBox1.Controls.Add(this.lblCreateByUser);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label13);
@@ -115,11 +123,9 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.lblRLAppID);
             this.groupBox1.Controls.Add(this.lblDetainDate);
-            this.groupBox1.Controls.Add(this.lblFineFees);
             this.groupBox1.Controls.Add(this.lblDetainID);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -129,6 +135,26 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Application New License Info";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label6.Location = new System.Drawing.Point(29, 119);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(147, 29);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Fine Fees   :";
+            // 
+            // lblFineFees1
+            // 
+            this.lblFineFees1.AutoSize = true;
+            this.lblFineFees1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblFineFees1.Location = new System.Drawing.Point(195, 119);
+            this.lblFineFees1.Name = "lblFineFees1";
+            this.lblFineFees1.Size = new System.Drawing.Size(46, 29);
+            this.lblFineFees1.TabIndex = 20;
+            this.lblFineFees1.Text = "???";
             // 
             // lblCreateByUser
             // 
@@ -154,7 +180,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label13.Location = new System.Drawing.Point(429, 128);
+            this.label13.Location = new System.Drawing.Point(429, 119);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(192, 29);
             this.label13.TabIndex = 16;
@@ -164,7 +190,7 @@
             // 
             this.lblApplicationFees.AutoSize = true;
             this.lblApplicationFees.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblApplicationFees.Location = new System.Drawing.Point(633, 128);
+            this.lblApplicationFees.Location = new System.Drawing.Point(633, 119);
             this.lblApplicationFees.Name = "lblApplicationFees";
             this.lblApplicationFees.Size = new System.Drawing.Size(46, 29);
             this.lblApplicationFees.TabIndex = 15;
@@ -174,17 +200,17 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label11.Location = new System.Drawing.Point(429, 174);
+            this.label11.Location = new System.Drawing.Point(29, 166);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(196, 29);
+            this.label11.Size = new System.Drawing.Size(148, 29);
             this.label11.TabIndex = 14;
-            this.label11.Text = "TotalFees         :";
+            this.label11.Text = "TotalFees   :";
             // 
             // lblTotalFees
             // 
             this.lblTotalFees.AutoSize = true;
             this.lblTotalFees.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblTotalFees.Location = new System.Drawing.Point(633, 174);
+            this.lblTotalFees.Location = new System.Drawing.Point(195, 166);
             this.lblTotalFees.Name = "lblTotalFees";
             this.lblTotalFees.Size = new System.Drawing.Size(46, 29);
             this.lblTotalFees.TabIndex = 13;
@@ -214,7 +240,7 @@
             // 
             this.lblRLAppID.AutoSize = true;
             this.lblRLAppID.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblRLAppID.Location = new System.Drawing.Point(194, 78);
+            this.lblRLAppID.Location = new System.Drawing.Point(633, 157);
             this.lblRLAppID.Name = "lblRLAppID";
             this.lblRLAppID.Size = new System.Drawing.Size(46, 29);
             this.lblRLAppID.TabIndex = 9;
@@ -224,21 +250,11 @@
             // 
             this.lblDetainDate.AutoSize = true;
             this.lblDetainDate.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblDetainDate.Location = new System.Drawing.Point(194, 128);
+            this.lblDetainDate.Location = new System.Drawing.Point(200, 78);
             this.lblDetainDate.Name = "lblDetainDate";
             this.lblDetainDate.Size = new System.Drawing.Size(46, 29);
             this.lblDetainDate.TabIndex = 8;
             this.lblDetainDate.Text = "???";
-            // 
-            // lblFineFees
-            // 
-            this.lblFineFees.AutoSize = true;
-            this.lblFineFees.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblFineFees.Location = new System.Drawing.Point(194, 174);
-            this.lblFineFees.Name = "lblFineFees";
-            this.lblFineFees.Size = new System.Drawing.Size(46, 29);
-            this.lblFineFees.TabIndex = 7;
-            this.lblFineFees.Text = "???";
             // 
             // lblDetainID
             // 
@@ -254,31 +270,21 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label5.Location = new System.Drawing.Point(23, 78);
+            this.label5.Location = new System.Drawing.Point(429, 157);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 29);
+            this.label5.Size = new System.Drawing.Size(191, 29);
             this.label5.TabIndex = 4;
-            this.label5.Text = "R.L.App ID  :";
+            this.label5.Text = "R.L.App ID       :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label4.Location = new System.Drawing.Point(23, 128);
+            this.label4.Location = new System.Drawing.Point(29, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 29);
             this.label4.TabIndex = 3;
             this.label4.Text = "Detain Date:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label3.Location = new System.Drawing.Point(23, 174);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fine Fees   :";
             // 
             // label2
             // 
@@ -290,6 +296,26 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Detain ID   :";
             // 
+            // lblFineFees
+            // 
+            this.lblFineFees.AutoSize = true;
+            this.lblFineFees.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblFineFees.Location = new System.Drawing.Point(454, 326);
+            this.lblFineFees.Name = "lblFineFees";
+            this.lblFineFees.Size = new System.Drawing.Size(46, 29);
+            this.lblFineFees.TabIndex = 7;
+            this.lblFineFees.Text = "???";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label3.Location = new System.Drawing.Point(289, 326);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 29);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Fine Fees   :";
+            // 
             // ctrlFilterLicense1
             // 
             this.ctrlFilterLicense1.BackColor = System.Drawing.Color.SteelBlue;
@@ -298,6 +324,7 @@
             this.ctrlFilterLicense1.Name = "ctrlFilterLicense1";
             this.ctrlFilterLicense1.Size = new System.Drawing.Size(824, 655);
             this.ctrlFilterLicense1.TabIndex = 22;
+            this.ctrlFilterLicense1.OnSearshForLicense += new System.Action<int>(this.ctrlFilterLicense1_OnSearshForLicense);
             // 
             // label1
             // 
@@ -323,6 +350,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlFilterLicense1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblFineFees);
             this.Name = "frmReleaseLicense";
             this.Text = "frmReleaseLicense";
             this.Load += new System.EventHandler(this.frmReleaseLicense_Load);
@@ -358,5 +387,7 @@
         private System.Windows.Forms.Label label2;
         private ctrlFilterLicense ctrlFilterLicense1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblFineFees1;
     }
 }

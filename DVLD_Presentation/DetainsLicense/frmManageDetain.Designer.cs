@@ -42,11 +42,13 @@
             this.showPersonInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLicenseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.releaseLicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnAddRelease = new System.Windows.Forms.Button();
             this.btnAddDetain = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetainManage)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,7 +83,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1087, 236);
+            this.label4.Location = new System.Drawing.Point(1087, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 24);
             this.label4.TabIndex = 21;
@@ -133,7 +135,7 @@
             this.lblCountRecord.AutoSize = true;
             this.lblCountRecord.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblCountRecord.ForeColor = System.Drawing.Color.White;
-            this.lblCountRecord.Location = new System.Drawing.Point(95, 599);
+            this.lblCountRecord.Location = new System.Drawing.Point(100, 610);
             this.lblCountRecord.Name = "lblCountRecord";
             this.lblCountRecord.Size = new System.Drawing.Size(39, 29);
             this.lblCountRecord.TabIndex = 16;
@@ -144,7 +146,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 599);
+            this.label2.Location = new System.Drawing.Point(12, 610);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 29);
             this.label2.TabIndex = 15;
@@ -174,16 +176,19 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showPersonInfoToolStripMenuItem,
             this.showLicenseDetailsToolStripMenuItem,
-            this.showPersonLicenseHistoryToolStripMenuItem});
+            this.showPersonLicenseHistoryToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.releaseLicToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(342, 172);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(358, 298);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showPersonInfoToolStripMenuItem
             // 
             this.showPersonInfoToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.show_person_details_48;
             this.showPersonInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
-            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(341, 56);
+            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(357, 72);
             this.showPersonInfoToolStripMenuItem.Text = "Show Person Detalis";
             this.showPersonInfoToolStripMenuItem.Click += new System.EventHandler(this.showPersonInfoToolStripMenuItem_Click);
             // 
@@ -192,7 +197,7 @@
             this.showLicenseDetailsToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.show_license_details_48;
             this.showLicenseDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showLicenseDetailsToolStripMenuItem.Name = "showLicenseDetailsToolStripMenuItem";
-            this.showLicenseDetailsToolStripMenuItem.Size = new System.Drawing.Size(341, 56);
+            this.showLicenseDetailsToolStripMenuItem.Size = new System.Drawing.Size(357, 72);
             this.showLicenseDetailsToolStripMenuItem.Text = "Show License Details";
             this.showLicenseDetailsToolStripMenuItem.Click += new System.EventHandler(this.showLicenseDetailsToolStripMenuItem_Click);
             // 
@@ -201,20 +206,46 @@
             this.showPersonLicenseHistoryToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.show_person_license_history_48;
             this.showPersonLicenseHistoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
-            this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(341, 56);
+            this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(357, 72);
             this.showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
             this.showPersonLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.showPersonLicenseHistoryToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(354, 6);
+            // 
+            // releaseLicToolStripMenuItem
+            // 
+            this.releaseLicToolStripMenuItem.Enabled = false;
+            this.releaseLicToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.manage_application_check_64x64_1_;
+            this.releaseLicToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.releaseLicToolStripMenuItem.Name = "releaseLicToolStripMenuItem";
+            this.releaseLicToolStripMenuItem.Size = new System.Drawing.Size(357, 72);
+            this.releaseLicToolStripMenuItem.Text = "Release Detained License";
+            this.releaseLicToolStripMenuItem.Click += new System.EventHandler(this.releaseLicToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(270, 212);
+            this.label1.Location = new System.Drawing.Point(435, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(596, 48);
+            this.label1.Size = new System.Drawing.Size(409, 48);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Local Driving Lincene Application";
+            this.label1.Text = "List Detained Licenses";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(1205, 246);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 24);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Add Releace";
             // 
             // btnAddRelease
             // 
@@ -223,7 +254,7 @@
             this.btnAddRelease.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddRelease.Font = new System.Drawing.Font("Tahoma", 14F);
             this.btnAddRelease.ForeColor = System.Drawing.Color.White;
-            this.btnAddRelease.Location = new System.Drawing.Point(1209, 263);
+            this.btnAddRelease.Location = new System.Drawing.Point(1209, 273);
             this.btnAddRelease.Name = "btnAddRelease";
             this.btnAddRelease.Size = new System.Drawing.Size(103, 66);
             this.btnAddRelease.TabIndex = 24;
@@ -237,7 +268,7 @@
             this.btnAddDetain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddDetain.Font = new System.Drawing.Font("Tahoma", 14F);
             this.btnAddDetain.ForeColor = System.Drawing.Color.White;
-            this.btnAddDetain.Location = new System.Drawing.Point(1091, 263);
+            this.btnAddDetain.Location = new System.Drawing.Point(1091, 273);
             this.btnAddDetain.Name = "btnAddDetain";
             this.btnAddDetain.Size = new System.Drawing.Size(91, 66);
             this.btnAddDetain.TabIndex = 20;
@@ -246,24 +277,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DVLD_Presentation.Properties.Resources.Application;
-            this.pictureBox1.Location = new System.Drawing.Point(332, 24);
+            this.pictureBox1.Image = global::DVLD_Presentation.Properties.Resources.ChatGPT_Image_Sep_29__2026__04_44_26_PM;
+            this.pictureBox1.Location = new System.Drawing.Point(431, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(413, 165);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1205, 236);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 24);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Add Releace";
             // 
             // frmManageDetain
             // 
@@ -316,5 +336,7 @@
         private System.Windows.Forms.ToolStripMenuItem showPersonInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showLicenseDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem releaseLicToolStripMenuItem;
     }
 }

@@ -148,6 +148,27 @@ namespace DVLD_Presentation
             frmReleaseLicense frm = new frmReleaseLicense();
 
             frm.ShowDialog();
+            _RefilshData();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (!clsDetainLicense.GetIsRelease((int)dgvDetainManage.CurrentRow.Cells[0].Value))
+            {
+                releaseLicToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                releaseLicToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void releaseLicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReleaseLicense frm = new frmReleaseLicense((int)dgvDetainManage.CurrentRow.Cells[0].Value);
+
+            frm.ShowDialog();
+            _RefilshData();
         }
     }
 }

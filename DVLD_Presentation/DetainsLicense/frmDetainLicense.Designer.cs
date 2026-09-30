@@ -60,6 +60,7 @@
             this.llLicenseInfo.TabIndex = 27;
             this.llLicenseInfo.TabStop = true;
             this.llLicenseInfo.Text = "License Info";
+            this.llLicenseInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llLicenseInfo_LinkClicked);
             // 
             // llLicenseHistory
             // 
@@ -72,6 +73,7 @@
             this.llLicenseHistory.TabIndex = 26;
             this.llLicenseHistory.TabStop = true;
             this.llLicenseHistory.Text = "Show Licenses History";
+            this.llLicenseHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llLicenseHistory_LinkClicked);
             // 
             // groupBox1
             // 
@@ -206,6 +208,7 @@
             this.ctrlFilterLicense1.Name = "ctrlFilterLicense1";
             this.ctrlFilterLicense1.Size = new System.Drawing.Size(811, 651);
             this.ctrlFilterLicense1.TabIndex = 24;
+            this.ctrlFilterLicense1.OnSearshForLicense += new System.Action<int>(this.ctrlFilterLicense1_OnSearshForLicense);
             // 
             // btnDetain
             // 
@@ -219,6 +222,7 @@
             this.btnDetain.TabIndex = 23;
             this.btnDetain.Text = "Detain";
             this.btnDetain.UseVisualStyleBackColor = false;
+            this.btnDetain.Click += new System.EventHandler(this.btnDetain_Click);
             // 
             // btnClose
             // 
